@@ -1,0 +1,220 @@
+\chapter[Estudio cualitativo de funciones]{Estudio cualitativo y representación de funciones}
+\label{chap:estudio-funciones}
+
+Representar una función no consiste en encadenar cálculos sin orden. El
+objetivo es deducir una descripción global coherente a partir del dominio, los
+límites, la continuidad y las derivadas. Cada conclusión debe indicar dónde
+vale; en particular, los intervalos separados por puntos excluidos del dominio
+no pueden tratarse como uno solo.
+
+\section{Un método de estudio}
+\label{sec:metodo-estudio-funciones}
+
+\subsection{Del dominio a la representación cualitativa}
+\CanonicalUnit{CM-C05-U001}{}{}
+
+Según la función, no todos los pasos aportan la misma información. Un flujo
+razonado de estudio es el siguiente:
+
+\begin{enumerate}
+  \item determinar el dominio y sus componentes;
+  \item comprobar simetrías o periodicidad;
+  \item hallar las intersecciones con los ejes, cuando existan;
+  \item estudiar el signo de la función en cada componente relevante;
+  \item calcular límites en la frontera del dominio;
+  \item estudiar el comportamiento cuando \(x\to+\infty\) y
+        \(x\to-\infty\), si procede;
+  \item identificar asíntotas y justificar cada una mediante límites;
+  \item localizar los puntos donde \(f'\) se anula o no existe;
+  \item determinar la monotonía por intervalos;
+  \item clasificar los extremos locales y, cuando tenga sentido, los globales;
+  \item localizar los puntos donde \(f''\) se anula o no existe;
+  \item determinar convexidad y concavidad por intervalos;
+  \item confirmar los puntos de inflexión mediante un cambio de convexidad;
+  \item reunir la información en tablas de signos o variación coherentes;
+  \item bosquejar la gráfica solo después de las deducciones anteriores.
+\end{enumerate}
+
+El dominio gobierna todo el análisis. Una ecuación como \(f'(x)>0\) puede
+probar crecimiento estricto en cada componente intervalar, pero no permite
+comparar valores situados en componentes distintas. Del mismo modo, un punto
+donde cambia el signo de una expresión no es un punto de la gráfica si no
+pertenece al dominio.
+
+\section{Simetrías y periodicidad}
+\label{sec:simetrias-periodicidad}
+
+\subsection{Funciones pares e impares}
+\CanonicalUnit{CM-C05-U002}{}{}
+
+Sea \(f:D\to\R\). Para hablar de paridad exigimos que el dominio sea
+simétrico respecto de cero:
+\[
+  x\in D \quad\Longrightarrow\quad -x\in D.
+\]
+La función es \emph{par} si \(f(-x)=f(x)\) para todo \(x\in D\), e
+\emph{impar} si \(f(-x)=-f(x)\) para todo \(x\in D\). La gráfica de una
+función par es simétrica respecto del eje vertical; la de una función impar
+es simétrica respecto del origen.
+
+Las ecuaciones no son intercambiables. Por ejemplo, \(x^2\) es par y \(x^3\)
+es impar. En cambio, la misma expresión \(x^2\) restringida al dominio
+\([0,+\infty)\) no se clasifica como par ni impar, porque su dominio no es
+simétrico respecto de cero.
+
+\subsection{Funciones periódicas}
+\CanonicalUnit{CM-C05-U003}{}{}
+
+Sea \(f:D\to\R\) y sea \(p>0\). Diremos que \(p\) es un \emph{período} de
+\(f\) si el dominio es estable por esa traslación,
+\[
+  D+p=D,
+\]
+y \(f(x+p)=f(x)\) para todo \(x\in D\). Una función que posee al menos un
+período es periódica. Esta definición incluye la compatibilidad del dominio;
+la igualdad de valores carecería de sentido si alguno de los argumentos
+quedara fuera de él.
+
+Cuando existe un período fundamental, basta estudiar un intervalo que cubra
+un ciclo y extender la información por traslación. No toda función periódica
+posee un período positivo mínimo: una función constante, por ejemplo, admite
+todo \(p>0\).
+
+\section{Intersecciones, límites y asíntotas}
+\label{sec:asintotas-estudio}
+
+\subsection{Intersecciones con los ejes}
+\CanonicalUnit{CM-C05-U004}{}{}
+
+Las intersecciones con el eje horizontal son los puntos \((x,0)\) para los
+que \(x\in D\) y \(f(x)=0\). La intersección con el eje vertical existe solo
+si \(0\in D\), y entonces es \((0,f(0))\). Resolver una ecuación sin comprobar
+el dominio puede introducir intersecciones inexistentes.
+
+\subsection{Tres tipos de asíntota}
+\CanonicalUnit{CM-C05-U005}{}{}
+
+La recta vertical \(x=a\) es una \emph{asíntota vertical} si al menos uno de
+los límites laterales \(\lim_{x\to a^-}f(x)\) o
+\(\lim_{x\to a^+}f(x)\) es infinito. Debe indicarse el lado y el signo del
+límite; no se presupone que ambos coincidan.
+
+La recta horizontal \(y=L\) es una \emph{asíntota horizontal} cuando
+\[
+  \lim_{x\to+\infty}f(x)=L
+  \quad\text{o}\quad
+  \lim_{x\to-\infty}f(x)=L.
+\]
+Los dos infinitos se estudian por separado.
+
+La recta \(y=mx+n\), con \(m\ne0\), es una \emph{asíntota oblicua} en uno
+de los dos infinitos si
+\[
+  \lim_{x\to\pm\infty}\bigl(f(x)-(mx+n)\bigr)=0.
+\]
+Cuando los límites existen y son finitos, sus coeficientes pueden obtenerse
+mediante
+\[
+  m=\lim_{x\to\pm\infty}\frac{f(x)}{x},
+  \qquad
+  n=\lim_{x\to\pm\infty}\bigl(f(x)-mx\bigr).
+\]
+Estas fórmulas son criterios que deben verificarse, no reglas formales
+independientes de los límites.
+
+\section{Información de las derivadas}
+\label{sec:sintesis-derivadas}
+
+\subsection{Variación, extremos, convexidad e inflexión}
+\CanonicalUnit{CM-C05-U006}{}{}
+
+Los criterios de los Capítulos~\ref{chap:derivacion-valor-medio} y
+\ref{chap:consecuencias-derivada} se aplican componente a componente:
+
+\begin{itemize}
+  \item el signo de \(f'\) determina la monotonía en intervalos;
+  \item un cambio de signo de \(f'\) clasifica un extremo local;
+  \item los extremos globales exigen comparar todos los candidatos y
+        justificar la existencia cuando esta no sea automática;
+  \item el signo de \(f''\) determina convexidad o concavidad bajo las
+        hipótesis del criterio diferencial;
+  \item un punto de inflexión debe pertenecer al dominio y presentar un
+        cambio de convexidad.
+\end{itemize}
+
+Las ecuaciones \(f'(a)=0\) y \(f''(a)=0\) producen candidatos, no
+conclusiones. La primera no garantiza un extremo y la segunda no garantiza un
+punto de inflexión. También deben considerarse los puntos pertinentes donde
+la derivada correspondiente no existe.
+
+\section{Ejemplo de síntesis}
+\label{sec:ejemplo-sintesis-funcion}
+
+\subsection{La función \(f(x)=x-1/x\)}
+\CanonicalUnit{CM-C05-U007}{}{}
+
+Consideremos
+\[
+  f(x)=x-\frac1x.
+\]
+Su dominio es \(D=\R\setminus\{0\}=(-\infty,0)\cup(0,+\infty)\). Es una
+función impar, pues el dominio es simétrico y \(f(-x)=-f(x)\).
+
+Las intersecciones con el eje horizontal se obtienen de
+\[
+  x-\frac1x=0,
+\]
+que, dentro del dominio, equivale a \(x^2=1\). Son \((-1,0)\) y \((1,0)\).
+No hay intersección con el eje vertical porque \(0\notin D\).
+
+En la frontera del dominio,
+\[
+  \lim_{x\to0^-}f(x)=+\infty,
+  \qquad
+  \lim_{x\to0^+}f(x)=-\infty,
+\]
+de modo que \(x=0\) es una asíntota vertical con comportamientos laterales
+opuestos. Además,
+\[
+  f(x)-x=-\frac1x\longrightarrow0
+  \qquad (x\to\pm\infty),
+\]
+por lo que \(y=x\) es una asíntota oblicua en ambos infinitos.
+
+Las dos primeras derivadas son
+\[
+  f'(x)=1+\frac1{x^2}>0,
+  \qquad
+  f''(x)=-\frac2{x^3}.
+\]
+Por tanto, \(f\) es estrictamente creciente en \(( -\infty,0)\) y en
+\((0,+\infty)\). No se afirma que sea creciente en todo \(D\): por ejemplo,
+\(-1<1\), pero \(f(-1)=f(1)=0\). No hay puntos críticos ni extremos locales.
+
+Como \(f''(x)>0\) para \(x<0\), la función es convexa en
+\(( -\infty,0)\). Como \(f''(x)<0\) para \(x>0\), es cóncava en
+\((0,+\infty)\). El cambio se produce al atravesar cero, pero cero no
+pertenece al dominio; por ello no existe allí un punto de inflexión.
+
+La representación cualitativa tiene dos ramas crecientes. La rama izquierda
+se aproxima a \(y=x\) cuando \(x\to-\infty\), pasa por \((-1,0)\) y tiende a
+\(+\infty\) cuando \(x\to0^-\). La rama derecha parte de \(-\infty\) cuando
+\(x\to0^+\), pasa por \((1,0)\) y se aproxima a \(y=x\) cuando
+\(x\to+\infty\). Esta descripción determina el bosquejo sin usar una gráfica
+como sustituto de las deducciones.
+
+\section{Comprobación computacional y alcance}
+\label{sec:comprobacion-computacional}
+
+\subsection{Qué puede comprobar una herramienta}
+\CanonicalUnit{CM-C05-U008}{}{}
+
+Una calculadora simbólica o una herramienta de representación puede ayudar a
+comprobar una derivada, explorar una ventana gráfica o detectar un posible
+error de cálculo. No demuestra por sí sola el dominio, la existencia de una
+asíntota, la monotonía en un intervalo ni la exhaustividad de los extremos.
+La validación matemática debe apoyarse en definiciones, límites y teoremas.
+
+El estudio cualitativo termina aquí con un ejemplo expositivo completo. Los
+ejercicios de práctica del material de partida quedan fuera de esta fuente
+canónica y de la autorización P4.5B.

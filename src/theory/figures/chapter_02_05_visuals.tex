@@ -1,0 +1,122 @@
+
+\newcommand{\SequenceCorridorVisual}{%
+\begin{tikzpicture}[x=0.62cm,y=1.15cm,>=Latex]
+  \draw[->,CourseInk] (0,0) -- (11.2,0) node[right] {$n$};
+  \draw[->,CourseInk] (0,-0.15) -- (0,3.2) node[above] {$a_n$};
+  \draw[CourseTeal,thick] (0,1.65) -- (10.8,1.65) node[right] {$L$};
+  \draw[CourseAmber,dashed] (0,2.25) -- (10.8,2.25) node[right] {$L+\varepsilon$};
+  \draw[CourseAmber,dashed] (0,1.05) -- (10.8,1.05) node[right] {$L-\varepsilon$};
+  \draw[CourseBlue,densely dotted] (4.5,0) -- (4.5,2.85) node[above] {$N$};
+  \foreach \x/\y in {1/2.8,2/0.45,3/2.45,4/0.82,5/2.12,6/1.22,7/1.92,8/1.42,9/1.8,10/1.52}{
+    \fill[CourseNavy] (\x,\y) circle (1.7pt);
+  }
+  \draw[decorate,decoration={brace,amplitude=4pt},CourseTeal]
+    (4.65,1.05) -- (4.65,2.25) node[midway,right=5pt,align=left] {corredor\\de radio $\varepsilon$};
+\end{tikzpicture}%
+}
+
+\newcommand{\EpsilonDeltaVisual}{%
+\begin{tikzpicture}[x=1.25cm,y=1.05cm,>=Latex]
+  \fill[CoursePaleTeal] (-2.45,-0.72) rectangle (2.45,0.72);
+  \fill[CoursePaleBlue] (-0.95,-1.85) rectangle (0.95,1.85);
+  \draw[CourseAmber,dashed] (-2.55,0.72) -- (2.55,0.72) node[right] {$L+\varepsilon$};
+  \draw[CourseAmber,dashed] (-2.55,-0.72) -- (2.55,-0.72) node[right] {$L-\varepsilon$};
+  \draw[CourseBlue,densely dotted] (-0.95,-1.85) -- (-0.95,1.85) node[above] {$a-\delta$};
+  \draw[CourseBlue,densely dotted] (0.95,-1.85) -- (0.95,1.85) node[above] {$a+\delta$};
+  \draw[->,CourseInk] (-2.7,0) -- (2.75,0) node[right] {$x$};
+  \draw[->,CourseInk] (0,-1.95) -- (0,2.05) node[above] {$y$};
+  \draw[CourseNavy,thick,domain=-2.3:2.3,samples=80]
+    plot (\x,{0.52*\x+0.12*\x*\x});
+  \fill[CourseNavy] (0,0) circle (1.7pt) node[below right] {$(a,L)$};
+  \node[CourseInk,align=center] at (1.65,-1.45) {$0<|x-a|<\delta$\\fuerza $|f(x)-L|<\varepsilon$};
+\end{tikzpicture}%
+}
+
+\newcommand{\SecantTangentVisual}{%
+\begin{tikzpicture}[x=1.58cm,y=1.38cm,>=Latex]
+  \pgfmathsetmacro{\basea}{-0.8}
+  \pgfmathsetmacro{\steph}{2.2}
+  \pgfmathsetmacro{\pointb}{\basea+\steph}
+  \pgfmathsetmacro{\fa}{0.25*\basea*\basea+1.0}
+  \pgfmathsetmacro{\fb}{0.25*\pointb*\pointb+1.0}
+  \pgfmathsetmacro{\mtan}{0.5*\basea}
+  \pgfmathsetmacro{\msec}{(\fb-\fa)/\steph}
+  \draw[->,CourseInk] (-2.35,0) -- (2.35,0) node[right] {$x$};
+  \draw[->,CourseInk] (0,-0.55) -- (0,2.55) node[above] {$y$};
+  \draw[CourseNavy,line width=1.1pt,domain=-2.2:2.25,samples=100]
+    plot (\x,{0.25*\x*\x+1.0});
+  \foreach \smallh/\shade in {1.35/55,0.72/32}{%
+    \pgfmathsetmacro{\smallb}{\basea+\smallh}
+    \pgfmathsetmacro{\smallfb}{0.25*\smallb*\smallb+1.0}
+    \pgfmathsetmacro{\smallm}{(\smallfb-\fa)/\smallh}
+    \draw[CourseAmber!\shade!CourseInk,densely dotted,line width=0.7pt,
+      domain=-2.15:2.15] plot (\x,{\fa+\smallm*(\x-\basea)});
+    \fill[CourseAmber!\shade!CourseInk] (\smallb,\smallfb) circle (1.35pt);
+  }
+  \draw[CourseAmber,dashed,line width=1.15pt,domain=-2.15:2.15]
+    plot (\x,{\fa+\msec*(\x-\basea)});
+  \draw[CourseTeal,line width=1.35pt,domain=-2.15:2.15]
+    plot (\x,{\fa+\mtan*(\x-\basea)});
+  \coordinate (A) at (\basea,\fa);
+  \coordinate (B) at (\pointb,\fb);
+  \fill[CourseNavy] (A) circle (2.2pt);
+  \fill[CourseNavy] (B) circle (2.2pt);
+  \draw[CourseRule] (\basea,0.05) -- (\basea,-0.05) node[below,CourseInk] {$a$};
+  \draw[CourseRule] (\pointb,0.05) -- (\pointb,-0.05) node[below,CourseInk] {$a+h$};
+  \node[CourseNavy,anchor=south east,fill=white,inner sep=1pt] at (A) {$(a,f(a))$};
+  \node[CourseNavy,anchor=south west,fill=white,inner sep=1pt] at (B) {$(a+h,f(a+h))$};
+  \node[CourseAmber,anchor=south west,fill=white,inner sep=1.5pt] at (-2.08,0.98) {secante};
+  \node[CourseTeal,anchor=north west,fill=white,inner sep=1.5pt] at (1.10,0.36) {tangente};
+  \draw[->,CourseBlue,line width=0.8pt] (\pointb,-0.34) -- (\basea,-0.34)
+    node[midway,below,CourseInk] {$h\to0$};
+  \node[CourseMuted,anchor=north west] at (-2.18,2.48) {$f(x)=\frac{x^2}{4}+1$};
+\end{tikzpicture}%
+}
+
+\newcommand{\DerivativeSignVisual}{%
+\begin{tikzpicture}[x=1.05cm,y=1cm,>=Latex]
+  \draw[CourseInk,line width=0.7pt] (-3.2,1.45) -- (3.2,1.45);
+  \foreach \x/\lab in {-1.25/a,1.25/b}{%
+    \draw[CourseInk] (\x,1.55) -- (\x,1.35) node[below=4pt] {$\lab$};
+  }
+  \node[CourseTeal,font=\bfseries] at (-2.2,1.90) {$f'>0$};
+  \node[CourseRed,font=\bfseries] at (0,1.90) {$f'<0$};
+  \node[CourseTeal,font=\bfseries] at (2.2,1.90) {$f'>0$};
+  \node[CourseMuted,anchor=east] at (-3.3,1.45) {signo};
+  \node[CourseMuted,anchor=east] at (-3.3,0.15) {variación};
+  \draw[CourseTeal,very thick,->] (-3.0,-0.25) -- (-1.35,0.70);
+  \draw[CourseRed,very thick,->] (-1.15,0.70) -- (1.15,-0.35);
+  \draw[CourseTeal,very thick,->] (1.35,-0.35) -- (3.0,0.55);
+  \fill[CourseNavy] (-1.25,0.76) circle (2.2pt);
+  \fill[CourseNavy] (1.25,-0.41) circle (2.2pt);
+  \node[CourseNavy,anchor=east] at (-1.58,0.76) {máximo local};
+  \node[CourseNavy,anchor=west] at (1.58,-0.41) {mínimo local};
+  \node[CourseInk,anchor=north,align=center,text width=11.7cm] at (0,-1.18)
+    {El signo en cada intervalo determina la variación;\\
+     los puntos candidatos deben clasificarse.};
+\end{tikzpicture}%
+}
+
+\newcommand{\FunctionStudyWorkflowVisual}{%
+\begin{tikzpicture}[x=1cm,y=1cm,>=Latex,
+  workflowstep/.style={draw=CourseBlue,rounded corners=1.2mm,fill=CoursePaleBlue,
+    minimum height=11mm,text width=34mm,align=center,font=\small,inner sep=4pt},
+  check/.style={draw=CourseTeal,rounded corners=1.2mm,fill=CoursePaleTeal,
+    minimum height=11mm,text width=34mm,align=center,font=\small,inner sep=4pt}]
+  \node[workflowstep] (domain) at (-4.4,1.25) {Dominio y simetrías};
+  \node[workflowstep] (limits) at (0,1.25) {Límites y asíntotas};
+  \node[workflowstep] (first) at (4.4,1.25) {Signo de $f'$ y extremos};
+  \node[workflowstep] (second) at (4.4,-0.55) {Signo de $f''$ e inflexión};
+  \node[check] (graph) at (0,-0.55) {Predicción y representación};
+  \node[check] (verify) at (-4.4,-0.55) {Comprobación de coherencia};
+  \draw[->,CourseNavy,thick] (domain) -- (limits);
+  \draw[->,CourseNavy,thick] (limits) -- (first);
+  \draw[->,CourseNavy,thick] (first) -- (second);
+  \draw[->,CourseNavy,thick] (second) -- (graph);
+  \draw[->,CourseNavy,thick] (graph) -- (verify);
+  \draw[->,CourseAmber,dashed,line width=0.9pt]
+    (verify.south) -- ++(0,-0.75) -- ++(8.8,0) -- (first.south);
+  \node[CourseAmber,fill=white,inner sep=2pt,font=\scriptsize]
+    at (0,-2.03) {si aparece una incoherencia, revisar las decisiones anteriores};
+\end{tikzpicture}%
+}

@@ -1,0 +1,181 @@
+\newcommand{\PublicTheoryCover}{%
+\begin{titlepage}
+  \thispagestyle{empty}
+  {\sffamily\color{CourseNavy}\fontsize{12}{15}\selectfont GIOVANNI DALMASSO}\par
+  \vspace{1.05cm}
+  {\color{CourseInk}\fontsize{33}{37}\selectfont\bfseries Cálculo Diferencial\\en una Variable\par}
+  \vspace{0.32cm}
+  {\sffamily\color{CourseTeal}\Large Teoría · Edición pública para estudiantes\par}
+  \vspace{0.9cm}
+  \centering
+  \BeginAccSupp{method=pdfstringdef,unicode,ActualText={Ilustración abstracta sobre cálculo diferencial con curvas, tangentes y formas geométricas}}%
+  \includegraphics[height=0.57\textheight,keepaspectratio]{src/theory/assets/cover.png}%
+  \EndAccSupp{}\par
+  \vfill
+  {\sffamily\small Versión 1.0\par}
+\end{titlepage}
+}
+
+\newcommand{\PublicTheoryTitleAndRights}{%
+\begin{titlepage}
+  \thispagestyle{empty}
+  \centering
+  \vspace*{2.2cm}
+  {\Huge\bfseries Cálculo Diferencial en una Variable\par}
+  \vspace{0.45cm}
+  {\Large\color{CourseTeal}Teoría · Edición pública para estudiantes\par}
+  \vspace{1.15cm}
+  {\Large \PublicAuthorDisplayName\par}
+  \vspace{0.3cm}
+  {\normalsize \PublicAuthorAffiliationLines\par}
+  \vfill
+  {\normalsize Versión 1.0 · 2026\par}
+\end{titlepage}
+
+\clearpage
+\thispagestyle{empty}
+\vspace*{0.27\textheight}
+{\small
+\textbf{Cálculo Diferencial en una Variable — Teoría}\par
+\PublicAuthorDisplayName\par
+Versión 1.0, 2026\par
+DOI: \href{https://doi.org/10.5281/zenodo.22306586}{\nolinkurl{10.5281/zenodo.22306586}}\par
+\vspace{1em}
+© 2026 Giovanni Dalmasso. Esta obra se distribuye bajo la licencia Creative
+Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional
+(CC BY-NC-SA 4.0). Resumen legible:
+\url{https://creativecommons.org/licenses/by-nc-sa/4.0/}. Texto legal oficial
+en español: \url{https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.es}.\par
+\vspace{0.7em}
+Afiliación del autor, a efectos informativos: \PublicAuthorAffiliationInline.
+Esta es una publicación del autor y no se presenta como publicación
+institucional oficial.\par
+\vspace{0.7em}
+\textbf{Cita recomendada:} Dalmasso, G. (2026). \emph{Cálculo Diferencial en
+una Variable — Teoría} (versión 1.0). Zenodo.
+\url{https://doi.org/10.5281/zenodo.22306586}\par
+\vspace{0.7em}
+\textbf{Ilustración de portada:} imagen generada con ChatGPT/OpenAI el 24 de
+agosto de 2026, dirigida y seleccionada por Giovanni Dalmasso. El proyecto no
+conserva datos verificables sobre el modelo, el prompt o la sesión de
+generación.\par
+}
+\clearpage
+}
+
+\newcommand{\PublicStudentIntroduction}{%
+\chapter*{Introducción}
+\addcontentsline{toc}{chapter}{Introducción}
+El cálculo diferencial estudia cómo cambian las cantidades. Una función puede
+describir una posición, una concentración, un coste o cualquier otra magnitud
+que dependa de una variable; el cálculo aporta un lenguaje para precisar qué
+ocurre cerca de un punto y cómo ese comportamiento local informa una tendencia
+más amplia. En una titulación de Matemáticas Aplicadas, esta forma de pensar
+conecta modelos, aproximaciones, análisis de datos y decisiones cuantitativas
+con una estructura matemática común.
+
+El recorrido del libro empieza antes de la derivada. Los números reales
+proporcionan el marco de medida y orden; las funciones organizan la dependencia
+entre magnitudes; los límites expresan aproximación; la continuidad evita
+saltos incompatibles con ciertas conclusiones; y la derivada convierte un
+cambio local en una cantidad calculable e interpretable. A partir de ahí, los
+teoremas del valor medio relacionan información local y global, el signo de las
+derivadas explica la forma de las gráficas y los polinomios de Taylor ofrecen
+aproximaciones locales cuyo error puede controlarse.
+
+El libro combina intuición, rigor y uso. Una figura puede sugerir una idea y un
+cálculo puede mostrar un patrón, pero ambos necesitan definiciones e hipótesis
+que indiquen exactamente qué se afirma. Las demostraciones no aparecen como un
+adorno: algunas deben poder reconstruirse, otras se estudian por su estrategia
+y otras se emplean como herramientas una vez comprendidas.
+
+Las representaciones gráficas y las herramientas computacionales ayudan a
+explorar, contrastar y detectar errores. No sustituyen la justificación
+matemática: una ventana gráfica siempre muestra una parte del problema y una
+salida numérica necesita interpretación.
+
+Este volumen reúne el núcleo teórico. Incluye ejemplos desarrollados y
+comprobaciones breves. Los ejercicios, las hojas prácticas y los materiales de
+estudio que complementan este volumen se recogen en \emph{Cálculo Diferencial
+en una Variable — Problemas, prácticas y estudio} (versión 1.0), disponible en
+Zenodo: \url{https://doi.org/10.5281/zenodo.22307022}.
+}
+
+\newcommand{\EditionFrontMatter}{%
+\frontmatter
+\pagenumbering{Alph}
+\PublicTheoryCover
+\PublicTheoryTitleAndRights
+\pagenumbering{roman}
+\tableofcontents
+\clearpage
+\PublicStudentIntroduction
+\chapter*{Cómo usar este libro}
+\addcontentsline{toc}{chapter}{Cómo usar este libro}
+\begin{EditionNotice}{Una secuencia común}
+Las orientaciones, figuras, avisos y comprobaciones breves ayudan a leer la
+matemática; no sustituyen definiciones, resultados, demostraciones ni ejemplos.
+\end{EditionNotice}
+\begin{EditionNotice}{Numeración de ejercicios}
+Las referencias de práctica emplean la numeración capítulo.ejercicio del libro
+de problemas, prácticas y estudio.
+\end{EditionNotice}
+\begin{EditionNotice}{Señales de aprendizaje}
+Las claves de estudio indican qué hacer con una demostración concreta. Los
+avisos señalan una confusión precisa y las comprobaciones invitan a recuperar
+una idea antes de continuar.
+\end{EditionNotice}
+\clearpage
+}
+
+\newcommand{\FullBookChapterLead}[3]{%
+  \clearpage
+  \phantomsection
+  \chapter*{Orientación del Capítulo #1}
+  \addcontentsline{toc}{chapter}{Orientación del Capítulo #1}
+  \begin{EditionNotice}{#2}#3\end{EditionNotice}
+  \clearpage
+}
+
+\newcommand{\FullBookChapterClosing}[3]{%
+  \chapter*{#2}
+  \addcontentsline{toc}{chapter}{#2}
+  \begin{EditionNotice}{Síntesis}#3\end{EditionNotice}
+  \begin{EditionCheckpointBox}{Recupera sin mirar}
+  Explica el mapa del capítulo con tus propias palabras y elige un resultado:
+  indica sus hipótesis, su conclusión y una situación en la que no se aplica.
+  \end{EditionCheckpointBox}
+  \clearpage
+}
+
+\newcommand{\FullBookBackMatter}{%
+\backmatter
+\chapter*{Bibliografía y fuentes utilizadas}
+\addcontentsline{toc}{chapter}{Bibliografía y fuentes utilizadas}
+Las obras siguientes se consultaron como referencias matemáticas y pedagógicas;
+no se reproducen figuras de terceros ni pasajes sustanciales de esas obras.
+
+\section*{Referencias consultadas}
+\textbf{Apostol, Tom M.} \emph{Calculus, Volume 1: One-Variable Calculus, with an Introduction to Linear Algebra}. 2.ª ed. John Wiley \& Sons, 1967. ISBN 0-471-00005-1. Referencia consultada para contrastar hipótesis y estructuras de resultados; no se adaptaron pasajes ni figuras.
+
+\textbf{Stewart, James.} \emph{Cálculo de una variable: trascendentes tempranas}. 8.ª ed. Cengage Learning, 2018. ISBN 978-607-526-550-6. \href{https://cengagelatam.editorialdc.com/libros/calculo-de-una-variable-trascendentes-tempranas-2/}{Ficha editorial}. Lectura complementaria para ejemplos y técnicas de un primer curso.
+
+\textbf{Ayres, F., y Mendelson, E.} \emph{Cálculo diferencial e integral}. Serie Schaum. McGraw-Hill.
+
+\chapter*{Agradecimientos y atribución}
+\addcontentsline{toc}{chapter}{Agradecimientos y atribución}
+Las diez figuras del libro son originales: ocho se construyen con TikZ y dos se
+generan mediante un script determinista de Matplotlib sin datos externos. Las
+referencias anteriores se utilizaron para contraste y lectura complementaria.
+
+\chapter*{Convenciones de lectura}
+\addcontentsline{toc}{chapter}{Convenciones de lectura}
+\begin{EditionNotice}{Terminología}
+Se usan de forma consistente dominio, codominio, imagen, preimagen, función
+inyectiva, sobreyectiva y biyectiva; entorno, cota, supremo e ínfimo; creciente
+y estrictamente creciente; convexa y cóncava según la convención del Capítulo 4.
+El logaritmo natural se escribe $\ln$.
+\end{EditionNotice}
+
+\PublicAuthorSection
+}

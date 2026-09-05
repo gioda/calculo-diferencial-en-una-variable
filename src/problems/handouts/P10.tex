@@ -1,0 +1,52 @@
+\documentclass[10pt,a4paper,oneside,openany]{book}
+\def\PSevenPdfTitle{P10 — Cadena, inversa e implícita — Edición pública para estudiantes · v1.0}
+\def\PSevenPdfSubject{Hoja práctica sin respuestas}
+\def\PSevenPdfKeywords{cálculo diferencial, ejercicios, prácticas, estudio, preparación oral}
+\def\PSevenEdition{Edición pública para estudiantes · v1.0}
+\def\PSevenRunningTitle{P10}
+\def\PSevenAccent{CourseTeal}
+\def\PSevenPale{CoursePaleTeal}
+\input{src/problems/style/public_style.tex}
+\fancyfoot[L]{\parbox[b]{0.42\textwidth}{\raggedright\tiny Cálculo Diferencial en una Variable · P10}}
+\fancyfoot[R]{\parbox[b]{0.42\textwidth}{\raggedleft\tiny Edición pública para estudiantes · v1.0}}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[L]{\parbox[b]{0.42\textwidth}{\raggedright\tiny Cálculo Diferencial en una Variable · P10}}
+  \fancyfoot[C]{\thepage}
+  \fancyfoot[R]{\parbox[b]{0.42\textwidth}{\raggedleft\tiny Edición pública para estudiantes · v1.0}}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+\begin{document}
+\PSevenCompactTitle{P10 — Cadena, inversa e implícita}{Edición pública para estudiantes · v1.0 · hoja sin respuestas}
+Resuelve los ejercicios del núcleo en el orden indicado. El material opcional es una ampliación y aparece separado.
+\section*{Núcleo de la sesión}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P10:CDV1-E0018}Ejercicio 1 · Cadena con una funcion abstracta}
+Sea \(f:\mathbb{R}\to \mathbb{R}\) derivable y \(g(x)=\sin(f(x^{4}))\). Calcula \(g'(x)\) y describe las capas de la composicion en el orden en que se derivan.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P10:CDV1-E0019}Ejercicio 2 · Derivada de una inversa sin despejarla}
+Sea \(f(x)=x^{3}+e^x\) y sea \(g=f^{-1}\). Suponiendo la invertibilidad local pertinente, calcula \(g'(1+e)\) \(\sin\) despejar \(g\).
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P10:CDV1-E0147}Ejercicio 3 · Cadena con raiz y exponencial}
+Deriva \(f(x)=\exp(\sqrt{1+x^{2}})\) y declara por que la formula vale para todo \(x\) real.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P10:CDV1-E0148}Ejercicio 4 · Regla de la cadena en tres capas}
+Descompón en tres funciones elementales y deriva \(y=\exp((\arctan x)^2)\). Indica el orden en que actúan las capas.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P10:CDV1-E0153}Ejercicio 5 · Tangente a una curva implícita}
+La curva \(x^2+2xy+3y^2=11\) pasa por \((2,1)\). Calcula \(dy/dx\) de forma implícita y escribe la recta tangente en ese punto.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P10:CDV1-E0157}Ejercicio 6 · Potencia variable positiva}
+Deriva \(y=x^x\) para \(x>0\) mediante logaritmos.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P10:CDV1-E0163}Ejercicio 7 · Rolle para localizar una derivada nula}
+Verifica Rolle para \(f(x)=x^{2}-4x+3\) en \([1,3]\) y encuentra todos los puntos c garantizados.
+\end{PSevenExerciseFixed}
+\section*{Opcional y reto}
+\begin{PSevenOptionalFixed}{\PSevenTarget{studentpractical:P10:CDV1-E0150}Ejercicio 8 · Derivada de arctangente}
+Deduce la derivada de \(y=arctan\) \(x\) a partir de \(\tan\) \(y=x\) y la regla de la funcion inversa.
+\end{PSevenOptionalFixed}
+\begin{PSevenOptionalFixed}{\PSevenTarget{studentpractical:P10:CDV1-E0160}Ejercicio 9 · Fermat no da el reciproco}
+Verdadero o falso: si \(f'(a)=0,\) entonces \(f\) tiene un extremo local en a.
+\end{PSevenOptionalFixed}
+\end{document}

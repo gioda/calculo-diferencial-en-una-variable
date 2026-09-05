@@ -1,0 +1,57 @@
+\documentclass[10pt,a4paper,oneside,openany]{book}
+\def\PSevenPdfTitle{P13 — Taylor, error y límites — Edición pública para estudiantes · v1.0}
+\def\PSevenPdfSubject{Hoja práctica sin respuestas}
+\def\PSevenPdfKeywords{cálculo diferencial, ejercicios, prácticas, estudio, preparación oral}
+\def\PSevenEdition{Edición pública para estudiantes · v1.0}
+\def\PSevenRunningTitle{P13}
+\def\PSevenAccent{CourseTeal}
+\def\PSevenPale{CoursePaleTeal}
+\input{src/problems/style/public_style.tex}
+\fancyfoot[L]{\parbox[b]{0.42\textwidth}{\raggedright\tiny Cálculo Diferencial en una Variable · P13}}
+\fancyfoot[R]{\parbox[b]{0.42\textwidth}{\raggedleft\tiny Edición pública para estudiantes · v1.0}}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[L]{\parbox[b]{0.42\textwidth}{\raggedright\tiny Cálculo Diferencial en una Variable · P13}}
+  \fancyfoot[C]{\thepage}
+  \fancyfoot[R]{\parbox[b]{0.42\textwidth}{\raggedleft\tiny Edición pública para estudiantes · v1.0}}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+\begin{document}
+\PSevenCompactTitle{P13 — Taylor, error y límites}{Edición pública para estudiantes · v1.0 · hoja sin respuestas}
+Resuelve los ejercicios del núcleo en el orden indicado. El material opcional es una ampliación y aparece separado.
+\section*{Núcleo de la sesión}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P13:CDV1-E0272}Ejercicio 1 · Resto de Lagrange para exponencial}
+Escribe el resto de Lagrange al aproximar \(e^x\) por su Taylor de grado \(n\) en \(0\) y acotalo para \(|x|\le 1\).
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P13:CDV1-E0273}Ejercicio 2 · Hipotesis del teorema de Taylor}
+Enuncia una version del teorema de Taylor con resto de Lagrange e identifica el intervalo donde debe controlarse \(f^{n+1}\).
+\end{PSevenExerciseFixed}
+\begin{PSevenExercise}{\PSevenTarget{studentpractical:P13:CDV1-E0275}Ejercicio 3 · Laboratorio del resto de Lagrange}
+Ejecuta el script que compara \(e^x\) con \(P_3\) en \([-1,1]\) y la cota \(e|x|^{4/4}!\). Verifica numericamente que el error queda bajo la cota y explica por que el experimento no sustituye la prueba.
+\par\medskip\textbf{Código Python}
+Abra el archivo, modifique los parámetros indicados si lo desea y
+ejecútelo. Observe la gráfica y responda a las preguntas.\par\smallskip
+\VerbatimInput[fontsize=\scriptsize,breaklines=true,firstline=6]{labs/lab_06_16_resto_de_lagrange.py}
+\end{PSevenExercise}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P13:CDV1-E0276}Ejercicio 4 · Elegir el grado desde una cota}
+Determina un grado \(n\) suficiente para aproximar \(e^{0}.5\) por Maclaurin con error menor que \(10^{-5}\) usando \(|R_n|\le e^{0}.5*0.5^{n+1}/(n+1)!\).
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P13:CDV1-E0283}Ejercicio 5 · Aproximar logaritmo con garantia}
+Usa \(P_3\) de \(\ln\) \(x\) centrado en \(1\) para aproximar \(\ln(1.1)\) y acota el resto con la cuarta derivada en \([1,1.1]\).
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P13:CDV1-E0289}Ejercicio 6 · Limite con cancelacion de cuarto orden}
+Calcula \(\lim_{x\to 0}\) [cos \(x-1+x^{2/2}]/x^{4}\) mediante un desarrollo finito con resto.
+\end{PSevenExerciseFixed}
+\section*{Opcional y reto}
+\begin{PSevenOptional}{\PSevenTarget{studentpractical:P13:CDV1-E0284}Ejercicio 7 · Laboratorio de grado minimo}
+Ejecuta el script que busca el primer grado cuya cota de Lagrange para \(e^{0}.5\) es menor que \(10^{-8}\) y compara la aproximacion con \(\exp(0.5)\). Explica la diferencia entre criterio de parada garantizado y error observado.
+\par\medskip\textbf{Código Python}
+Abra el archivo, modifique los parámetros indicados si lo desea y
+ejecútelo. Observe la gráfica y responda a las preguntas.\par\smallskip
+\VerbatimInput[fontsize=\scriptsize,breaklines=true,firstline=6]{labs/lab_06_26_grado_para_exponencial.py}
+\end{PSevenOptional}
+\begin{PSevenOptionalFixed}{\PSevenTarget{studentpractical:P13:CDV1-E0297}Ejercicio 8 · Seleccionar la herramienta Taylor}
+Para cada objetivo elige construccion, resto de Lagrange o algebra de desarrollos: a) obtener coeficientes; b) garantizar error numerico; c) calcular un limite con cancelaciones. Justifica.
+\end{PSevenOptionalFixed}
+\end{document}

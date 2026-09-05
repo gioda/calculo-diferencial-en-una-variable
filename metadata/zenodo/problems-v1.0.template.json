@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "upload_type": "publication",
+    "publication_type": "book",
+    "publication_date": "__PUBLICATION_DATE__",
+    "title": "Cálculo Diferencial en una Variable — Problemas, prácticas y estudio",
+    "creators": [
+      {
+        "name": "Dalmasso, Giovanni",
+        "affiliation": "Department of Mathematics and Data Analytics, IQS School of Engineering, Universitat Ramon Llull",
+        "orcid": "0000-0002-8586-6027"
+      }
+    ],
+    "description": "<p>Volumen complementario de problemas, prácticas y estudio para un primer curso universitario de cálculo diferencial en una variable. Reúne 301 ejercicios, 301 respuestas breves, 30 soluciones desarrolladas seleccionadas, preparación oral, las colecciones P01–P13 y ocho laboratorios Python.</p>",
+    "access_right": "open",
+    "license": "cc-by-nc-sa-4.0",
+    "keywords": [
+      "cálculo diferencial",
+      "problemas de cálculo",
+      "prácticas de cálculo",
+      "laboratorios Python",
+      "educación matemática"
+    ],
+    "language": "spa",
+    "version": "1.0",
+    "related_identifiers": [
+      {
+        "identifier": "https://github.com/gioda/calculo-diferencial-en-una-variable",
+        "relation": "isSupplementedBy"
+      },
+      {
+        "identifier": "10.5281/zenodo.22306586",
+        "relation": "isSupplementTo",
+        "resource_type": "publication-book"
+      }
+    ]
+  }
+}

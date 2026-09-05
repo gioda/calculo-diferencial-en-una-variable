@@ -1,0 +1,49 @@
+\documentclass[10pt,a4paper,oneside,openany]{book}
+\def\PSevenPdfTitle{P09 — Derivabilidad y reglas algebraicas — Edición pública para estudiantes · v1.0}
+\def\PSevenPdfSubject{Hoja práctica sin respuestas}
+\def\PSevenPdfKeywords{cálculo diferencial, ejercicios, prácticas, estudio, preparación oral}
+\def\PSevenEdition{Edición pública para estudiantes · v1.0}
+\def\PSevenRunningTitle{P09}
+\def\PSevenAccent{CourseTeal}
+\def\PSevenPale{CoursePaleTeal}
+\input{src/problems/style/public_style.tex}
+\fancyfoot[L]{\parbox[b]{0.42\textwidth}{\raggedright\tiny Cálculo Diferencial en una Variable · P09}}
+\fancyfoot[R]{\parbox[b]{0.42\textwidth}{\raggedleft\tiny Edición pública para estudiantes · v1.0}}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[L]{\parbox[b]{0.42\textwidth}{\raggedright\tiny Cálculo Diferencial en una Variable · P09}}
+  \fancyfoot[C]{\thepage}
+  \fancyfoot[R]{\parbox[b]{0.42\textwidth}{\raggedleft\tiny Edición pública para estudiantes · v1.0}}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+\begin{document}
+\PSevenCompactTitle{P09 — Derivabilidad y reglas algebraicas}{Edición pública para estudiantes · v1.0 · hoja sin respuestas}
+Resuelve los ejercicios del núcleo en el orden indicado. El material opcional es una ampliación y aparece separado.
+\section*{Núcleo de la sesión}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P09:CDV1-E0016}Ejercicio 1 · Completar la prueba derivable implica continua}
+Completa el argumento. Si \(f\) es derivable en a, para \(x\) distinto de a escribe \(f(x)-f(a)\) como un producto que contenga el cociente incremental. Identifica los dos limites de los factores y concluye continuidad en a.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P09:CDV1-E0020}Ejercicio 2 · Empalme continuo y derivable}
+Determina \(h\) y \(k\) para que \(f(x)=x^{2}\) si \(x\ge 2,\) y \(f(x)=kx+h\) si \(x<2,\) sea continua y derivable en \(x=2\). Separa las dos condiciones.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P09:CDV1-E0131}Ejercicio 3 · Aproximacion lineal de una raiz}
+Usa la linealizacion de \(\sqrt{x}\) en \(a=4\) para aproximar \(\sqrt{4.1}\) y estima el error real comparando con \(2.024845673\).
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P09:CDV1-E0132}Ejercicio 4 · Diferencial de volumen con unidades}
+El volumen de una esfera es \(V(r)=\tfrac43\pi r^3\). Estima mediante el diferencial el cambio de volumen cuando el radio pasa de \(5\,\mathrm{cm}\) a \(4.97\,\mathrm{cm}\). Conserva el signo y las unidades e interpreta el resultado.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P09:CDV1-E0137}Ejercicio 5 · Derivada del seno desde la suma}
+Completa la derivacion de \((\sin\,x)'\) usando \(\sin(x+h)=\sin\) \(x\) \(\cos\) \(h+\cos\) \(x\) \(\sin\) \(h\) y los limites fundamentales.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P09:CDV1-E0141}Ejercicio 6 · Cociente con simplificacion posterior}
+Deriva \(f(x)=(x^{2}+1)/(x-1),\) declara el dominio y simplifica el numerador del resultado.
+\end{PSevenExerciseFixed}
+\section*{Opcional y reto}
+\begin{PSevenOptionalFixed}{\PSevenTarget{studentpractical:P09:CDV1-E0136}Ejercicio 7 · Continua pero no derivable}
+Verifica que \(f(x)=|x|\) es continua en \(0\) pero no derivable alli, calculando los cocientes incrementales laterales.
+\end{PSevenOptionalFixed}
+\begin{PSevenOptionalFixed}{\PSevenTarget{studentpractical:P09:CDV1-E0144}Ejercicio 8 · Derivadas sucesivas de una exponencial trigonometrica}
+Calcula \(f',\) \(f''\) y \(f'''\) para \(f(x)=e^x\) \(\sin\) \(x\).
+\end{PSevenOptionalFixed}
+\end{document}

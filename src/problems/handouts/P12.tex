@@ -1,0 +1,53 @@
+\documentclass[10pt,a4paper,oneside,openany]{book}
+\def\PSevenPdfTitle{P12 — Extremos, convexidad y estudio cualitativo — Edición pública para estudiantes · v1.0}
+\def\PSevenPdfSubject{Hoja práctica sin respuestas}
+\def\PSevenPdfKeywords{cálculo diferencial, ejercicios, prácticas, estudio, preparación oral}
+\def\PSevenEdition{Edición pública para estudiantes · v1.0}
+\def\PSevenRunningTitle{P12}
+\def\PSevenAccent{CourseTeal}
+\def\PSevenPale{CoursePaleTeal}
+\input{src/problems/style/public_style.tex}
+\fancyfoot[L]{\parbox[b]{0.42\textwidth}{\raggedright\tiny Cálculo Diferencial en una Variable · P12}}
+\fancyfoot[R]{\parbox[b]{0.42\textwidth}{\raggedleft\tiny Edición pública para estudiantes · v1.0}}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[L]{\parbox[b]{0.42\textwidth}{\raggedright\tiny Cálculo Diferencial en una Variable · P12}}
+  \fancyfoot[C]{\thepage}
+  \fancyfoot[R]{\parbox[b]{0.42\textwidth}{\raggedleft\tiny Edición pública para estudiantes · v1.0}}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+\begin{document}
+\PSevenCompactTitle{P12 — Extremos, convexidad y estudio cualitativo}{Edición pública para estudiantes · v1.0 · hoja sin respuestas}
+Resuelve los ejercicios del núcleo en el orden indicado. El material opcional es una ampliación y aparece separado.
+\section*{Núcleo de la sesión}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P12:CDV1-E0205}Ejercicio 1 · Criterio de la primera derivada}
+Clasifica los puntos criticos de \(f(x)=x^{4}-4x^{3}\) mediante el cambio de signo de \(f'\).
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P12:CDV1-E0212}Ejercicio 2 · Extremos absolutos en un polinomio}
+Halla maximo y minimo absolutos de \(f(x)=x^{3}-3x\) en \([-2,3]\) mediante la lista de candidatos.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P12:CDV1-E0220}Ejercicio 3 · Convexidad desde la segunda derivada}
+Determina intervalos de convexidad y concavidad de \(f(x)=x^{4}-6x^{2}\).
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P12:CDV1-E0232}Ejercicio 4 · Orden de un estudio cualitativo}
+Ordena y justifica estas tareas al estudiar una funcion: dominio, simetrias, limites/asintotas, derivada y monotonia, segunda derivada/convexidad, cortes y esbozo final.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P12:CDV1-E0248}Ejercicio 5 · Asintotas de una racional}
+Determina las asintotas verticales y oblicua de \(f(x)=(x^{2}+1)/(x-1)\).
+\end{PSevenExerciseFixed}
+\begin{PSevenExercise}{\PSevenTarget{studentpractical:P12:CDV1-E0235}Ejercicio 6 · Laboratorio de verificacion del estudio}
+Ejecuta el script para representar \(f(x)=(x^{2}-1)/(x^{2}+1),\) \(f'\) y \(f''\). Contrasta visualmente cortes, monotonia, convexidad y asintota horizontal con el analisis simbolico; registra una limitacion de la grafica.
+\par\medskip\textbf{Código Python}
+Abra el archivo, modifique los parámetros indicados si lo desea y
+ejecútelo. Observe la gráfica y responda a las preguntas.\par\smallskip
+\VerbatimInput[fontsize=\scriptsize,breaklines=true,firstline=6]{labs/lab_05_04_estudio_funcion_racional.py}
+\end{PSevenExercise}
+\section*{Opcional y reto}
+\begin{PSevenOptionalFixed}{\PSevenTarget{studentpractical:P12:CDV1-E0024}Ejercicio 7 · Rectangulo de area maxima bajo una parabola}
+Un rectangulo simetrico respecto del eje y tiene la base inferior en el eje \(x\) y sus vertices superiores sobre \(y=1-x^{2}\). Formula el dominio factible y determina dimensiones y area maxima.
+\end{PSevenOptionalFixed}
+\begin{PSevenOptionalFixed}{\PSevenTarget{studentpractical:P12:CDV1-E0255}Ejercicio 8 · Estudio completo de x menos cuatro sobre x}
+Realiza el estudio completo de \(f(x)=x-4/x\): dominio, simetria, cortes, asintotas, monotonia, convexidad e inflexiones.
+\end{PSevenOptionalFixed}
+\end{document}

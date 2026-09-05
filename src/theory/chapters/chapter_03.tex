@@ -1,0 +1,639 @@
+\chapter{Derivación y teoremas del valor medio}
+\label{chap:derivacion-valor-medio}
+
+La derivada mide una variación local. Puede leerse como pendiente de una
+tangente, como tasa instantánea o como la mejor aproximación lineal de una
+función cerca de un punto. Estas tres lecturas describen el mismo número, pero
+la aproximación lineal será la que organice las reglas de cálculo y evite
+argumentos formales incompletos.
+
+\section{La derivada como variación local}
+\label{sec:derivada-variacion-local}
+
+\subsection{Cociente incremental, pendiente y tasa}
+\CanonicalUnit{CM-C03-U001}{}{}
+
+Sea \(f:D\to\R\) y sea \(a\) un punto interior de \(D\). La tasa media de
+cambio entre \(a\) y \(a+h\), con \(h\ne0\), es
+\[
+  \frac{f(a+h)-f(a)}{h}.
+\]
+Geométricamente es la pendiente de la recta secante que une
+\((a,f(a))\) con \((a+h,f(a+h))\).
+
+\begin{definicion}[Derivada]
+La función \(f\) es \emph{derivable en \(a\)} si existe y es finito el límite
+\[
+  f'(a)=\lim_{h\to0}\frac{f(a+h)-f(a)}{h}.
+\]
+Equivalentemente,
+\[
+  f'(a)=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}.
+\]
+El número \(f'(a)\) es la \emph{derivada} de \(f\) en \(a\).
+\end{definicion}
+
+La variable de incremento \(h\) tiende a \(0\), no a \(a\). Si la derivada
+existe en todos los puntos de un conjunto, la \emph{función derivada} asigna
+\(x\mapsto f'(x)\).
+
+Cuando solo hay puntos del dominio a un lado de \(a\), se definen las
+derivadas laterales mediante \(h\to0^+\) o \(h\to0^-\). Si ambos lados están
+disponibles, la derivada bilateral existe si y solo si las dos derivadas
+laterales existen y coinciden.
+
+El paso de secantes a la recta tangente corresponde al límite de sus
+pendientes. En un modelo temporal, el mismo cociente es una tasa media y su
+límite es una tasa instantánea.
+
+\begin{ejemplo}[Velocidad instantánea]
+Si la posición de una partícula es \(s(t)=t^2\), su velocidad media entre
+\(t=3\) y \(t=3+h\) es
+\[
+  \frac{s(3+h)-s(3)}{h}=6+h.
+\]
+Al hacer \(h\to0\), la velocidad instantánea es \(s'(3)=6\), en unidades de
+longitud por unidad de tiempo.
+\end{ejemplo}
+
+\subsection{Aproximación lineal y diferencial}
+\CanonicalUnit{CM-C03-U002}{}{}
+
+La existencia de \(f'(a)\) equivale a poder escribir
+\[
+  f(a+h)=f(a)+f'(a)h+r(h),
+  \qquad
+  \frac{r(h)}{h}\longrightarrow0.
+\]
+Con la notación del Capítulo~\ref{chap:sucesiones-limites-continuidad},
+\[
+  f(a+h)=f(a)+f'(a)h+o(h)
+  \qquad(h\to0).
+\]
+El término \(f(a)+f'(a)h\) es la aproximación lineal local; el error es de
+orden superior al incremento.
+
+\begin{definicion}[Diferencial en un punto]
+La \emph{diferencial de \(f\) en \(a\)} es la aplicación lineal
+\[
+  df_a:\R\to\R, \qquad df_a(k)=f'(a)k.
+\]
+\end{definicion}
+
+La diferencial no es otro nombre para el número \(f'(a)\): es la aplicación
+lineal determinada por ese número. En una variable ambas informaciones se
+identifican fácilmente, pero la distinción aclara la regla de la cadena y
+prepara generalizaciones posteriores.
+
+\subsection{Derivabilidad y continuidad}
+\CanonicalUnit{CM-C03-U003}{}{}
+
+\begin{teorema}[La derivabilidad implica continuidad]
+Si \(f\) es derivable en \(a\), entonces es continua en \(a\).
+\end{teorema}
+
+\begin{proof}
+La aproximación lineal da
+\[
+  f(a+h)-f(a)=f'(a)h+r(h),
+  \qquad r(h)=o(h).
+\]
+Cuando \(h\to0\), tanto \(f'(a)h\) como \(r(h)\) tienden a cero. Por tanto,
+\(f(a+h)\to f(a)\), que es la continuidad en \(a\).
+\end{proof}
+
+El recíproco es falso. La función \(f(x)=|x|\) es continua en \(0\), pero sus
+derivadas laterales valen \(-1\) y \(1\), por lo que no es derivable allí. La
+función \(x^{1/3}\) también es continua en cero, pero su cociente incremental
+es \(h^{-2/3}\), que no tiene límite real finito. Una esquina y una tangente
+vertical son dos mecanismos distintos de no derivabilidad.
+
+\section{Derivadas elementales y reglas algebraicas}
+\label{sec:reglas-derivacion}
+
+\subsection{Derivaciones representativas}
+\CanonicalUnit{CM-C03-U004}{}{}
+\ProofRole{proof-018}{}
+\ProofRole{proof-004}{}
+
+La derivada de una constante es cero y la de la identidad es uno. Para
+\(n\in\N\), el binomio de Newton da
+\[
+ \frac{(a+h)^n-a^n}{h}
+ =\sum_{k=1}^{n}\binom nk a^{n-k}h^{k-1},
+\]
+de donde
+\[
+  \frac{d}{dx}x^n=nx^{n-1}.
+\]
+Las reglas algebraicas extenderán esta fórmula a potencias enteras negativas y
+la regla de la función inversa permitirá tratar raíces en sus ramas reales.
+
+Para el número \(e\) definido en el capítulo anterior, la construcción de la
+exponencial real proporciona la caracterización equivalente
+\[
+  \lim_{h\to0}\frac{e^h-1}{h}=1.
+\]
+Es una propiedad de referencia de esa construcción, no una nueva definición
+independiente. Por tanto,
+\[
+ \frac{e^{x+h}-e^x}{h}
+ =e^x\frac{e^h-1}{h}\longrightarrow e^x,
+ \qquad
+ (e^x)'=e^x.
+\]
+Si \(b>0\), entonces \(b^x=e^{x\ln b}\), y la regla de la cadena dará
+\[
+  (b^x)'=b^x\ln b.
+\]
+La fórmula incluye \(b=1\), cuyo caso es la función constante; no utiliza un
+logaritmo de base uno.
+
+Para el seno usamos la identidad de adición:
+\[
+ \frac{\sin(x+h)-\sin x}{h}
+ =\sin x\frac{\cos h-1}{h}
+  +\cos x\frac{\sin h}{h}.
+\]
+Los límites del Capítulo~2 dan
+\[
+  (\sin x)'=\cos x.
+\]
+Del mismo modo, \((\cos x)'=-\sin x\). Después de aplicar las reglas de
+producto, cociente, cadena e inversa, obtendremos las restantes fórmulas
+elementales sin repetir todos los límites desde la definición.
+
+\subsection{Suma, producto y cociente}
+\CanonicalUnit{CM-C03-U005}{}{}
+\ProofRole{proof-019}{}
+
+\begin{teorema}[Reglas algebraicas de derivación]
+Sean \(f\) y \(g\) derivables en \(a\), y sea \(\lambda\in\R\). Entonces
+\[
+ (f+g)'(a)=f'(a)+g'(a),
+ \qquad
+ (\lambda f)'(a)=\lambda f'(a),
+\]
+\[
+ (fg)'(a)=f'(a)g(a)+f(a)g'(a).
+\]
+Si además \(g(a)\ne0\), el cociente está definido en un entorno de \(a\) y
+\[
+ \left(\frac f g\right)'(a)
+ =\frac{f'(a)g(a)-f(a)g'(a)}{g(a)^2}.
+\]
+\end{teorema}
+
+\begin{proof}
+Las reglas de suma y múltiplo escalar se obtienen distribuyendo el cociente
+incremental. Para el producto, sumamos y restamos \(f(a+h)g(a)\):
+\[
+\begin{aligned}
+ \frac{f(a+h)g(a+h)-f(a)g(a)}{h}
+ &=f(a+h)\frac{g(a+h)-g(a)}h\\
+ &\quad+g(a)\frac{f(a+h)-f(a)}h.
+\end{aligned}
+\]
+La derivabilidad implica continuidad, así que \(f(a+h)\to f(a)\), y el límite
+es la fórmula del producto.
+
+Para el recíproco, la continuidad de \(g\) y \(g(a)\ne0\) garantizan que
+\(g(a+h)\ne0\) cuando \(h\) es pequeño. Entonces
+\[
+ \frac{1/g(a+h)-1/g(a)}h
+ =-\frac{1}{g(a+h)g(a)}
+   \frac{g(a+h)-g(a)}h
+ \longrightarrow-\frac{g'(a)}{g(a)^2}.
+\]
+La regla del producto aplicada a \(f(1/g)\) produce la fórmula del cociente.
+\end{proof}
+
+En particular,
+\[
+  (\tan x)'=\frac1{\cos^2x}
+\]
+en los puntos donde \(\cos x\ne0\). Las condiciones de dominio no desaparecen
+al derivar.
+
+\subsection{Derivadas de orden superior}
+\CanonicalUnit{CM-C03-U006}{}{}
+
+Si la función derivada \(f'\) es a su vez derivable, definimos la segunda
+derivada \(f''=(f')'\). Recursivamente,
+\[
+  f^{(n)}=(f^{(n-1)})', \qquad n\ge2,
+\]
+en los puntos donde todas las derivadas anteriores existen. No debe suponerse
+que la existencia de \(f'\) implique automáticamente la de \(f''\).
+
+En un modelo de posición \(s(t)\), \(s'(t)\) representa velocidad y
+\(s''(t)\) aceleración. Esta interpretación depende de las unidades y del
+modelo, no solo de la fórmula simbólica.
+
+\section{Composición, inversa y técnicas de derivación}
+\label{sec:composicion-inversa-derivacion}
+
+\subsection{Regla de la cadena}
+\CanonicalUnit{CM-C03-U007}{}{}
+\ProofRole{proof-020}{}
+
+\begin{teorema}[Regla de la cadena]
+Sean \(A,B,C,D\subseteq\R\), \(f:A\to B\) y \(g:C\to D\), con
+\(f(A)\subseteq C\). Si \(f\) es derivable en \(a\in A\) y \(g\) es
+derivable en \(b=f(a)\), entonces
+\(g\circ f\) es derivable en \(a\) y
+\[
+  (g\circ f)'(a)=g'(f(a))f'(a).
+\]
+\end{teorema}
+
+\begin{proof}
+Por derivabilidad de \(f\), existe un resto \(r_f(h)=o(h)\) tal que
+\[
+  f(a+h)=b+f'(a)h+r_f(h).
+\]
+Definimos el incremento interior
+\(k(h)=f(a+h)-b\). Entonces \(k(h)\to0\) y el cociente \(k(h)/h\) permanece
+acotado cuando \(h\to0\).
+
+Por derivabilidad de \(g\), podemos escribir
+\[
+  g(b+k)=g(b)+g'(b)k+k\eta(k),
+\]
+donde \(\eta(k)\to0\) cuando \(k\to0\); definimos \(\eta(0)=0\). Al sustituir
+\(k=k(h)\),
+\[
+\begin{aligned}
+ g(f(a+h))-g(f(a))
+ &=g'(b)\bigl(f'(a)h+r_f(h)\bigr)\\
+ &\quad+k(h)\eta(k(h)).
+\end{aligned}
+\]
+Dividiendo por \(h\), el término con \(r_f(h)\) tiende a cero. El último
+también, porque \(k(h)/h\) está acotado y \(\eta(k(h))\to0\). Queda
+\(g'(b)f'(a)\). El argumento incluye sin cancelación los valores de \(h\) para
+los que \(k(h)=0\).
+\end{proof}
+
+En lenguaje de diferenciales,
+\[
+  d(g\circ f)_a=dg_{f(a)}\circ df_a.
+\]
+La regla expresa que las aproximaciones lineales se componen en el mismo orden
+que las funciones.
+
+\subsection{Derivada de la función inversa}
+\CanonicalUnit{CM-C03-U008}{}{}
+\ProofRole{proof-021}{}
+
+\begin{teorema}[Derivada de la función inversa]
+Sea \(f:I\to J\) una función biyectiva entre intervalos, con
+\(x_0\in\operatorname{int}I\) y \(y_0=f(x_0)\in\operatorname{int}J\).
+Supongamos que \(f^{-1}\) es continua en \(y_0\), que \(f\) es derivable en
+\(x_0\) y que \(f'(x_0)\ne0\). Entonces \(f^{-1}\) es
+derivable en \(y_0\) y
+\[
+  (f^{-1})'(y_0)=\frac1{f'(x_0)}.
+\]
+\end{teorema}
+
+\begin{proof}[Estrategia no circular]
+Para \(y\ne y_0\), ponemos \(x=f^{-1}(y)\). La inyectividad garantiza
+\(x\ne x_0\), y
+\[
+ \frac{f^{-1}(y)-f^{-1}(y_0)}{y-y_0}
+ =\frac{x-x_0}{f(x)-f(x_0)}.
+\]
+Cuando \(y\to y_0\), la continuidad de \(f^{-1}\) implica \(x\to x_0\).
+El último cociente tiende a \(1/f'(x_0)\), que existe porque
+\(f'(x_0)\ne0\). Así se establece primero la derivabilidad de la inversa; la
+regla de la cadena puede comprobar después la fórmula, pero no se usa para
+suponer la conclusión.
+\end{proof}
+
+La exponencial natural es biyectiva de \(\R\) en \((0,+\infty)\). Aplicando el
+teorema a \(f(x)=e^x\), con \(x_0=\ln y_0\), obtenemos
+\[
+  (\ln y)'=\frac1y, \qquad y>0.
+\]
+
+Para \(n\) impar, \(x\mapsto x^n\) es biyectiva de \(\R\) en \(\R\). Para
+\(n\) par debe restringirse, por ejemplo, a
+\([0,+\infty)\to[0,+\infty)\) antes de invertirla como raíz \(n\)-ésima
+real. En puntos con raíz no nula, la fórmula inversa da
+\[
+  \frac{d}{dx}x^{1/n}
+  =\frac{1}{n\bigl(x^{1/n}\bigr)^{n-1}}
+\]
+en la rama y dominio declarados.
+
+Del mismo modo, usando las ramas principales del Capítulo~1,
+\[
+ \frac{d}{dx}\operatorname{arcsen}x=\frac1{\sqrt{1-x^2}}
+ \quad(|x|<1),
+\]
+\[
+ \frac{d}{dx}\arccos x=-\frac1{\sqrt{1-x^2}}
+ \quad(|x|<1),
+ \qquad
+ \frac{d}{dx}\arctan x=\frac1{1+x^2}
+ \quad(x\in\R).
+\]
+Aquí \(\operatorname{arcsen}\) es el arcoseno; \(\arcsin\) es el alias
+internacional usado en el capítulo de funciones.
+
+\subsection{Derivación implícita}
+\CanonicalUnit{CM-C03-U009}{}{}
+
+Una relación entre \(x\) e \(y\) puede describir localmente \(y\) como función
+de \(x\) sin que esa función esté despejada. La derivación implícita parte de
+una hipótesis explícita: cerca del punto estudiado existe una función derivable
+\(y=y(x)\) que satisface la relación.
+
+En la circunferencia
+\[
+  x^2+y^2=1,
+\]
+suponemos que una rama se escribe localmente como \(y=y(x)\). Al derivar la
+identidad \(x^2+y(x)^2=1\) y aplicar la regla de la cadena,
+\[
+  2x+2y(x)y'(x)=0.
+\]
+Si \(y(x)\ne0\), entonces
+\[
+  y'(x)=-\frac{x}{y(x)}.
+\]
+En los puntos con \(y=0\) no puede dividirse por \(2y\); precisamente allí la
+circunferencia no se representa localmente como una función derivable de
+\(x\) con pendiente finita.
+
+De forma general, si una relación \(F(x,y)=0\) admite localmente una función
+derivable \(y(x)\), la regla de la cadena conduce formalmente a
+\[
+  F_x(x,y)+F_y(x,y)y'(x)=0.
+\]
+Cuando las derivadas indicadas existen y \(F_y(x,y)\ne0\), puede aislarse
+\(y'=-F_x/F_y\). Esta regla calcula la derivada bajo la hipótesis de función
+local; no es una demostración del teorema general de la función implícita ni
+garantiza por sí sola que dicha función exista.
+
+\subsection{Derivación logarítmica}
+\CanonicalUnit{CM-C03-U010}{}{}
+\ProofRole{proof-022}{}
+
+Si \(y=f(x)>0\) en un intervalo y \(f\) es derivable, se puede tomar el
+logaritmo natural y derivar
+\[
+  \ln y=\ln f(x),
+  \qquad
+  \frac{y'}y=\frac{f'(x)}{f(x)}.
+\]
+La positividad no es opcional: garantiza que el logaritmo real esté definido y
+que la división por \(y\) sea válida.
+
+\begin{ejemplo}
+Para \(x>0\), definimos \(y=x^x>0\). Entonces
+\[
+  \ln y=x\ln x.
+\]
+Al derivar,
+\[
+  \frac{y'}y=\ln x+1,
+  \qquad
+  y'=x^x(\ln x+1).
+\]
+El dominio \(x>0\) forma parte del resultado real.
+\end{ejemplo}
+
+\section{De los extremos locales al valor medio}
+\label{sec:rolle-valor-medio}
+
+\subsection{Condición necesaria de extremo interior}
+\CanonicalUnit{CM-C03-U011}{}{}
+
+\begin{teorema}[Teorema de Fermat]
+Si \(f\) tiene un máximo o mínimo local en un punto interior \(c\) de su
+dominio y es derivable en \(c\), entonces \(f'(c)=0\).
+\end{teorema}
+
+\begin{proof}
+Supongamos que \(c\) es un máximo local. Para \(h>0\) pequeño,
+\[
+  \frac{f(c+h)-f(c)}h\le0,
+\]
+mientras que para \(h<0\) pequeño el mismo cociente es mayor o igual que cero,
+porque el numerador sigue siendo no positivo y el denominador cambia de signo.
+Si el límite bilateral existe, debe ser simultáneamente menor o igual y mayor
+o igual que cero; por tanto, \(f'(c)=0\). El caso de un mínimo es análogo.
+\end{proof}
+
+La conclusión es necesaria, no suficiente: \(f'(c)=0\) no garantiza por sí
+solo un extremo.
+
+\subsection{Teorema de Rolle}
+\CanonicalUnit{CM-C03-U012}{}{}
+\ProofRole{proof-023}{}
+\ProofRole{proof-015}{}
+
+\begin{teorema}[Teorema de Rolle]
+Sea \(f:[a,b]\to\R\), con \(a<b\). Si \(f\) es continua en \([a,b]\),
+derivable en \((a,b)\) y \(f(a)=f(b)\), entonces existe \(c\in(a,b)\) tal
+que \(f'(c)=0\).
+\end{teorema}
+
+\begin{proof}
+Por el teorema del valor extremo, \(f\) alcanza máximo y mínimo absolutos en
+\([a,b]\). Si ambos valores coinciden, \(f\) es constante y cualquier
+\(c\in(a,b)\) satisface \(f'(c)=0\). Si son distintos, sea
+\(q=f(a)=f(b)\). Entonces el máximo es mayor que \(q\) o el mínimo es menor
+que \(q\); el extremo correspondiente no puede alcanzarse solamente en
+\(a\) o en \(b\), y por tanto se alcanza en algún punto interior. En ese
+punto, el teorema de Fermat da \(f'(c)=0\).
+\end{proof}
+
+Cada hipótesis tiene un papel: la continuidad cerrada garantiza extremos, la
+derivabilidad interior permite aplicar Fermat y la igualdad de valores en los
+extremos fuerza un extremo interior salvo en el caso constante.
+
+\subsection{Teorema del valor medio}
+\CanonicalUnit{CM-C03-U013}{}{}
+\ProofRole{proof-024}{}
+
+\begin{teorema}[Teorema del valor medio]
+Sea \(f:[a,b]\to\R\), con \(a<b\). Si \(f\) es continua en \([a,b]\) y
+derivable en \((a,b)\), entonces existe \(c\in(a,b)\) tal que
+\[
+  f'(c)=\frac{f(b)-f(a)}{b-a}.
+\]
+\end{teorema}
+
+\begin{proof}
+Sea
+\[
+  m=\frac{f(b)-f(a)}{b-a}
+\]
+y definamos \(\varphi(x)=f(x)-f(a)-m(x-a)\). La función \(\varphi\) es
+continua en \([a,b]\), derivable en \((a,b)\), y
+\(\varphi(a)=\varphi(b)=0\). Por Rolle existe \(c\in(a,b)\) tal que
+\[
+  0=\varphi'(c)=f'(c)-m.
+\]
+De aquí resulta la fórmula.
+\end{proof}
+
+El teorema relaciona una tasa media global con una tasa instantánea interior.
+No afirma que el punto \(c\) sea único.
+
+\section{Regla de l'Hôpital}
+\label{sec:lhopital}
+
+\subsection{Enunciado y control de hipótesis}
+\CanonicalUnit{CM-C03-U014}{}{}
+\ProofRole{proof-025}{}
+
+La regla de l'Hôpital se estudia después de Rolle y del teorema del valor
+medio porque su justificación depende de resultados de valor medio. Es un
+teorema para ciertas formas indeterminadas, no una instrucción automática para
+derivar numerador y denominador.
+
+\begin{teorema}[Regla de l'Hôpital, forma lateral]
+Sean \(f\) y \(g\) derivables en \((a,a+\eta)\), con \(\eta>0\), y supongamos
+que
+\[
+  g(x)\ne0, \qquad g'(x)\ne0
+  \quad\text{para }a<x<a+\eta.
+\]
+Supongamos además que se cumple una de las dos alternativas:
+\[
+  f(x)\to0,\quad g(x)\to0
+  \qquad(x\to a^+),
+\]
+o bien
+\[
+  |f(x)|\to+\infty,\quad |g(x)|\to+\infty
+  \qquad(x\to a^+).
+\]
+Si existe, finito o infinito, el límite
+\[
+  \lim_{x\to a^+}\frac{f'(x)}{g'(x)}=L,
+\]
+entonces
+\[
+  \lim_{x\to a^+}\frac{f(x)}{g(x)}=L.
+\]
+\end{teorema}
+
+Hay versiones análogas para \(x\to a^-\) y \(x\to\pm\infty\), obtenidas con
+los cambios de variable correspondientes. No desarrollaremos la demostración
+completa, que usa una forma generalizada del teorema del valor medio. Para
+aplicar la regla hay que comprobar, en este orden: dominio lateral, forma
+\(0/0\) o \(\infty/\infty\), derivabilidad, no anulación del denominador y de
+su derivada, y existencia del límite del cociente de derivadas.
+
+\subsection{Aplicaciones directas}
+\CanonicalUnit{CM-C03-U015}{}{}
+\ProofRole{proof-025}{}
+
+En el límite
+\[
+  \lim_{x\to+\infty}\frac{\ln x}{x},
+\]
+numerador y denominador tienden a \(+\infty\). Para \(x>0\), las hipótesis de
+derivación se cumplen y
+\[
+  \lim_{x\to+\infty}\frac{(\ln x)'}{(x)'}
+  =\lim_{x\to+\infty}\frac1x=0.
+\]
+Por l'Hôpital, el límite original es cero.
+
+Si \(\alpha\in\R\) y \(\beta\ne0\), entonces
+\[
+ \lim_{x\to0}\frac{\sin(\alpha x)}{\sin(\beta x)}
+ =\lim_{x\to0}
+   \frac{\alpha\cos(\alpha x)}{\beta\cos(\beta x)}
+ =\frac\alpha\beta.
+\]
+La condición \(\beta\ne0\) asegura que el denominador original no sea la
+función nula y que el cociente de derivadas esté definido cerca de cero. Este
+límite también se obtiene de \(\sin u/u\to1\), a menudo con menos trabajo.
+
+Antes de repetir l'Hôpital hay que verificar de nuevo la forma. Por ejemplo,
+\[
+ \lim_{x\to0}\frac{1-\cos x}{x^2}
+ =\lim_{x\to0}\frac{\sin x}{2x}
+ =\lim_{x\to0}\frac{\cos x}{2}
+ =\frac12,
+\]
+y cada paso usa una forma \(0/0\) hasta llegar a un límite directo.
+
+\subsection{Productos y diferencias indeterminadas}
+\CanonicalUnit{CM-C03-U016}{}{}
+\ProofRole{proof-025}{}
+
+Una forma \(0\cdot\infty\) debe transformarse en un cociente. Para
+\(x\to0^+\),
+\[
+  x\ln x=\frac{\ln x}{1/x}.
+\]
+El cociente tiene forma \((-\infty)/(+\infty)\), y
+\[
+  \frac{(\ln x)'}{(1/x)'}
+  =\frac{1/x}{-1/x^2}=-x\longrightarrow0.
+\]
+Por tanto, \(x\ln x\to0\).
+
+Una forma \(\infty-\infty\) suele transformarse mediante denominador común,
+factorización o racionalización. Por ejemplo,
+\[
+ \sqrt{x^2+x}-x
+ =\frac{x}{\sqrt{x^2+x}+x}
+ =\frac1{\sqrt{1+1/x}+1}
+ \longrightarrow\frac12
+ \qquad(x\to+\infty).
+\]
+La racionalización resuelve el límite sin l'Hôpital. Transformar bien la forma
+es más importante que forzar una técnica concreta.
+
+\subsection{Formas de potencia}
+\CanonicalUnit{CM-C03-U017}{}{}
+\ProofRole{proof-025}{}
+
+Para una potencia real variable \(y(x)=f(x)^{g(x)}\) se requiere
+\(f(x)>0\) en un entorno lateral del punto. Entonces
+\[
+  \ln y(x)=g(x)\ln f(x).
+\]
+La forma de potencia se estudia calculando primero el límite del exponente
+logarítmico. Si este límite es \(A\in\R\), la continuidad de la exponencial da
+\(y(x)\to e^A\).
+
+Para la forma \(1^\infty\),
+\[
+ \ln\left(\left(1+\frac1x\right)^x\right)
+ =\frac{\ln(1+1/x)}{1/x}
+ \longrightarrow1
+ \qquad(x\to+\infty),
+\]
+pues el cociente de derivadas es \(x/(x+1)\). Por tanto,
+\[
+  \left(1+\frac1x\right)^x\longrightarrow e,
+\]
+en concordancia con la definición secuencial del capítulo anterior.
+
+La forma \(0^0\) aparece en \(x^x\) cuando \(x\to0^+\). Como
+\(x\ln x\to0\), se obtiene \(x^x\to e^0=1\). Para la forma
+\(\infty^0\),
+\[
+  x^{1/x}\longrightarrow1
+  \qquad(x\to+\infty),
+\]
+porque \(\ln x/x\to0\). En todos los casos la positividad de la base y la
+forma real deben comprobarse antes de tomar logaritmos.
+
+\begin{advertencia}
+La regla de l'Hôpital no es el método por defecto para límites difíciles. Antes
+de usarla se identifica la forma, se comprueban las hipótesis y se comparan
+métodos alternativos: álgebra, equivalencias, encaje o racionalización pueden
+ser más breves y mostrar mejor la estructura del límite. Las comparaciones
+mediante Taylor pertenecen a un capítulo posterior.
+\end{advertencia}

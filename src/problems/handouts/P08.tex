@@ -1,0 +1,49 @@
+\documentclass[10pt,a4paper,oneside,openany]{book}
+\def\PSevenPdfTitle{P08 — De los límites a la derivada — Edición pública para estudiantes · v1.0}
+\def\PSevenPdfSubject{Hoja práctica sin respuestas}
+\def\PSevenPdfKeywords{cálculo diferencial, ejercicios, prácticas, estudio, preparación oral}
+\def\PSevenEdition{Edición pública para estudiantes · v1.0}
+\def\PSevenRunningTitle{P08}
+\def\PSevenAccent{CourseTeal}
+\def\PSevenPale{CoursePaleTeal}
+\input{src/problems/style/public_style.tex}
+\fancyfoot[L]{\parbox[b]{0.42\textwidth}{\raggedright\tiny Cálculo Diferencial en una Variable · P08}}
+\fancyfoot[R]{\parbox[b]{0.42\textwidth}{\raggedleft\tiny Edición pública para estudiantes · v1.0}}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[L]{\parbox[b]{0.42\textwidth}{\raggedright\tiny Cálculo Diferencial en una Variable · P08}}
+  \fancyfoot[C]{\thepage}
+  \fancyfoot[R]{\parbox[b]{0.42\textwidth}{\raggedleft\tiny Edición pública para estudiantes · v1.0}}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+\begin{document}
+\PSevenCompactTitle{P08 — De los límites a la derivada}{Edición pública para estudiantes · v1.0 · hoja sin respuestas}
+Resuelve los ejercicios del núcleo en el orden indicado. El material opcional es una ampliación y aparece separado.
+\section*{Núcleo de la sesión}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P08:CDV1-E0081}Ejercicio 1 · De convergencia a criterio de Cauchy}
+Sea \((u_n)\) una sucesión convergente a \(L\). A partir de la desigualdad \(|u_n-u_m|\le |u_n-L|+|u_m-L|\), construye un mismo umbral para \(m\) y \(n\) y demuestra que la sucesión es de Cauchy. Realiza el reparto del error usando \(\varepsilon/3\).
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P08:CDV1-E0112}Ejercicio 2 · Continuidad relativa en un extremo}
+Enuncia que significa que \(f:[0,1]\to \mathbb{R}\) sea continua en \(0\). Explica por que no se exige un limite por la izquierda.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P08:CDV1-E0014}Ejercicio 3 · Derivada de otra cuadrática desde el cociente incremental}
+Sea \(p(x)=2x^{2}-5x+1\). Obtén \(p'(x)\) usando únicamente el cociente incremental y calcula después la pendiente de la tangente en \(x=-1\).
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P08:CDV1-E0015}Ejercicio 4 · Tangente y significado local}
+Para \(f(x)=x^{3},\) usa la definicion o una derivada ya justificada para hallar la recta tangente en \(x=1\). Explica que informacion local aporta y que no permite afirmar sobre toda la grafica.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P08:CDV1-E0129}Ejercicio 5 · Derivada de raiz desde el cociente incremental}
+Calcula desde la definicion la derivada de \(f(x)=\sqrt{x}\) en un punto \(a>0,\) racionalizando el cociente incremental.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P08:CDV1-E0130}Ejercicio 6 · Tasa media frente a tasa instantanea}
+Una posicion es \(s(t)=t^{2}-4t\) metros. Calcula la velocidad media en \([1,1+h]\) y explica como su limite cuando \(h\to 0\) produce la velocidad instantanea en \(t=1\).
+\end{PSevenExerciseFixed}
+\section*{Opcional y reto}
+\begin{PSevenOptionalFixed}{\PSevenTarget{studentpractical:P08:CDV1-E0073}Ejercicio 7 · El umbral no depende de n}
+Verdadero o falso: para probar \(a_n\to L\) se puede elegir \(N=n,\) porque entonces siempre se cumple \(n\ge N\). Justifica identificando el error de cuantificadores.
+\end{PSevenOptionalFixed}
+\begin{PSevenOptionalFixed}{\PSevenTarget{studentpractical:P08:CDV1-E0098}Ejercicio 8 · Limite secuencial en un conjunto ralo}
+Sea \(A=\{0\}\) \(\cup \) \(\{1/n:n\,\in \,\mathbb{N}\}\) y \(f(0)=9,\) \(f(1/n)=n/(n+1)\). Calcula \(\lim_{x\to 0,\,x\,\in \,A}\) \(f(x)\).
+\end{PSevenOptionalFixed}
+\end{document}

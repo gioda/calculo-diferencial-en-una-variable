@@ -1,0 +1,52 @@
+\documentclass[11pt,oneside]{book}
+\input{src/theory/style/public_style.tex}
+\input{src/shared/author_information.tex}
+\input{src/shared/companion_references.tex}
+\input{src/theory/overlays/chapter_01_overlay.tex}
+\input{src/theory/overlays/chapter_02_overlay.tex}
+\input{src/theory/overlays/chapter_03_overlay.tex}
+\input{src/theory/overlays/chapter_04_overlay.tex}
+\input{src/theory/overlays/chapter_05_overlay.tex}
+\input{src/theory/overlays/chapter_06_overlay.tex}
+\input{src/theory/style/frontmatter.tex}
+\input{src/theory/style/public_xrefs.tex}
+
+\let\PublicOriginalCanonicalUnit\CanonicalUnit
+\renewcommand{\CanonicalUnit}[3]{%
+  \PublicOriginalCanonicalUnit{#1}{#2}{#3}%
+  \gdef\PublicXrefPendingUnit{#1}%
+}
+\pretocmd{\section}{\PublicXrefFlushPending}{}{}
+\pretocmd{\subsection}{\PublicXrefFlushPending}{}{}
+\pretocmd{\FullBookChapterClosing}{\PublicXrefFlushPending}{}{}
+
+\begin{document}
+\EditionFrontMatter
+\mainmatter
+
+\FullBookChapterLead{01}{Fundamentos reales y funciones}{Aprenderás a leer la recta real con distancia y entornos, a distinguir cotas de extremos y a describir funciones mediante dominio, codominio, imagen, preimagen, inversa y composición.}
+\CanonicalChapterInput{01}{src/theory/chapters/chapter_01.tex}
+\FullBookChapterClosing{01}{Resumen del Capítulo 1}{El valor absoluto expresa distancia; una cota no tiene que pertenecer al conjunto y el supremo puede no ser máximo. Una función incluye regla, dominio y codominio; imagen y codominio no son sinónimos, como tampoco preimagen e inversa.}
+
+\FullBookChapterLead{02}{Sucesiones, límites y continuidad}{Aprenderás a traducir definiciones entre palabras, símbolos y geometría; a conservar el orden de los cuantificadores; y a comprobar las hipótesis de resultados sobre límites, continuidad y existencia.}
+\CanonicalChapterInput{02}{src/theory/chapters/chapter_02.tex}
+\FullBookChapterClosing{02}{Resumen del Capítulo 2}{Convergencia significa control de todos los términos suficientemente tardíos. En límites funcionales importa cómo permite acercarse el dominio. Continuidad coordina límite y valor; los teoremas de existencia necesitan hipótesis y no garantizan automáticamente unicidad.}
+
+\FullBookChapterLead{03}{Derivada y teoremas estructurales}{Aprenderás a interpretar la derivada como pendiente, tasa y aproximación lineal; a elegir una técnica según la estructura de la función; y a leer Rolle, valor medio y l'Hôpital con sus condiciones.}
+\CanonicalChapterInput{03}{src/theory/chapters/chapter_03.tex}
+\FullBookChapterClosing{03}{Resumen del Capítulo 3}{La derivada nace de un límite con incremento que tiende a cero. Derivable implica continua, no al revés. Las reglas necesitan dominio e hipótesis; l'Hôpital es un teorema posterior al valor medio, no un procedimiento automático.}
+
+\FullBookChapterLead{04}{Monotonía, extremos, optimización y convexidad}{Aprenderás a leer cuadros de signos, separar candidatos de extremos, modelar una optimización y distinguir conclusiones locales de globales, con una convención estable de convexidad.}
+\CanonicalChapterInput{04}{src/theory/chapters/chapter_04.tex}
+\FullBookChapterClosing{04}{Resumen del Capítulo 4}{El signo de la derivada organiza la variación. Los ceros y puntos no derivables producen candidatos que deben clasificarse. Los extremos absolutos incluyen extremos del intervalo; una inflexión exige cambio de convexidad y no solo segunda derivada nula.}
+
+\FullBookChapterLead{05}{Estudio cualitativo de funciones}{Aprenderás a predecir una gráfica combinando dominio, simetrías, límites, asíntotas y derivadas, y a usar una representación computacional como comprobación, no como prueba.}
+\CanonicalChapterInput{05}{src/theory/chapters/chapter_05.tex}
+\FullBookChapterClosing{05}{Resumen del Capítulo 5}{Un estudio completo no es una lista mecánica: cada cálculo explica un rasgo y todos deben ser compatibles. La gráfica final se justifica analíticamente; una ventana de software puede ayudar a detectar errores, pero no demuestra el comportamiento global.}
+
+\FullBookChapterLead{06}{Taylor y aproximación local controlada}{Aprenderás a construir polinomios de Taylor, interpretar el resto, obtener cotas cuando se cumplen las hipótesis y usar desarrollos finitos en límites, desigualdades y aproximaciones.}
+\CanonicalChapterInput{06}{src/theory/chapters/chapter_06.tex}
+\FullBookChapterClosing{06}{Resumen del Capítulo 6}{Un polinomio de Taylor se organiza por centro y orden. La calidad de una aproximación depende del punto, el intervalo y el control del resto; aumentar el orden no garantiza por sí solo una mejora incondicional.}
+
+\FullBookBackMatter
+\end{document}

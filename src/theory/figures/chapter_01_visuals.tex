@@ -1,0 +1,74 @@
+\newcommand{\NumberSystemsVisual}{%
+\begin{center}
+\begin{tikzpicture}[font=\small, every node/.style={align=center}]
+  \draw[CourseNavy,very thick,rounded corners=8pt,fill=CoursePaleBlue]
+    (-4.7,-2.1) rectangle (4.7,2.1);
+  \node[anchor=north west,text=CourseNavy,font=\bfseries] at (-4.45,1.9) {$\R$};
+  \draw[CourseTeal,very thick,rounded corners=8pt,fill=CoursePaleTeal]
+    (-3.5,-1.45) rectangle (2.1,1.45);
+  \node[anchor=north west,text=CourseTeal,font=\bfseries] at (-3.25,1.25) {$\Q$};
+  \draw[CourseBlue,very thick,rounded corners=8pt,fill=white]
+    (-2.55,-0.9) rectangle (1.1,0.9);
+  \node[anchor=north west,text=CourseBlue,font=\bfseries] at (-2.3,0.72) {$\Z$};
+  \draw[CourseAmber,very thick,rounded corners=8pt,fill=CoursePaleAmber]
+    (-1.55,-0.42) rectangle (0.2,0.42);
+  \node[text=CourseAmber,font=\bfseries] at (-0.68,0) {$\N$};
+  \node[text=CourseNavy] at (3.15,0.25) {irracionales};
+  \node[text=CourseNavy] at (3.15,-0.25) {$\sqrt{2},\,\pi,\ldots$};
+\end{tikzpicture}
+
+\small\itshape Lectura del diagrama: cada sistema interior está contenido en
+el siguiente; la región de $\R$ situada fuera de $\Q$ representa los
+irracionales.
+\end{center}%
+}
+
+\newcommand{\DistanceNeighbourhoodVisual}{%
+\begin{center}
+\begin{tikzpicture}[x=1.3cm,y=1cm,font=\small]
+  \draw[-{Latex[length=2mm]},CourseInk] (-3.2,0) -- (3.2,0);
+  \draw[CourseBlue,line width=4pt] (-1.94,0) -- (1.94,0);
+  \draw[CourseBlue,very thick,fill=white] (-2,0) circle (2.8pt);
+  \draw[CourseBlue,very thick,fill=white] (2,0) circle (2.8pt);
+  \draw[CourseInk] (0,-0.12)--(0,0.12);
+  \node[below=5pt] at (-2,0) {$a-r$};
+  \node[below=5pt] at (0,0) {$a$};
+  \node[below=5pt] at (2,0) {$a+r$};
+  \fill[CourseBlue] (0,0) circle (1.8pt);
+  \draw[CourseAmber,thick,{Latex[length=2mm]}-{Latex[length=2mm]}]
+    (0,0.58)--(1.35,0.58);
+  \node[above,text=CourseAmber] at (0.68,0.58) {$|x-a|$};
+  \fill[CourseAmber] (1.35,0) circle (1.8pt);
+  \node[below=5pt,text=CourseAmber] at (1.35,0) {$x$};
+  \node[above=3pt,text=CourseBlue] at (-1.35,0) {$V_r(a)$};
+\end{tikzpicture}
+
+\small\itshape Lectura del diagrama: $V_r(a)=(a-r,a+r)$ es abierto. Los
+círculos huecos excluyen $a-r$ y $a+r$; $|x-a|<r$ sitúa a $x$ dentro del
+entorno y la longitud destacada es la distancia entre $x$ y $a$.
+\end{center}%
+}
+
+\newcommand{\FunctionMappingVisual}{%
+\begin{center}
+\begin{tikzpicture}[font=\small,>=Latex]
+  \node[draw=CourseBlue,very thick,ellipse,minimum width=2.6cm,minimum height=4.3cm,
+    fill=CoursePaleBlue,label=above:{\bfseries dominio $A$}] (A) at (-3,0) {};
+  \node[draw=CourseTeal,very thick,ellipse,minimum width=3.1cm,minimum height=4.3cm,
+    fill=CoursePaleTeal,label=above:{\bfseries codominio $B$}] (B) at (3,0) {};
+  \coordinate (a1) at (-3,1.1); \coordinate (a2) at (-3,0); \coordinate (a3) at (-3,-1.1);
+  \coordinate (b1) at (3,1.25); \coordinate (b2) at (3,0.35); \coordinate (b3) at (3,-0.55); \coordinate (b4) at (3,-1.35);
+  \foreach \p in {a1,a2,a3,b1,b2,b3,b4} \fill[CourseInk] (\p) circle (2.1pt);
+  \draw[CourseNavy,thick,->] (a1) to[bend left=8] (b1);
+  \draw[CourseNavy,thick,->] (a2) -- (b2);
+  \draw[CourseNavy,thick,->] (a3) to[bend right=8] (b3);
+  \draw[CourseAmber,thick,rounded corners] (2.55,1.6) rectangle (3.45,-0.95);
+  \node[right,text=CourseAmber] at (3.55,0.2) {imagen $f(A)$};
+  \node[text=CourseRed] at (3,-1.35) {$\bullet$};
+  \node[right,text=CourseRed] at (3.18,-1.35) {no alcanzado};
+\end{tikzpicture}
+
+\small\itshape Lectura del diagrama: todas las flechas parten del dominio;
+la imagen reúne los valores alcanzados y puede ser menor que el codominio.
+\end{center}%
+}

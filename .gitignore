@@ -1,0 +1,14 @@
+.DS_Store
+.build/
+cduv-public-build-cache.*/
+__pycache__/
+*.py[cod]
+.venv/
+.env
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc

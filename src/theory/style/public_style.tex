@@ -1,0 +1,221 @@
+\usepackage[a4paper,inner=27mm,outer=23mm,top=24mm,bottom=27mm,headheight=22pt]{geometry}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{fontspec}
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{needspace}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{accsupp}
+\usepackage{hyperref}
+\usepackage{hyperxmp}
+\usepackage{bookmark}
+\usepackage[most]{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,decorations.pathreplacing,fit,positioning,shapes.geometric}
+
+\input{src/theory/style/design_tokens.tex}
+\input{src/theory/style/math_support.tex}
+\input{src/theory/figures/chapter_01_visuals.tex}
+\input{src/theory/figures/chapter_02_05_visuals.tex}
+\input{src/theory/figures/chapter_06_visuals.tex}
+
+\hypersetup{
+  colorlinks=true,
+  hypertexnames=false,
+  linkcolor=CourseBlue,
+  urlcolor=CourseTeal,
+  pdftitle={Cálculo Diferencial en una Variable — Teoría — Edición pública para estudiantes · v1.0},
+  pdfauthor={Giovanni Dalmasso, PhD},
+  pdfsubject={Libro de teoría para un primer curso de cálculo diferencial},
+  pdfkeywords={cálculo diferencial, matemáticas aplicadas, teoría},
+  pdfcreator={LuaLaTeX; fuente pública para estudiantes},
+  pdfcopyright={Copyright © 2026 Giovanni Dalmasso},
+  pdflicenseurl={https://creativecommons.org/licenses/by-nc-sa/4.0/},
+  pdfdoi={10.5281/zenodo.22306586},
+  pdfmetalang={es},
+  pdflang={es-ES},
+  pdfdisplaydoctitle=true,
+  keeppdfinfo=true,
+  bookmarksopen=true,
+  bookmarksnumbered=true
+}
+\pdfstringdefDisableCommands{\def\({}\def\){}\def\texttt#1{#1}}
+
+\setlist[itemize]{leftmargin=*,itemsep=2pt,topsep=4pt}
+\setlist[enumerate]{leftmargin=*,itemsep=2pt,topsep=4pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4.2pt plus 1pt minus 1pt}
+\raggedbottom
+\emergencystretch=2em
+\pretocmd{\section}{\Needspace{0.30\textheight}}{}{}
+\pretocmd{\subsection}{\Needspace{0.24\textheight}}{}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily Edición pública para estudiantes · v1.0}
+\fancyhead[R]{\small\sffamily Cálculo Diferencial en una Variable}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{CourseRule}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\chaptername}{Capítulo}
+
+\newtcolorbox{EditionUnitCard}[1]{
+  enhanced,breakable,frame hidden,boxrule=0pt,colback=white,
+  borderline west={2.1pt}{0pt}{CourseTeal},
+  title={#1},title after break={#1 (continuación)},fonttitle=\sffamily\bfseries,
+  coltitle=CourseInk,left=8pt,right=2pt,top=4pt,bottom=3pt,
+  before skip=8pt,after skip=7pt
+}
+\newtcolorbox{EditionNotice}[2][]{
+  enhanced,breakable,frame hidden,boxrule=0pt,
+  borderline west={1.8pt}{0pt}{CourseTeal},
+  colback=CoursePaleTeal,coltitle=CourseInk,title={#2},fonttitle=\sffamily\bfseries,
+  left=8pt,right=8pt,top=4pt,bottom=5pt,before skip=7pt,after skip=7pt,#1
+}
+\newtcolorbox{EditionWarningBox}[1]{
+  enhanced,breakable,frame hidden,boxrule=0pt,
+  borderline west={1.8pt}{0pt}{CourseAmber},
+  colback=CoursePaleAmber,coltitle=CourseInk,title={#1},fonttitle=\sffamily\bfseries,
+  left=8pt,right=8pt,top=4pt,bottom=5pt,before skip=6pt,after skip=6pt
+}
+\newtcolorbox{EditionCheckpointBox}[1]{
+  enhanced,breakable,frame hidden,boxrule=0pt,
+  borderline west={1.8pt}{0pt}{CourseTeal},
+  colback=CoursePaleTeal,coltitle=CourseInk,title={#1},fonttitle=\sffamily\bfseries,
+  left=8pt,right=8pt,top=4pt,bottom=5pt,before skip=6pt,after skip=6pt
+}
+
+\newcommand{\StudySignal}[1]{%
+  \par\smallskip\noindent
+  \textcolor{CourseTeal}{\rule{2pt}{1.12em}}\hspace{6pt}%
+  \textbf{Clave de estudio.} #1\par\smallskip
+}
+
+\tcolorboxenvironment{definicion}{
+  enhanced,breakable,frame hidden,boxrule=0pt,colback=CoursePaleBlue,
+  borderline west={1.8pt}{0pt}{CourseBlue},
+  left=7pt,right=7pt,top=4pt,bottom=4pt,before skip=7pt,after skip=7pt
+}
+\tcolorboxenvironment{teorema}{
+  enhanced,breakable,frame hidden,boxrule=0pt,colback=CoursePaleTeal,
+  borderline west={1.8pt}{0pt}{CourseTeal},
+  left=7pt,right=7pt,top=4pt,bottom=4pt,before skip=7pt,after skip=7pt
+}
+\tcolorboxenvironment{proposicion}{
+  enhanced,breakable,frame hidden,boxrule=0pt,colback=CoursePaleTeal,
+  borderline west={1.8pt}{0pt}{CourseTeal},
+  left=7pt,right=7pt,top=4pt,bottom=4pt,before skip=7pt,after skip=7pt
+}
+\tcolorboxenvironment{advertencia}{
+  enhanced,breakable,frame hidden,boxrule=0pt,colback=CoursePaleAmber,
+  borderline west={1.8pt}{0pt}{CourseAmber},
+  left=7pt,right=7pt,top=4pt,bottom=4pt,before skip=7pt,after skip=7pt
+}
+\tcolorboxenvironment{ejemplo}{
+  enhanced,breakable,colback=CoursePaper,colframe=CourseRule,
+  boxrule=0.45pt,left=7pt,right=7pt,top=4pt,bottom=4pt,
+  before skip=7pt,after skip=7pt
+}
+
+\newcommand{\RegisteredBookFigure}[5]{%
+  \par\medskip
+  \begin{minipage}{\linewidth}
+  \centering
+  \refstepcounter{figure}%
+  \hypertarget{figure:#1}{}%
+  \label{#2}%
+  \BeginAccSupp{method=pdfstringdef,unicode,ActualText={#4}}%
+  #5%
+  \EndAccSupp{}%
+  \captionsetup{type=figure}%
+  \caption*{\figurename~\thefigure. #3}%
+  \end{minipage}
+  \par\medskip
+}
+\newcommand{\StableFigureRef}[2]{figura~\ref{#2}}
+
+\newcommand{\DeclareEditionOverlay}[2]{%
+  \expandafter\long\expandafter\def\csname PublicOverlay@#1\endcsname{#2}%
+}
+\newcommand{\DispatchEditionOverlay}[3]{%
+  \ifcsname PublicOverlay@#1\endcsname
+    \csname PublicOverlay@#1\endcsname
+  \else
+    \PackageError{public-theory}{Missing Student overlay for unit #1}{}%
+  \fi
+}
+\newcommand{\CanonicalChapterInput}[2]{\input{#2}}
+\renewcommand{\CanonicalUnit}[3]{%
+  \par\medskip
+  \hypertarget{unit:#1}{}%
+  \DispatchEditionOverlay{#1}{#2}{#3}%
+  \ignorespaces
+}
+
+\newcommand{\DeclareStudentProofGuidance}[2]{%
+  \expandafter\long\expandafter\def\csname PublicStudentProof@#1\endcsname{#2}%
+}
+\DeclareStudentProofGuidance{proof-002}{Reconstruye la demostración por contradicción de la irracionalidad de $\sqrt2$ y localiza el choque con la fracción reducida.}
+\DeclareStudentProofGuidance{proof-003}{Sigue una vez la derivación de la desigualdad triangular; después úsala como herramienta de estimación.}
+\DeclareStudentProofGuidance{proof-005}{Comprende una derivación representativa de estas identidades y conserva siempre sus condiciones de validez.}
+\DeclareStudentProofGuidance{proof-006}{Reconstruye la lectura epsilon--$N$: dado el margen, produce un umbral que controle todos los términos posteriores.}
+\DeclareStudentProofGuidance{proof-007}{Reconstruye los pasos esenciales de unicidad y de las reglas de cálculo, indicando dónde entra cada hipótesis.}
+\DeclareStudentProofGuidance{proof-008}{Explica cómo monotonía, acotación y completitud se encadenan para obtener convergencia.}
+\DeclareStudentProofGuidance{proof-009}{Aprende el criterio de Cauchy y decide cuándo permite concluir convergencia en $\R$.}
+\DeclareStudentProofGuidance{proof-011}{Reconstruye las dos direcciones del criterio secuencial y distingue probar un límite de refutarlo.}
+\DeclareStudentProofGuidance{proof-012}{Reconstruye una prueba epsilon--delta representativa respetando el orden de los cuantificadores.}
+\DeclareStudentProofGuidance{proof-013}{Reconstruye el encaje geométrico que lleva a $\sin x/x$ y justifica el paso al límite.}
+\DeclareStudentProofGuidance{proof-014}{Sigue una vez cómo se obtiene la continuidad de las familias elementales; después aplícala sin perder el dominio.}
+\DeclareStudentProofGuidance{proof-015}{Conoce el enunciado de Weierstrass, comprueba compacto y continuidad, y distingue existencia de localización.}
+\DeclareStudentProofGuidance{proof-016}{Explica la estrategia de intervalos encajados que garantiza un cero, sin confundir existencia con unicidad.}
+\DeclareStudentProofGuidance{proof-017}{Reconstruye cómo el teorema del valor intermedio se reduce al caso de un cero y conserva sus hipótesis.}
+\DeclareStudentProofGuidance{proof-018}{Reconstruye una derivada desde el cociente incremental y justifica el paso al límite.}
+\DeclareStudentProofGuidance{proof-019}{Reconstruye las reglas de producto y cociente, señalando el término añadido y la condición del denominador.}
+\DeclareStudentProofGuidance{proof-020}{Reconstruye la regla de la cadena separando el caso en que el incremento interior se anula.}
+\DeclareStudentProofGuidance{proof-021}{Explica la estrategia de la derivada de la inversa y por qué la hipótesis $f'(a)\ne0$ es decisiva.}
+\DeclareStudentProofGuidance{proof-022}{Sigue una vez la derivación logarítmica con sus restricciones; después úsala como técnica.}
+\DeclareStudentProofGuidance{proof-023}{Reconstruye la demostración de Rolle desde el teorema de los extremos y el resultado de Fermat.}
+\DeclareStudentProofGuidance{proof-024}{Reconstruye el teorema del valor medio aplicando Rolle a una función auxiliar adecuada.}
+\DeclareStudentProofGuidance{proof-025}{Conoce las formas y las hipótesis de l'Hôpital; aplícalo solo tras verificar ambas.}
+\DeclareStudentProofGuidance{proof-026}{Sigue una vez la justificación de los criterios de extremos; después clasifica con signos e hipótesis.}
+\DeclareStudentProofGuidance{proof-027}{Sigue una vez la conexión entre cuerdas, variación de $f'$ y signo de $f''$; conserva la regularidad necesaria.}
+\DeclareStudentProofGuidance{proof-028}{Reconstruye cómo las derivadas en el centro determinan los coeficientes y la unicidad del polinomio.}
+\DeclareStudentProofGuidance{proof-029}{Comprende la función auxiliar y el uso del valor medio que producen el resto de Lagrange.}
+\DeclareStudentProofGuidance{proof-030}{Conoce la cota de Lagrange, controla la derivada en todo el tramo y aplícala al error.}
+\DeclareStudentProofGuidance{proof-032}{Explica por qué suma, producto y composición conservan el orden asintótico bajo las condiciones indicadas.}
+
+\newcommand{\StudentProofCue}[2]{%
+  \ifcsname PublicStudentProofSeen@#1\endcsname
+  \else
+    \expandafter\gdef\csname PublicStudentProofSeen@#1\endcsname{1}%
+    \ifcsname PublicStudentProof@#1\endcsname
+      \StudySignal{\csname PublicStudentProof@#1\endcsname}%
+    \fi
+  \fi
+}
+\renewcommand{\ProofRole}[2]{\StudentProofCue{#1}{#2}\ignorespaces}
+
+\newtcolorbox{PublicXrefBox}[1]{
+  enhanced,breakable,frame hidden,boxrule=0pt,
+  borderline west={1.6pt}{0pt}{CourseTeal},
+  colback=CoursePaleTeal,coltitle=CourseInk,title={#1},
+  fonttitle=\small\sffamily\bfseries,fontupper=\small,
+  left=7pt,right=7pt,top=3pt,bottom=4pt,before skip=7pt,after skip=8pt
+}
+\newcommand{\DeclarePublicXref}[2]{\expandafter\def\csname PublicXref@#1\endcsname{#2}}
+\newcommand{\PublicXrefPendingUnit}{}
+\newcommand{\PublicXrefRender}[1]{\ifcsname PublicXref@#1\endcsname\csname PublicXref@#1\endcsname\fi}
+\newcommand{\PublicXrefFlushPending}{%
+  \ifstrempty{\PublicXrefPendingUnit}{}{%
+    \expandafter\PublicXrefRender\expandafter{\PublicXrefPendingUnit}%
+    \global\let\PublicXrefPendingUnit\empty
+  }%
+}

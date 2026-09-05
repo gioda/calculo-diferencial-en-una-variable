@@ -1,0 +1,49 @@
+\documentclass[10pt,a4paper,oneside,openany]{book}
+\def\PSevenPdfTitle{P04 — Sucesiones y convergencia — Edición pública para estudiantes · v1.0}
+\def\PSevenPdfSubject{Hoja práctica sin respuestas}
+\def\PSevenPdfKeywords{cálculo diferencial, ejercicios, prácticas, estudio, preparación oral}
+\def\PSevenEdition{Edición pública para estudiantes · v1.0}
+\def\PSevenRunningTitle{P04}
+\def\PSevenAccent{CourseTeal}
+\def\PSevenPale{CoursePaleTeal}
+\input{src/problems/style/public_style.tex}
+\fancyfoot[L]{\parbox[b]{0.42\textwidth}{\raggedright\tiny Cálculo Diferencial en una Variable · P04}}
+\fancyfoot[R]{\parbox[b]{0.42\textwidth}{\raggedleft\tiny Edición pública para estudiantes · v1.0}}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[L]{\parbox[b]{0.42\textwidth}{\raggedright\tiny Cálculo Diferencial en una Variable · P04}}
+  \fancyfoot[C]{\thepage}
+  \fancyfoot[R]{\parbox[b]{0.42\textwidth}{\raggedleft\tiny Edición pública para estudiantes · v1.0}}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+\begin{document}
+\PSevenCompactTitle{P04 — Sucesiones y convergencia}{Edición pública para estudiantes · v1.0 · hoja sin respuestas}
+Resuelve los ejercicios del núcleo en el orden indicado. El material opcional es una ampliación y aparece separado.
+\section*{Núcleo de la sesión}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P04:CDV1-E0007}Ejercicio 1 · Testigo epsilon-N explicito}
+Demuestra directamente con la definicion epsilon-N que \(a_n=(3n+1)/(n+2)\) converge a \(3\). Debes dar un \(N\) que dependa solo de \(\varepsilon \) y verificar la implicacion para todo \(n\ge N\).
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P04:CDV1-E0008}Ejercicio 2 · Racionalizacion de un limite de sucesiones}
+Calcula \(\lim_{n\to \infty }(\sqrt{n^{2}+n}-n)\). Explica por que sustituir directamente produce una forma que no es una respuesta y elige una transformacion algebraica adecuada.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P04:CDV1-E0067}Ejercicio 3 · Tres descripciones de una sucesion}
+Escribe los seis primeros terminos de \(a_n=(-1)^{n+1}/(n+1),\) da una descripcion verbal del patron y explica por que la sucesion no es el conjunto de sus valores.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P04:CDV1-E0068}Ejercicio 4 · Recurrencia bien especificada}
+Una nota dice solamente \(a_{n+1}=2a_n-1\). Explica por que no define una sucesion unica y completa la informacion para que \(a_1=3\) determine todos los terminos. Calcula \(a_2,a_3,a_4\).
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P04:CDV1-E0071}Ejercicio 5 · Umbral epsilon para una sucesion afin}
+Completa una prueba epsilon-N de que \((3n-1)/(n+2)\) tiende a \(3,\) dando un umbral entero explicito en funcion de \(\varepsilon \).
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P04:CDV1-E0074}Ejercicio 6 · Encaje con oscilacion}
+Calcula \(\lim\) \(((-1)^n)/(\sqrt{n}+2)\) indicando el teorema que evita separar indices pares e impares.
+\end{PSevenExerciseFixed}
+\section*{Opcional y reto}
+\begin{PSevenOptionalFixed}{\PSevenTarget{studentpractical:P04:CDV1-E0072}Ejercicio 7 · Negacion correcta de la convergencia}
+Niega formalmente la afirmacion \(a_n\to L\) y usa la negacion para mostrar que \(a_n=(-1)^n\) no converge a \(0\).
+\end{PSevenOptionalFixed}
+\begin{PSevenOptionalFixed}{\PSevenTarget{studentpractical:P04:CDV1-E0075}Ejercicio 8 · Orden estricto y paso al límite}
+Construye dos sucesiones \((u_n)\) y \((v_n)\) tales que \(u_n<v_n\) para todo \(n\), pero ambas converjan a \(4\). Usa el ejemplo para formular la conclusión no estricta que sí se conserva al pasar al límite.
+\end{PSevenOptionalFixed}
+\end{document}

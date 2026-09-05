@@ -1,0 +1,42 @@
+\documentclass[10pt,a4paper,oneside,openany]{book}
+\def\PSevenPdfTitle{P01 — Números reales y representaciones — Edición pública para estudiantes · v1.0}
+\def\PSevenPdfSubject{Hoja práctica sin respuestas}
+\def\PSevenPdfKeywords{cálculo diferencial, ejercicios, prácticas, estudio, preparación oral}
+\def\PSevenEdition{Edición pública para estudiantes · v1.0}
+\def\PSevenRunningTitle{P01}
+\def\PSevenAccent{CourseTeal}
+\def\PSevenPale{CoursePaleTeal}
+\input{src/problems/style/public_style.tex}
+\fancyfoot[L]{\parbox[b]{0.42\textwidth}{\raggedright\tiny Cálculo Diferencial en una Variable · P01}}
+\fancyfoot[R]{\parbox[b]{0.42\textwidth}{\raggedleft\tiny Edición pública para estudiantes · v1.0}}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[L]{\parbox[b]{0.42\textwidth}{\raggedright\tiny Cálculo Diferencial en una Variable · P01}}
+  \fancyfoot[C]{\thepage}
+  \fancyfoot[R]{\parbox[b]{0.42\textwidth}{\raggedleft\tiny Edición pública para estudiantes · v1.0}}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+\begin{document}
+\PSevenCompactTitle{P01 — Números reales y representaciones}{Edición pública para estudiantes · v1.0 · hoja sin respuestas}
+Resuelve los ejercicios del núcleo en el orden indicado. El material opcional es una ampliación y aparece separado.
+\section*{Núcleo de la sesión}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P01:CDV1-E0001}Ejercicio 1 · Jerarquia de los sistemas numericos}
+Para cada numero, indica el conjunto mas pequeno entre \(\mathbb{N},\) \(\mathbb{Z},\) \(\mathbb{Q}\) y \(\mathbb{R}\setminus \mathbb{Q}\) al que pertenece: \(-4,\) \(0,\) \(3/7\) y \(\sqrt{2}\). Explica por que la cadena \(\mathbb{N}\) \(\subset \) \(\mathbb{Z}\) \(\subset \) \(\mathbb{Q}\) \(\subset \) \(\mathbb{R}\) no permite clasificar \(\sqrt{2}\) como racional.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P01:CDV1-E0029}Ejercicio 2 · Clasificar expresiones equivalentes}
+Simplifica y clasifica en el conjunto mas pequeno \(\mathbb{N},\) \(\mathbb{Z},\) \(\mathbb{Q}\) o \(\mathbb{R}\setminus \mathbb{Q}\): \(\sqrt{18}/3,\) \((\sqrt{8})^{2/4},\) \(0.125\) y el decimal \(0.101001000100001\ldots ,\) donde entre unos aparecen uno, dos, tres, ... ceros.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P01:CDV1-E0030}Ejercicio 3 · Decimales y racionalidad}
+Decide y justifica: (a) todo decimal finito es racional; (b) todo decimal infinito es irracional; (c) un decimal periodico representa un racional.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P01:CDV1-E0031}Ejercicio 4 · Por que hacen falta los reales}
+Explica por que \(\mathbb{Q}\) no basta para medir la diagonal de un cuadrado de lado \(1\) y que aporta \(\mathbb{R}\) \(\sin\) afirmar que todo real admita una expresion decimal finita.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P01:CDV1-E0300}Ejercicio 5 · Recta numerica y cierre de operaciones}
+Compara \(\mathbb{N},\) \(\mathbb{Z},\) \(\mathbb{Q}\) y \(\mathbb{R}\) desde dos perspectivas: que operaciones aritmeticas dejan de estar cerradas en cada ampliacion y que problema de orden/completitud sigue \(\sin\) resolver \(\mathbb{Q}\). Incluye un ejemplo concreto por paso.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P01:CDV1-E0301}Ejercicio 6 · Taller de representaciones de un mismo numero}
+Agrupa las expresiones que representan el mismo numero y clasifica ese numero: \(0.5,\) \(1/2,\) \(\sin(\pi /6),\) \(\sqrt{1/4},\) \(0.4999\ldots \); despues explica que conversion fue decisiva en cada agrupacion.
+\end{PSevenExerciseFixed}
+\end{document}

@@ -1,0 +1,52 @@
+\documentclass[10pt,a4paper,oneside,openany]{book}
+\def\PSevenPdfTitle{P11 — Valor medio, L'Hôpital y monotonía — Edición pública para estudiantes · v1.0}
+\def\PSevenPdfSubject{Hoja práctica sin respuestas}
+\def\PSevenPdfKeywords{cálculo diferencial, ejercicios, prácticas, estudio, preparación oral}
+\def\PSevenEdition{Edición pública para estudiantes · v1.0}
+\def\PSevenRunningTitle{P11}
+\def\PSevenAccent{CourseTeal}
+\def\PSevenPale{CoursePaleTeal}
+\input{src/problems/style/public_style.tex}
+\fancyfoot[L]{\parbox[b]{0.42\textwidth}{\raggedright\tiny Cálculo Diferencial en una Variable · P11}}
+\fancyfoot[R]{\parbox[b]{0.42\textwidth}{\raggedleft\tiny Edición pública para estudiantes · v1.0}}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[L]{\parbox[b]{0.42\textwidth}{\raggedright\tiny Cálculo Diferencial en una Variable · P11}}
+  \fancyfoot[C]{\thepage}
+  \fancyfoot[R]{\parbox[b]{0.42\textwidth}{\raggedleft\tiny Edición pública para estudiantes · v1.0}}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+\begin{document}
+\PSevenCompactTitle{P11 — Valor medio, L'Hôpital y monotonía}{Edición pública para estudiantes · v1.0 · hoja sin respuestas}
+Resuelve los ejercicios del núcleo en el orden indicado. El material opcional es una ampliación y aparece separado.
+\section*{Núcleo de la sesión}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P11:CDV1-E0022}Ejercicio 1 · Una desigualdad por el valor medio}
+Demuestra que \(|\sin\) b-sin \(a|\le |b-a|\) para cualesquiera a,b reales. Indica las hipotesis del teorema del valor medio y el punto donde se usa \(|\cos\) \(c|\le 1\).
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P11:CDV1-E0023}Ejercicio 2 · L'Hopital con control de forma}
+Calcula \(\lim_{x\to 0}(e^x-1-x)/x^{2}\) mediante L'Hopital. Antes de cada aplicacion verifica la forma indeterminada y al final explica por que ya no se vuelve a aplicar.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P11:CDV1-E0166}Ejercicio 3 · Cota de variación mediante el valor medio}
+Sea \(f\) derivable en un intervalo que contiene \([-1,3]\) y supón que \(|f'(x)|\le5/2\) en ese tramo. Demuestra que \(|f(3)-f(-1)|\le10\).
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P11:CDV1-E0169}Ejercicio 4 · L Hopital no es sustitucion automatica}
+Enumera las comprobaciones previas a aplicar L'Hopital a un cociente y explica por que una forma \(0/0\) es una condicion de entrada, no el valor del limite.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P11:CDV1-E0172}Ejercicio 5 · L Hopital una sola vez}
+Calcula \(\lim_{x\to 0}\) \((e^{2x}-1)/\sin(3x),\) verificando la forma antes de derivar.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P11:CDV1-E0175}Ejercicio 6 · Transformar cero por infinito}
+Calcula \(\lim_{x\to 0+}\) \(x\) \(\ln\) \(x\) transformando el producto en un cociente apto para L'Hopital.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P11:CDV1-E0189}Ejercicio 7 · Intervalos de monotonia de un cubico}
+Determina los intervalos de monotonia de \(f(x)=x^{3}-3x\) usando el signo de \(f'\).
+\end{PSevenExerciseFixed}
+\section*{Opcional y reto}
+\begin{PSevenOptionalFixed}{\PSevenTarget{studentpractical:P11:CDV1-E0174}Ejercicio 8 · Dos aplicaciones justificadas}
+Calcula \(\lim_{x\to 0}\) \((1-\cos\) \(x)/x^{2}\) con L'Hopital y justifica cada repeticion.
+\end{PSevenOptionalFixed}
+\begin{PSevenOptionalFixed}{\PSevenTarget{studentpractical:P11:CDV1-E0199}Ejercicio 9 · Unicidad de una ecuacion}
+Prueba que \(x+e^x=0\) tiene exactamente una solucion real, combinando existencia y una consecuencia del TVM.
+\end{PSevenOptionalFixed}
+\end{document}

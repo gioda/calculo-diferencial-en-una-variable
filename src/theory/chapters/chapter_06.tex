@@ -1,0 +1,300 @@
+\chapter[Aproximación de Taylor]{Aproximación polinómica y fórmula de Taylor}
+\label{chap:taylor}
+
+La aproximación lineal sustituye una función por la recta que comparte su
+valor y su primera derivada en un punto. Taylor prolonga esa idea: buscamos un
+polinomio que comparta también derivadas de orden superior. El resultado es
+finito y local. No debe confundirse con afirmar que la función coincide con
+una serie infinita.
+
+\section{Del contacto lineal al contacto de orden superior}
+\label{sec:contacto-taylor}
+
+\subsection{Orden de contacto}
+\CanonicalUnit{CM-C06-U001}{}{}
+
+Sean \(f\) y \(p\) funciones definidas cerca de \(a\). Decir que tienen
+\emph{contacto de orden al menos \(n\)} en \(a\) significa, en este capítulo,
+que
+\[
+  f^{(k)}(a)=p^{(k)}(a),
+  \qquad k=0,1,\dots,n,
+\]
+si esas derivadas existen. El número \(n\) describe cuántas derivadas
+coinciden; no es automáticamente el grado exacto de \(p\).
+
+De forma equivalente, bajo la regularidad necesaria,
+\[
+  f(x)-p(x)=o\bigl(|x-a|^n\bigr)
+  \qquad (x\to a).
+\]
+La notación \(o\) pequeña siempre debe declarar la variable, el centro y el
+orden. Una afirmación de este tipo describe un comportamiento asintótico
+local, no una igualdad exacta lejos de \(a\).
+
+\subsection{Construcción y unicidad del polinomio}
+\CanonicalUnit{CM-C06-U002}{}{}
+\ProofRole{proof-028}{}
+
+Supongamos que \(f\) es derivable \(n\) veces en \(a\). Buscamos un polinomio
+escrito en potencias de \(x-a\),
+\[
+  p(x)=c_0+c_1(x-a)+\cdots+c_n(x-a)^n,
+\]
+que satisfaga \(p^{(k)}(a)=f^{(k)}(a)\) para \(k=0,\dots,n\). Al derivar y
+evaluar en \(a\) obtenemos
+\[
+  p^{(k)}(a)=k!c_k,
+\]
+de modo que necesariamente
+\[
+  c_k=\frac{f^{(k)}(a)}{k!}.
+\]
+
+\begin{definicion}[Polinomio de Taylor]
+El \emph{polinomio de Taylor de grado a lo sumo \(n\), centrado en \(a\)}, es
+\[
+  P_{n,a}(x)=\sum_{k=0}^{n}\frac{f^{(k)}(a)}{k!}(x-a)^k.
+\]
+Cuando \(a=0\), también se llama polinomio de Maclaurin.
+\end{definicion}
+
+La construcción prueba además la unicidad: ningún otro polinomio de grado a
+lo sumo \(n\) puede compartir con \(f\) todas las derivadas hasta orden \(n\)
+en \(a\). El grado efectivo puede ser menor si alguno de los coeficientes
+finales se anula.
+
+\subsection{Polinomios básicos}
+\CanonicalUnit{CM-C06-U003}{}{}
+
+Los polinomios de Maclaurin más utilizados son
+\[
+  e^x=\sum_{k=0}^{n}\frac{x^k}{k!}+R_n(x),
+\]
+\[
+  \sin x=\sum_{k=0}^{m}(-1)^k\frac{x^{2k+1}}{(2k+1)!}
+          +R_{2m+1}(x),
+\]
+\[
+  \cos x=\sum_{k=0}^{m}(-1)^k\frac{x^{2k}}{(2k)!}
+          +R_{2m}(x),
+\]
+y, para \(x>-1\),
+\[
+  \ln(1+x)=\sum_{k=1}^{n}(-1)^{k+1}\frac{x^k}{k}+R_n(x).
+\]
+Aquí cada suma es finita y \(R_n\) es el resto exacto correspondiente; estas
+fórmulas no afirman todavía convergencia de una serie infinita.
+
+El centro no tiene que ser cero. Por ejemplo, el polinomio de Taylor de
+grado \(n\) de \(e^x\) centrado en \(a\) es
+\[
+  P_{n,a}(x)=e^a\sum_{k=0}^{n}\frac{(x-a)^k}{k!}.
+\]
+
+\section{La fórmula de Taylor y el resto}
+\label{sec:formula-taylor-resto}
+
+\subsection{Resto exacto y forma de Lagrange}
+\CanonicalUnit{CM-C06-U004}{}{}
+\ProofRole{proof-029}{}
+
+Definimos el \emph{resto de Taylor} por
+\[
+  R_{n,a}(x)=f(x)-P_{n,a}(x).
+\]
+Es una diferencia exacta. La magnitud \(|R_{n,a}(x)|\), o una cota para ella,
+se interpreta como error de aproximación.
+
+\begin{teorema}[Taylor con resto de Lagrange]
+Sea \(I\) un intervalo abierto, sean \(a,x\in I\), con \(a\ne x\), y sea
+\(n\in\Nzero\). Supongamos que \(f\) y sus derivadas hasta orden \(n\) son
+continuas en \(I\), y que \(f^{(n+1)}\) existe en el intervalo abierto cuyos
+extremos son \(a\) y \(x\). Entonces existe un punto \(\xi\) estrictamente
+entre \(a\) y \(x\)
+tal que
+\[
+  f(x)=P_{n,a}(x)
+       +\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-a)^{n+1}.
+\]
+El último sumando es el \emph{resto de Lagrange}.
+\end{teorema}
+
+\begin{proof}[Estrategia de la demostración]
+Se fija \(x\) y se introduce una función auxiliar que mide la diferencia
+entre \(f\), su polinomio de Taylor en \(a\) y un múltiplo de
+\((t-a)^{n+1}\). El múltiplo se elige para que la función auxiliar se anule
+en \(t=a\) con sus primeras \(n\) derivadas y también en \(t=x\). Aplicando
+Rolle de forma sucesiva se obtiene un punto \(\xi\) donde se anula su
+derivada de orden \(n+1\). Al despejar el múltiplo resulta la fórmula
+anterior. La idea esencial es transformar el resto en una igualdad accesible
+mediante aplicaciones repetidas de Rolle.
+\end{proof}
+
+La regularidad se vincula al resultado concreto. No se supone, sin decirlo,
+que una función derivable indefinidamente sea analítica ni que el resto tienda
+a cero cuando \(n\to\infty\).
+
+\subsection{Cotas del error}
+\CanonicalUnit{CM-C06-U005}{}{}
+\ProofRole{proof-030}{}
+
+Si, además de las hipótesis del teorema, se conoce una cota
+\[
+  |f^{(n+1)}(t)|\le M
+\]
+para todo \(t\) entre \(a\) y \(x\), entonces
+\[
+  |R_{n,a}(x)|
+  \le \frac{M}{(n+1)!}|x-a|^{n+1}.
+\]
+La cota debe cubrir todo el segmento relevante, no solo el centro.
+
+Una aproximación de grado mayor no tiene por qué mejorar en cualquier punto
+y bajo cualquier elección de cotas. Para comparar dos grados hay que estimar
+sus restos en el mismo punto o en el mismo intervalo. La disminución del
+término \(|x-a|^{n+1}/(n+1)!\) puede quedar compensada por el crecimiento de
+las derivadas.
+
+\subsection{Tres restos representativos}
+\CanonicalUnit{CM-C06-U006}{}{}
+\ProofRole{proof-030}{}
+
+Para la exponencial centrada en cero,
+\[
+  R_n(x)=\frac{e^\xi}{(n+1)!}x^{n+1}
+\]
+para algún \(\xi\) entre \(0\) y \(x\). Para el seno y el coseno, todas las
+derivadas tienen valor absoluto a lo sumo uno; por ello, con el polinomio de
+Taylor del grado correspondiente,
+\[
+  |R_n(x)|\le\frac{|x|^{n+1}}{(n+1)!}.
+\]
+Para \(\ln(1+x)\), el intervalo usado para acotar las derivadas no puede
+atravesar \(-1\), que es frontera del dominio.
+
+\section{Aplicaciones controladas}
+\label{sec:aplicaciones-taylor}
+
+\subsection{Aproximación numérica con error garantizado}
+\CanonicalUnit{CM-C06-U007}{}{}
+\ProofRole{proof-030}{}
+
+Para aproximar \(e=e^1\), tomemos el polinomio de Maclaurin de grado siete:
+\[
+  P_7(1)=\sum_{k=0}^{7}\frac1{k!}
+        =\frac{685}{252}
+        \approx 2{,}718254.
+\]
+Como \(e^t\le e\le3\) en \([0,1]\), donde la cota elemental \(e\le3\) se
+obtiene de la sucesión definitoria mediante la expansión binomial y
+\(k!\ge2^{k-1}\) para \(k\ge2\), el resto de Lagrange satisface
+\[
+  |e-P_7(1)|\le\frac{3}{8!}<7{,}5\cdot10^{-5}.
+\]
+La aproximación y la garantía son datos distintos: el decimal procede del
+polinomio, mientras que el intervalo certificado procede de la cota del
+resto.
+
+\subsection{Una desigualdad local}
+\CanonicalUnit{CM-C06-U008}{}{}
+\ProofRole{proof-030}{}
+
+Para \(|x|\le\pi\), el polinomio de Maclaurin de grado dos del coseno es
+\(1-x^2/2\). La forma de Lagrange da
+\[
+  \cos x=1-\frac{x^2}{2}+\frac{\sin\xi}{6}x^3
+\]
+para algún \(\xi\) entre \(0\) y \(x\). Si \(x\ge0\), entonces
+\(0\le\xi\le x\le\pi\), de modo que \(\sin\xi\ge0\). Si \(x\le0\),
+entonces \(-\pi\le x\le\xi\le0\), por lo que \(\sin\xi\le0\) y
+\(x^3\le0\). En ambos casos el resto es no negativo y
+\[
+  \cos x\ge1-\frac{x^2}{2}
+  \qquad (|x|\le\pi).
+\]
+
+\subsection{Límites mediante desarrollos finitos}
+\CanonicalUnit{CM-C06-U009}{}{}
+
+Cuando aparecen cancelaciones, un desarrollo hasta el primer término no nulo
+puede mostrar el orden dominante. Por ejemplo,
+\[
+  \sin x=x-\frac{x^3}{6}+o(x^3)
+  \qquad(x\to0),
+\]
+y por tanto
+\[
+  \lim_{x\to0}\frac{x-\sin x}{x^3}=\frac16.
+\]
+El orden elegido debe superar todas las cancelaciones relevantes. Si basta
+un límite notable, una equivalencia ya validada o l'Hôpital bajo sus
+hipótesis, no es obligatorio usar Taylor; la herramienta se elige por la
+estructura del problema.
+
+\section{Álgebra de la notación \(o\) pequeña}
+\label{sec:algebra-o-pequena}
+
+\subsection{Suma, producto y composición}
+\CanonicalUnit{CM-C06-U010}{}{}
+\ProofRole{proof-032}{}
+
+La relación \(r(x)=o((x-a)^n)\) cuando \(x\to a\) significa
+\[
+  \lim_{x\to a}\frac{r(x)}{(x-a)^n}=0,
+\]
+con la adaptación mediante valor absoluto cuando convenga. De la definición
+se deducen, para órdenes compatibles,
+\[
+  o((x-a)^n)+o((x-a)^n)=o((x-a)^n)
+\]
+y
+\[
+  o((x-a)^m)\,o((x-a)^n)=o((x-a)^{m+n}).
+\]
+
+La sustitución en una composición necesita una regla explícita. Si
+\(u(x)\to0\) y \(r(t)=o(t^n)\) cuando \(t\to0\), entonces
+\[
+  r(u(x))=o\bigl(u(x)^n\bigr)
+\]
+en los puntos donde la composición esté definida. En efecto,
+\[
+  \frac{r(u(x))}{u(x)^n}\longrightarrow0
+\]
+si \(u(x)\ne0\) cerca del punto; los ceros eventuales se tratan por la
+extensión natural cuando \(r(0)=0\). Para reexpresar el resultado como una
+potencia de \(x-a\) hace falta, además, conocer el orden de \(u(x)\). La
+unicidad del polinomio de Taylor no justifica por sí sola esta sustitución.
+
+\section{Enriquecimiento y límite de alcance}
+\label{sec:restos-enriquecimiento}
+
+\subsection{Resto de Cauchy}
+\CanonicalUnit{CM-C06-U011}{}{}
+\ProofRole{proof-031}{}
+
+Como enriquecimiento, bajo las hipótesis adecuadas puede expresarse el resto
+en la forma de Cauchy
+\[
+  R_{n,a}(x)
+  =\frac{f^{(n+1)}(\xi)}{n!}(x-\xi)^n(x-a),
+\]
+donde \(\xi\) está entre \(a\) y \(x\). Esta forma no pertenece al núcleo de
+aplicación del curso.
+
+Existe también un resto integral, pero su enunciado y demostración dependen de
+la integración, que no es un prerrequisito de este curso diferencial. Por
+ello no se formula ni se usa aquí. Esta exclusión evita una dependencia
+oculta y no debe interpretarse como una negación del resultado.
+
+\subsection{Qué queda establecido}
+\CanonicalUnit{CM-C06-U012}{}{}
+
+El núcleo del capítulo es finito: construir \(P_{n,a}\), expresar el resto de
+Lagrange, acotarlo y usarlo en aproximaciones, desigualdades y límites. No se
+ha desarrollado una teoría de series de potencias ni se ha afirmado que toda
+función suave coincida con su serie de Taylor.
+
+Los ejercicios del material de partida y cualquier colección adicional
+quedan fuera de esta fuente canónica y de la autorización P4.5B.

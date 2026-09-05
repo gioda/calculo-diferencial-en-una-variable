@@ -1,0 +1,52 @@
+\documentclass[10pt,a4paper,oneside,openany]{book}
+\def\PSevenPdfTitle{P06 — Límites, continuidad y discontinuidades — Edición pública para estudiantes · v1.0}
+\def\PSevenPdfSubject{Hoja práctica sin respuestas}
+\def\PSevenPdfKeywords{cálculo diferencial, ejercicios, prácticas, estudio, preparación oral}
+\def\PSevenEdition{Edición pública para estudiantes · v1.0}
+\def\PSevenRunningTitle{P06}
+\def\PSevenAccent{CourseTeal}
+\def\PSevenPale{CoursePaleTeal}
+\input{src/problems/style/public_style.tex}
+\fancyfoot[L]{\parbox[b]{0.42\textwidth}{\raggedright\tiny Cálculo Diferencial en una Variable · P06}}
+\fancyfoot[R]{\parbox[b]{0.42\textwidth}{\raggedleft\tiny Edición pública para estudiantes · v1.0}}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[L]{\parbox[b]{0.42\textwidth}{\raggedright\tiny Cálculo Diferencial en una Variable · P06}}
+  \fancyfoot[C]{\thepage}
+  \fancyfoot[R]{\parbox[b]{0.42\textwidth}{\raggedleft\tiny Edición pública para estudiantes · v1.0}}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+\begin{document}
+\PSevenCompactTitle{P06 — Límites, continuidad y discontinuidades}{Edición pública para estudiantes · v1.0 · hoja sin respuestas}
+Resuelve los ejercicios del núcleo en el orden indicado. El material opcional es una ampliación y aparece separado.
+\section*{Núcleo de la sesión}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P06:CDV1-E0012}Ejercicio 1 · Continuidad de una funcion a trozos}
+Sea \(f(x)=ax+1\) si \(x<1\) y \(f(x)=x^{2}+b\) si \(x\ge 1\). Determina todos los pares (a,b) para los que \(f\) es continua en \(x=1\). No impongas derivabilidad.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P06:CDV1-E0105}Ejercicio 2 · Racionalizacion en el infinito}
+Calcula \(\lim_{x\to +\infty }\) \((\sqrt{x^{2}+3x}-x)\) mediante racionalizacion.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P06:CDV1-E0106}Ejercicio 3 · Definicion de limite infinito funcional}
+Prueba desde la definicion que \(\lim_{x\to 0+}\) \(1/x=+\infty ,\) dando \(\delta \) en funcion de \(M>0\).
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P06:CDV1-E0109}Ejercicio 4 · Infinitesimos equivalentes en producto}
+Calcula \(\lim_{x\to 0}\) \((1-\cos\) \(x)/x^{2}\) usando \(1-\cos\) \(x=2\) \(\sin^{2}(x/2)\) y el equivalente \(\sin\) \(u\sim u\).
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P06:CDV1-E0113}Ejercicio 5 · Composicion continua con imagen compatible}
+Justifica la continuidad en \(x=0\) de \(h(x)=\sqrt{1+x^{2}}\) identificando las dos funciones compuestas y la compatibilidad de dominios.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P06:CDV1-E0116}Ejercicio 6 · Continuidad de un logaritmo compuesto}
+Determina donde es continua \(f(x)=\ln(4-x^{2})\) y justifica la respuesta por composicion, no solo por una regla memorizada.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P06:CDV1-E0118}Ejercicio 7 · Clasificacion de tres discontinuidades}
+Clasifica en \(x=0\): a) \(f(x)=\sin\) \(x/x\) con \(f(0)=3\); b) \(g(x)=1/x\); c) \(h(x)=0\) si \(x<0\) y \(1\) si \(x\ge 0\).
+\end{PSevenExerciseFixed}
+\section*{Opcional y reto}
+\begin{PSevenOptionalFixed}{\PSevenTarget{studentpractical:P06:CDV1-E0108}Ejercicio 8 · Equivalentes y suma delicada}
+Verdadero o falso: si \(f\sim g\) y \(h\sim k,\) entonces \(f-h\sim g-k\). Justifica con un contraejemplo cerca de \(0\).
+\end{PSevenOptionalFixed}
+\begin{PSevenOptionalFixed}{\PSevenTarget{studentpractical:P06:CDV1-E0119}Ejercicio 9 · Reparar una discontinuidad evitable}
+Elige \(k\) para que \(f(x)=(x^{2}-4)/(x-2)\) si \(x\ne 2\) y \(f(2)=k\) sea continua en \(2\).
+\end{PSevenOptionalFixed}
+\end{document}

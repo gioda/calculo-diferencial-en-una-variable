@@ -1,0 +1,49 @@
+\documentclass[10pt,a4paper,oneside,openany]{book}
+\def\PSevenPdfTitle{P05 — Completitud y límites funcionales — Edición pública para estudiantes · v1.0}
+\def\PSevenPdfSubject{Hoja práctica sin respuestas}
+\def\PSevenPdfKeywords{cálculo diferencial, ejercicios, prácticas, estudio, preparación oral}
+\def\PSevenEdition{Edición pública para estudiantes · v1.0}
+\def\PSevenRunningTitle{P05}
+\def\PSevenAccent{CourseTeal}
+\def\PSevenPale{CoursePaleTeal}
+\input{src/problems/style/public_style.tex}
+\fancyfoot[L]{\parbox[b]{0.42\textwidth}{\raggedright\tiny Cálculo Diferencial en una Variable · P05}}
+\fancyfoot[R]{\parbox[b]{0.42\textwidth}{\raggedleft\tiny Edición pública para estudiantes · v1.0}}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[L]{\parbox[b]{0.42\textwidth}{\raggedright\tiny Cálculo Diferencial en una Variable · P05}}
+  \fancyfoot[C]{\thepage}
+  \fancyfoot[R]{\parbox[b]{0.42\textwidth}{\raggedleft\tiny Edición pública para estudiantes · v1.0}}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+\begin{document}
+\PSevenCompactTitle{P05 — Completitud y límites funcionales}{Edición pública para estudiantes · v1.0 · hoja sin respuestas}
+Resuelve los ejercicios del núcleo en el orden indicado. El material opcional es una ampliación y aparece separado.
+\section*{Núcleo de la sesión}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P05:CDV1-E0076}Ejercicio 1 · Iteración de Herón para la raíz de cinco}
+Se define \(x_1=4\) y, para \(n\ge1\), \(x_{n+1}=\tfrac12(x_n+5/x_n)\). Demuestra primero que \(x_n\ge\sqrt5\); prueba después que la sucesión es decreciente y determina su límite sin presuponer su convergencia.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P05:CDV1-E0080}Ejercicio 2 · Cauchy sin conocer el limite}
+Prueba directamente que \(a_n=1/(n+1)\) es de Cauchy, \(\sin\) usar que converge, y da \(N(\varepsilon )\).
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P05:CDV1-E0084}Ejercicio 3 · Umbral para divergencia a infinito}
+Usa la definicion para probar que \(n^{2}-3n\) tiende a \(+\infty \) y da un \(N\) valido para un M real arbitrario.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P05:CDV1-E0094}Ejercicio 4 · Delta explicito en dominio restringido}
+Para \(f:A\to \mathbb{R},\) \(A=[0,+\infty ),\) \(f(x)=x^{2},\) prueba que \(\lim_{x\to 2,\,x\,\in \,A}\) \(f(x)=4\) dando \(\delta (\varepsilon )\).
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P05:CDV1-E0095}Ejercicio 5 · Dos aproximaciones laterales con imágenes distintas}
+Para \(x\ne0\), sea \(f(x)=(x+|x|)/x\). Usa dos sucesiones que tiendan a \(0\), una por cada lado, para demostrar mediante el criterio secuencial que \(\lim_{x\to0}f(x)\) no existe.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P05:CDV1-E0099}Ejercicio 6 · Laterales incompatibles}
+Para \(f(x)=(x^{2}-1)/|x-1|,\) calcula los limites laterales en \(x=1\) y decide si existe el limite bilateral.
+\end{PSevenExerciseFixed}
+\section*{Opcional y reto}
+\begin{PSevenOptionalFixed}{\PSevenTarget{studentpractical:P05:CDV1-E0077}Ejercicio 7 · Punto fijo no implica convergencia}
+Verdadero o falso: si una recurrencia \(a_{n+1}=g(a_n)\) tiene un unico punto fijo L, toda sucesion generada por ella converge a L.
+\end{PSevenOptionalFixed}
+\begin{PSevenOptionalFixed}{\PSevenTarget{studentpractical:P05:CDV1-E0100}Ejercicio 8 · Limite bilateral y laterales}
+Decide: existe \(\lim_{x\to a}\) \(f(x)=L\) si y solo si existen ambos limites laterales y valen L. Indica que condicion sobre el dominio se presupone.
+\end{PSevenOptionalFixed}
+\end{document}

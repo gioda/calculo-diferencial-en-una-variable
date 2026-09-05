@@ -1,0 +1,428 @@
+\chapter{Consecuencias globales de la derivada}
+\label{chap:consecuencias-derivada}
+
+La derivada es local, pero el teorema del valor medio permite convertir su
+signo en información sobre todo un intervalo. Esa conexión organiza este
+capítulo: primero estudiaremos variación y extremos; después formularemos
+problemas de optimización; por último, usaremos la segunda derivada para
+describir convexidad e inflexión.
+
+\section{Monotonía y teorema del valor medio}
+\label{sec:monotonia-mvt}
+
+\subsection{Cuatro nociones de monotonía}
+\CanonicalUnit{CM-C04-U001}{}{}
+
+Sea \(I\subseteq\R\) un intervalo y \(f:I\to\R\). Diremos que \(f\) es
+
+\begin{itemize}
+  \item \emph{no decreciente} en \(I\) si
+        \(x<y\) implica \(f(x)\le f(y)\);
+  \item \emph{no creciente} en \(I\) si
+        \(x<y\) implica \(f(x)\ge f(y)\);
+  \item \emph{estrictamente creciente} en \(I\) si
+        \(x<y\) implica \(f(x)<f(y)\);
+  \item \emph{estrictamente decreciente} en \(I\) si
+        \(x<y\) implica \(f(x)>f(y)\).
+\end{itemize}
+
+Estas son propiedades en un intervalo, no propiedades aisladas de un punto.
+Cuando interese comparar el comportamiento a ambos lados de \(c\), se
+formularán las desigualdades locales exactas en vez de usar la expresión no
+estándar ``creciente en \(c\)''.
+
+La distinción entre desigualdades débiles y estrictas es esencial. Una función
+constante es no decreciente y no creciente, pero no es estrictamente monótona
+en ningún intervalo no degenerado.
+
+\subsection{Dependencias ya establecidas}
+\CanonicalUnit{CM-C04-U002}{}{}
+
+El teorema de Rolle y el teorema del valor medio ya fueron enunciados y
+demostrados en la Sección~\ref{sec:rolle-valor-medio}. No se repiten aquí. En
+lo que sigue se utilizará, en particular, que para una función continua en
+\([a,b]\) y derivable en \((a,b)\) existe \(c\in(a,b)\) tal que
+
+\[
+  f(b)-f(a)=f'(c)(b-a).
+\]
+
+Esta identidad es el puente entre el signo local de \(f'\) y la comparación
+global de valores de \(f\).
+
+\subsection{Criterios de monotonía mediante la derivada}
+\CanonicalUnit{CM-C04-U003}{}{}
+
+\begin{teorema}[Signo de la derivada y monotonía]
+Sea \(I\) un intervalo, \(f:I\to\R\) continua en \(I\) y derivable en
+\(\operatorname{int}I\). Entonces:
+
+\begin{enumerate}
+  \item si \(f'(x)\ge0\) para todo \(x\in\operatorname{int}I\), \(f\) es no
+        decreciente en \(I\);
+  \item si \(f'(x)\le0\) para todo \(x\in\operatorname{int}I\), \(f\) es no
+        creciente en \(I\);
+  \item si \(f'(x)>0\) para todo \(x\in\operatorname{int}I\), \(f\) es
+        estrictamente creciente en \(I\);
+  \item si \(f'(x)<0\) para todo \(x\in\operatorname{int}I\), \(f\) es
+        estrictamente decreciente en \(I\).
+\end{enumerate}
+\end{teorema}
+
+\begin{proof}
+Tomemos \(x<y\) en \(I\). El teorema del valor medio aplicado a \([x,y]\)
+proporciona \(c\in(x,y)\) tal que
+
+\[
+  f(y)-f(x)=f'(c)(y-x).
+\]
+
+Como \(y-x>0\), el signo de la diferencia \(f(y)-f(x)\) es el de \(f'(c)\).
+Las cuatro conclusiones se obtienen usando, respectivamente, una desigualdad
+débil o estricta y su versión con signo contrario.
+\end{proof}
+
+La conversa estricta es falsa. La función \(f(x)=x^3\) es estrictamente
+creciente en \(\R\), pero \(f'(0)=0\). En cambio, si una función no
+decreciente es derivable en un punto interior, su derivada en ese punto no
+puede ser negativa; la afirmación análoga vale para funciones no crecientes.
+
+\subsection{Derivada nula e igualdad de derivadas}
+\CanonicalUnit{CM-C04-U004}{}{}
+
+\begin{corolario}[Derivada nula]
+Sea \(I\) un intervalo. Si \(f:I\to\R\) es continua en \(I\), derivable en
+\(\operatorname{int}I\) y \(f'(x)=0\) en el interior, entonces \(f\) es
+constante en \(I\).
+\end{corolario}
+
+\begin{proof}
+Para cualesquiera \(x<y\) en \(I\), el teorema del valor medio da
+\(f(y)-f(x)=f'(c)(y-x)=0\). Por tanto, todos los valores coinciden.
+\end{proof}
+
+Si \(f'=g'\) en el interior de un intervalo y ambas funciones satisfacen las
+hipótesis anteriores, entonces \((f-g)'=0\). En consecuencia, existe
+\(K\in\R\) tal que
+
+\[
+  f(x)=g(x)+K
+  \qquad(x\in I).
+\]
+
+La conclusión depende de que el dominio sea un intervalo. En un dominio con
+varias componentes, la constante podría ser distinta en cada componente.
+
+\subsection{Dos consecuencias representativas}
+\CanonicalUnit{CM-C04-U005}{}{}
+
+Si \(f'(x)>0\) en un intervalo, cada ecuación \(f(x)=\lambda\) tiene a lo sumo
+una solución allí, porque la estricta monotonía impide repetir valores. La
+existencia de una solución exige, además, información de continuidad y de
+valores o límites; monotonía no significa existencia.
+
+Como ejemplo de desigualdad, el teorema del valor medio aplicado a la
+exponencial permite probar
+
+\[
+  e^x\ge 1+x \qquad(x\in\R),
+\]
+
+con igualdad solo en \(x=0\). Para \(x>0\), se escribe
+\(e^x-1=e^c x\) con \(c\in(0,x)\) y \(e^c>1\). Para \(x<0\), se obtiene la
+misma identidad con \(c\in(x,0)\); entonces \(0<e^c<1\) y la multiplicación
+por \(x<0\) conserva la desigualdad en la dirección requerida.
+
+\section{Extremos y criterios derivados}
+\label{sec:extremos-criterios}
+
+\subsection{Extremos, puntos estacionarios y puntos críticos}
+\CanonicalUnit{CM-C04-U006}{}{}
+\ProofRole{proof-026}{}
+
+Sea \(f:D\to\R\) y \(c\in D\). La función tiene un \emph{máximo local} en
+\(c\) si existe un entorno \(U\) de \(c\) tal que
+
+\[
+  f(x)\le f(c) \qquad(x\in D\cap U).
+\]
+
+El \emph{mínimo local} se define invirtiendo la desigualdad. Un máximo o
+mínimo es \emph{absoluto} en \(D\) si la comparación vale para todo \(x\in D\).
+El punto \(c\) es el punto extremizador; \(f(c)\) es el valor extremo.
+
+Usaremos la siguiente convención:
+
+\begin{itemize}
+  \item un \emph{punto estacionario} es un punto interior donde \(f'\) existe
+        y vale cero;
+  \item un \emph{punto crítico} es un punto interior donde \(f'(c)=0\) o donde
+        la derivada no existe.
+\end{itemize}
+
+Los extremos de un intervalo cerrado se consideran candidatos absolutos, pero
+no se denominan críticos bajo esta convención. El teorema de Fermat de la
+Sección~\ref{sec:rolle-valor-medio} afirma que todo extremo local interior en
+el que \(f\) sea derivable es estacionario. Es una condición necesaria, no
+suficiente: \(x^3\) tiene un punto estacionario en cero y no tiene allí un
+extremo.
+
+\subsection{Criterio de la primera derivada}
+\CanonicalUnit{CM-C04-U007}{}{}
+\ProofRole{proof-026}{}
+
+\begin{teorema}[Cambio de signo de la primera derivada]
+Sea \(f\) continua en un entorno de \(c\) y derivable a ambos lados de \(c\),
+salvo quizá en \(c\). Entonces:
+
+\begin{itemize}
+  \item si \(f'>0\) a la izquierda de \(c\) y \(f'<0\) a la derecha, \(f\)
+        tiene un máximo local en \(c\);
+  \item si \(f'<0\) a la izquierda de \(c\) y \(f'>0\) a la derecha, \(f\)
+        tiene un mínimo local en \(c\);
+  \item si \(f'\) conserva el signo al atravesar \(c\), este criterio no
+        produce un extremo local.
+\end{itemize}
+\end{teorema}
+
+La justificación no es una tabla formal: el signo de \(f'\) y el teorema del
+valor medio establecen la monotonía en cada intervalo lateral. Crecer hasta
+\(c\) y decrecer después fuerza un máximo; decrecer y luego crecer fuerza un
+mínimo.
+
+\subsection{Criterio de la segunda derivada}
+\CanonicalUnit{CM-C04-U008}{}{}
+\ProofRole{proof-026}{}
+
+\begin{teorema}[Criterio de la segunda derivada]
+Supongamos que \(f'(c)=0\) y que \(f''(c)\) existe. Si \(f''(c)>0\), \(f\)
+tiene un mínimo local estricto en \(c\). Si \(f''(c)<0\), tiene un máximo
+local estricto en \(c\).
+\end{teorema}
+
+\begin{proof}[Derivación del criterio]
+Si \(f''(c)>0\), por la definición de derivada aplicada a \(f'\), para \(x\)
+suficientemente próximo a \(c\) se cumple
+
+\[
+  \frac{f'(x)-f'(c)}{x-c}>0.
+\]
+
+Como \(f'(c)=0\), resulta \(f'(x)<0\) a la izquierda y \(f'(x)>0\) a la
+derecha. El criterio de la primera derivada da un mínimo. El caso
+\(f''(c)<0\) es análogo.
+\end{proof}
+
+Si \(f''(c)=0\), el criterio es inconcluso. En \(c=0\), \(x^4\) tiene un
+mínimo, \(-x^4\) tiene un máximo y \(x^3\) no tiene ninguno; en los tres casos
+se anulan la primera y la segunda derivadas. Los criterios basados en la
+primera derivada no nula de orden superior requieren hipótesis y herramientas
+adicionales; no se usarán como mecanismo automático en el núcleo de este
+capítulo.
+
+\subsection{Extremos absolutos en un intervalo cerrado}
+\CanonicalUnit{CM-C04-U009}{}{}
+\ProofRole{proof-015}{}
+
+Si \(f:[a,b]\to\R\) es continua, el teorema del valor extremo de la
+Sección~\ref{sec:teoremas-existencia} garantiza que alcanza máximo y mínimo
+absolutos. Ese resultado prueba \emph{existencia}; la derivada ayuda a
+\emph{localizarlos}.
+
+El procedimiento lógico es:
+
+\begin{enumerate}
+  \item identificar los puntos críticos del interior;
+  \item incluir los extremos \(a\) y \(b\);
+  \item evaluar \(f\) en todos los candidatos;
+  \item comparar los valores alcanzados.
+\end{enumerate}
+
+Si la función no es continua en todo el intervalo, o el dominio no es cerrado
+y acotado, la existencia debe justificarse de otra manera. Resolver \(f'=0\)
+sin comprobar esos aspectos solo produce una lista parcial de candidatos.
+
+\section{Optimización en una variable}
+\label{sec:optimizacion-variable}
+
+\subsection{Del enunciado al modelo}
+\CanonicalUnit{CM-C04-U010}{}{}
+
+Un problema de optimización aplicada no empieza derivando. Primero hay que
+construir y delimitar el modelo:
+
+\begin{enumerate}
+  \item identificar las variables y sus unidades;
+  \item traducir las restricciones;
+  \item elegir la función objetivo;
+  \item reducir el problema a una variable;
+  \item determinar el dominio factible;
+  \item justificar si el óptimo absoluto debe existir;
+  \item localizar puntos críticos y extremos del dominio;
+  \item comparar candidatos e interpretar el resultado en el contexto.
+\end{enumerate}
+
+La función objetivo expresa qué magnitud se maximiza o minimiza; una
+restricción expresa qué combinaciones son admisibles. Confundirlas puede dar
+una derivación correcta para un modelo equivocado.
+
+\begin{ejemplo}[Rectángulo de perímetro fijado]
+Sea \(P>0\) un perímetro dado. Si los lados de un rectángulo miden \(x\) e
+\(y\), la restricción es
+
+\[
+  2x+2y=P,
+\]
+
+y el objetivo es maximizar el área \(A=xy\). Al escribir
+\(y=P/2-x\), el dominio factible es \(0\le x\le P/2\) y
+
+\[
+  A(x)=x\left(\frac P2-x\right).
+\]
+
+La continuidad en el intervalo cerrado garantiza la existencia de máximo y
+mínimo absolutos. Como
+
+\[
+  A'(x)=\frac P2-2x,
+  \qquad
+  A''(x)=-2,
+\]
+
+el único punto estacionario es \(x=P/4\), donde hay un máximo local. Los
+extremos factibles dan área cero, mientras que
+
+\[
+  A\left(\frac P4\right)=\frac{P^2}{16}.
+\]
+
+Por tanto, el rectángulo de área máxima es el cuadrado de lado \(P/4\). La
+respuesta final incluye la geometría y las unidades: no es solo el número
+\(P/4\).
+\end{ejemplo}
+
+\section{Convexidad, concavidad e inflexión}
+\label{sec:convexidad-inflexion}
+
+\subsection{Definición mediante cuerdas}
+\CanonicalUnit{CM-C04-U011}{}{}
+\ProofRole{proof-027}{}
+
+\begin{definicion}[Función convexa]
+Sea \(I\) un intervalo. Una función \(f:I\to\R\) es \emph{convexa} si, para
+todo \(x,y\in I\) y todo \(t\in[0,1]\),
+
+\[
+  f\bigl((1-t)x+ty\bigr)
+  \le (1-t)f(x)+tf(y).
+\]
+\end{definicion}
+
+El lado derecho describe la cuerda que une \((x,f(x))\) con \((y,f(y))\): la
+gráfica de una función convexa queda por debajo de sus cuerdas. La función es
+\emph{estrictamente convexa} si la desigualdad es estricta cuando
+\(x\ne y\) y \(0<t<1\). Una función es \emph{cóncava} si \(-f\) es convexa;
+en ese caso se invierten las desigualdades.
+
+Esta es la convención canónica. No se usarán como términos formales las
+expresiones históricas ``convexa hacia arriba'' o ``convexa hacia abajo''.
+
+Una función convexa finita es continua en el interior de su intervalo, pero
+la definición por sí sola no fuerza continuidad en un extremo incluido. Por
+ejemplo, la función que vale cero en \([0,1)\) y vale uno en \(1\) es convexa
+en \([0,1]\) y no es continua en el extremo derecho.
+
+\subsection{Caracterizaciones diferenciales}
+\CanonicalUnit{CM-C04-U012}{}{}
+\ProofRole{proof-027}{}
+
+\begin{teorema}[Criterios de convexidad]
+Sea \(I\) un intervalo abierto y \(f:I\to\R\) derivable. Son equivalentes:
+
+\begin{enumerate}
+  \item \(f\) es convexa en \(I\);
+  \item \(f'\) es no decreciente en \(I\);
+  \item para todos \(x,y\in I\),
+        \[
+          f(y)\ge f(x)+f'(x)(y-x).
+        \]
+\end{enumerate}
+
+Así, las rectas tangentes de una función convexa quedan por debajo de la
+gráfica. Si además \(f\) es dos veces derivable en \(I\), estas condiciones
+equivalen a
+
+\[
+  f''(x)\ge0 \qquad(x\in I).
+\]
+\end{teorema}
+
+\begin{proof}[Derivación orientada]
+Para una función convexa, las pendientes de las cuerdas aumentan al desplazar
+sus extremos hacia la derecha. Al hacer tender ambos extremos hacia un punto,
+las pendientes límite muestran que \(f'\) es no decreciente y producen la
+desigualdad de la tangente. Recíprocamente, esa desigualdad aplicada en \(x\)
+y en \(y\), con pesos adecuados, da la desigualdad de convexidad.
+
+Si \(f''\ge0\), el criterio de monotonía aplicado a \(f'\) muestra que \(f'\)
+es no decreciente. En sentido inverso, si \(f'\) es no decreciente y es
+derivable, entonces \(f''\ge0\) en cada punto. Para concavidad se invierten
+todos los signos.
+\end{proof}
+
+\subsection{Convexidad estricta y optimización}
+\CanonicalUnit{CM-C04-U013}{}{}
+
+Si \(f''(x)>0\) en un intervalo, entonces \(f'\) es estrictamente creciente y
+\(f\) es estrictamente convexa. Es una condición suficiente, no necesaria:
+\(x^4\) es estrictamente convexa en \(\R\), aunque \(f''(0)=0\).
+
+Si \(f\) es derivable y convexa, todo punto estacionario \(c\) es un mínimo
+absoluto, porque la desigualdad de la tangente da
+
+\[
+  f(y)\ge f(c)+f'(c)(y-c)=f(c)
+  \qquad(y\in I).
+\]
+
+Si la función es estrictamente convexa, ese mínimo es único. Esta observación
+es útil en optimización, pero no elimina la necesidad de comprobar el dominio
+factible ni la existencia del candidato.
+
+\subsection{Puntos de inflexión}
+\CanonicalUnit{CM-C04-U014}{}{}
+
+\begin{definicion}[Punto de inflexión]
+Un punto interior \(c\) del dominio es un \emph{punto de inflexión} si la
+función cambia de convexa a cóncava, o de cóncava a convexa, al atravesar
+\(c\).
+\end{definicion}
+
+El criterio operativo consiste en estudiar la convexidad en intervalos a
+ambos lados. Si \(f''\) existe y cambia de signo en \(c\), hay inflexión. La
+igualdad \(f''(c)=0\) solo identifica un candidato y no es suficiente.
+
+La función \(x^3\) cambia de cóncava en \(( -\infty,0)\) a convexa en
+\((0,+\infty)\), de modo que \(0\) es un punto de inflexión. En cambio,
+\(x^4\) es convexa a ambos lados de cero: aunque \(f''(0)=0\), no hay
+inflexión. Tampoco es necesario que exista \(f''(c)\); lo decisivo es el
+cambio de convexidad.
+
+Los criterios de orden superior no se aplicarán sin declarar el primer orden
+no nulo, la posición interior y la regularidad local requeridos. Su tratamiento
+general se deja como enriquecimiento posterior a la aproximación de Taylor.
+
+\subsection{Enriquecimiento: propiedad de Darboux de las derivadas}
+\CanonicalUnit{CM-C04-U015}{}{}
+
+Aunque una derivada no sea continua, posee la propiedad del valor intermedio.
+Si \(f\) es derivable en un intervalo abierto \(I\), \(x_1<x_2\) y
+\(\lambda\) está entre \(f'(x_1)\) y \(f'(x_2)\), existe
+\(c\in(x_1,x_2)\) tal que \(f'(c)=\lambda\).
+
+La estrategia considera \(g(x)=f(x)-\lambda x\). Según la orientación de los
+signos de \(g'(x_1)\) y \(g'(x_2)\), la función alcanza un mínimo o un máximo
+local interior; el teorema de Fermat da \(g'(c)=0\). La formulación cubre ambos
+casos y no supone un orden particular entre los valores extremos de la
+derivada. Este resultado no se convierte aquí en una familia de ejercicios.

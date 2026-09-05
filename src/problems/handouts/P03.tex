@@ -1,0 +1,49 @@
+\documentclass[10pt,a4paper,oneside,openany]{book}
+\def\PSevenPdfTitle{P03 — Funciones, composición y dominios — Edición pública para estudiantes · v1.0}
+\def\PSevenPdfSubject{Hoja práctica sin respuestas}
+\def\PSevenPdfKeywords{cálculo diferencial, ejercicios, prácticas, estudio, preparación oral}
+\def\PSevenEdition{Edición pública para estudiantes · v1.0}
+\def\PSevenRunningTitle{P03}
+\def\PSevenAccent{CourseTeal}
+\def\PSevenPale{CoursePaleTeal}
+\input{src/problems/style/public_style.tex}
+\fancyfoot[L]{\parbox[b]{0.42\textwidth}{\raggedright\tiny Cálculo Diferencial en una Variable · P03}}
+\fancyfoot[R]{\parbox[b]{0.42\textwidth}{\raggedleft\tiny Edición pública para estudiantes · v1.0}}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[L]{\parbox[b]{0.42\textwidth}{\raggedright\tiny Cálculo Diferencial en una Variable · P03}}
+  \fancyfoot[C]{\thepage}
+  \fancyfoot[R]{\parbox[b]{0.42\textwidth}{\raggedleft\tiny Edición pública para estudiantes · v1.0}}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+\begin{document}
+\PSevenCompactTitle{P03 — Funciones, composición y dominios}{Edición pública para estudiantes · v1.0 · hoja sin respuestas}
+Resuelve los ejercicios del núcleo en el orden indicado. El material opcional es una ampliación y aparece separado.
+\section*{Núcleo de la sesión}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P03:CDV1-E0004}Ejercicio 1 · Dominio natural con logaritmos y raiz}
+Determina el dominio natural de \(\sqrt{\ln(2-x)-\ln(x+1)}\). Registra por separado las condiciones de existencia de los logaritmos y la de la raiz antes de combinarlas.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P03:CDV1-E0005}Ejercicio 2 · Inversa con dominio e imagen explicitos}
+Considera \(f:[2,+\infty )\to [0,+\infty ),\) \(f(x)=\sqrt{x-2}\). Demuestra que es biyectiva, calcula \(f^{-1}\) y declara dominio e imagen de ambas funciones.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P03:CDV1-E0006}Ejercicio 3 · Una formula que no es biyectiva}
+Sea \(f:\mathbb{R}\setminus \{0\}\to \mathbb{R},\) \(f(x)=x+1/x\). Decide si es inyectiva y si es sobreyectiva \(\sin\) usar derivadas. Si falla una propiedad, aporta una prueba o un contraejemplo preciso.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P03:CDV1-E0055}Ejercicio 4 · Dominios de dos composiciones}
+Sean \(f(x)=\sqrt{x+1}\) y \(g(x)=x^{2}-4\). Halla \(f\circ g\) y \(g\circ f\) con sus dominios naturales.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P03:CDV1-E0059}Ejercicio 5 · Leer una funcion a trozos}
+Representa \(f(x)=x+2\) si \(x<0,\) \(f(x)=1\) si \(0\le x\le 2\) y \(f(x)=3-x\) si \(x>2\). Calcula \(f(-2),\) \(f(0),\) \(f(2),\) \(f(4)\) y marca correctamente los extremos.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P03:CDV1-E0062}Ejercicio 6 · Logaritmos con control de dominio}
+Resuelve \(\ln(x-1)+\ln(x+1)=\ln(3x+1)\). Declara el dominio antes de combinar logaritmos.
+\end{PSevenExerciseFixed}
+\section*{Opcional y reto}
+\begin{PSevenOptionalFixed}{\PSevenTarget{studentpractical:P03:CDV1-E0053}Ejercicio 7 · Restringir para invertir una parabola}
+La regla \(f(x)=(x-1)^{2}\) no es inyectiva en \(\mathbb{R}\). Elige una restriccion de dominio que contenga \(3,\) declara el codominio para obtener una biyeccion y calcula la inversa.
+\end{PSevenOptionalFixed}
+\begin{PSevenOptionalFixed}{\PSevenTarget{studentpractical:P03:CDV1-E0065}Ejercicio 8 · Soluciones trigonometricas en un periodo}
+Resuelve \(\sin(2x)=\sqrt{3}/2\) para \(x\) en \([0,2\pi )\). Organiza primero las soluciones para el angulo \(2x\).
+\end{PSevenOptionalFixed}
+\end{document}

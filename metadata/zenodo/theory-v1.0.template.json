@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "upload_type": "publication",
+    "publication_type": "book",
+    "publication_date": "__PUBLICATION_DATE__",
+    "title": "Cálculo Diferencial en una Variable — Teoría",
+    "creators": [
+      {
+        "name": "Dalmasso, Giovanni",
+        "affiliation": "Department of Mathematics and Data Analytics, IQS School of Engineering, Universitat Ramon Llull",
+        "orcid": "0000-0002-8586-6027"
+      }
+    ],
+    "description": "<p>Manual de teoría para un primer curso universitario de cálculo diferencial en una variable. Presenta fundamentos, continuidad, derivación, aplicaciones de la derivada y aproximación de Taylor, con énfasis en el razonamiento matemático, la interpretación y la conexión con el volumen complementario de problemas, prácticas y estudio.</p>",
+    "access_right": "open",
+    "license": "cc-by-nc-sa-4.0",
+    "keywords": [
+      "cálculo diferencial",
+      "cálculo en una variable",
+      "análisis matemático",
+      "matemáticas aplicadas",
+      "educación matemática"
+    ],
+    "language": "spa",
+    "version": "1.0",
+    "related_identifiers": [
+      {
+        "identifier": "https://github.com/gioda/calculo-diferencial-en-una-variable",
+        "relation": "isSupplementedBy"
+      },
+      {
+        "identifier": "10.5281/zenodo.22307022",
+        "relation": "isSupplementedBy",
+        "resource_type": "publication-book"
+      }
+    ]
+  }
+}

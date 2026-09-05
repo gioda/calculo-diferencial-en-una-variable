@@ -1,0 +1,31 @@
+name: Error de contenido
+description: Comunica un error matemático, una errata o un problema de referencia.
+title: "[Contenido] "
+labels: []
+assignees: []
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Tipo de incidencia
+      options:
+        - Error matemático o de contenido
+        - Errata tipográfica
+        - Referencia o enlace roto
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Localización
+      description: Indica el libro o la hoja, la página y la sección o el número visible del ejercicio.
+      placeholder: "Teoría, p. 34, sección 3.2"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Descripción
+      description: Explica qué parece incorrecto y, si es posible, cuál sería la corrección.
+    validations:
+      required: true

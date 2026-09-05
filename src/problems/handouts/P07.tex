@@ -1,0 +1,50 @@
+\documentclass[10pt,a4paper,oneside,openany]{book}
+\def\PSevenPdfTitle{P07 — Material de consolidación opcional — Edición pública para estudiantes · v1.0}
+\def\PSevenPdfSubject{Material de consolidación opcional sin respuestas}
+\def\PSevenPdfKeywords{cálculo diferencial, ejercicios, prácticas, estudio, preparación oral}
+\def\PSevenEdition{Edición pública para estudiantes · v1.0}
+\def\PSevenRunningTitle{P07}
+\def\PSevenAccent{CourseTeal}
+\def\PSevenPale{CoursePaleTeal}
+\input{src/problems/style/public_style.tex}
+\fancyfoot[L]{\parbox[b]{0.42\textwidth}{\raggedright\tiny Cálculo Diferencial en una Variable · P07}}
+\fancyfoot[R]{\parbox[b]{0.42\textwidth}{\raggedleft\tiny Edición pública para estudiantes · v1.0}}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[L]{\parbox[b]{0.42\textwidth}{\raggedright\tiny Cálculo Diferencial en una Variable · P07}}
+  \fancyfoot[C]{\thepage}
+  \fancyfoot[R]{\parbox[b]{0.42\textwidth}{\raggedleft\tiny Edición pública para estudiantes · v1.0}}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+\begin{document}
+\PSevenCompactTitle{P07 — Material de consolidación opcional}{Edición pública para estudiantes · v1.0 · material opcional sin respuestas}
+No está programado como sesión docente en 2026/27. Puede utilizarse para la consolidación independiente o por indicación del profesorado.
+Resuelve las actividades principales en el orden indicado. El material opcional es una ampliación y aparece separado.
+\section*{Actividades principales}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P07:CDV1-E0013}Ejercicio 1 · Biseccion y garantia de error}
+Una funcion continua y estrictamente monotona en \([0,1]\) cambia de signo entre los extremos. Se aplica biseccion. Cual es el menor numero \(n\) de pasos que garantiza un intervalo final de longitud menor que \(10^{-6}\)? Justifica primero existencia y unicidad de la raiz.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P07:CDV1-E0121}Ejercicio 2 · Hipotesis del valor extremo}
+Para cada caso decide si el teorema del valor extremo garantiza maximo y minimo: a) \(f(x)=1/x\) en \((0,1]\); b) \(f(x)=x^{2}\) en \([-2,3]\); c) \(f(x)=1/x\) en \([-1,1]\).
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P07:CDV1-E0124}Ejercicio 3 · Dos pasos de biseccion}
+Para \(f(x)=x^{3}-x-1\) verifica Bolzano en \([1,2]\) y realiza dos pasos de biseccion, conservando siempre un intervalo con cambio de signo.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P07:CDV1-E0125}Ejercicio 4 · Cambio de signo y numero de raices}
+Separa lo que garantiza Bolzano de lo que no garantiza. Verdadero o falso: si \(f\) es continua en [a,b] y \(f(a)f(b)<0,\) entonces existe exactamente una raiz en (a,b).
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P07:CDV1-E0126}Ejercicio 5 · Valor intermedio sin cambio de signo}
+Prueba que \(x^{5}+x+1=2\) tiene al menos una solucion en \((0,1)\) usando el teorema del valor intermedio.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P07:CDV1-E0128}Ejercicio 6 · La continuidad es esencial en el valor intermedio}
+Da una funcion en \([-1,1]\) con \(f(-1)<0<f(1)\) que no tome el valor \(0\) y explica que hipotesis del teorema falla.
+\end{PSevenExerciseFixed}
+\section*{Opcional y reto}
+\begin{PSevenOptionalFixed}{\PSevenTarget{studentpractical:P07:CDV1-E0096}Ejercicio 7 · Cuantificadores del criterio secuencial}
+Enuncia correctamente el criterio secuencial para \(\lim_{x\to a,\,x\,\in \,A}\) \(f(x)=L,\) incluyendo las condiciones sobre cada sucesion de prueba.
+\end{PSevenOptionalFixed}
+\begin{PSevenOptionalFixed}{\PSevenTarget{studentpractical:P07:CDV1-E0104}Ejercicio 8 · Algebra de limites con dominio declarado}
+Sean \(f(x)\to 2\) y \(g(x)\to -1\) cuando \(x\to a\). Calcula el limite de \((f(x)^{2}+3g(x))/(f(x)-g(x))\) y justifica la regla del cociente.
+\end{PSevenOptionalFixed}
+\end{document}

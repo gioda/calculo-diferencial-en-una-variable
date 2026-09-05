@@ -1,0 +1,737 @@
+\chapter{Sucesiones, límites y continuidad}
+\label{chap:sucesiones-limites-continuidad}
+
+El límite permite describir una tendencia sin confundirla con una igualdad en
+un instante concreto. Empezaremos con sucesiones, donde el índice es discreto,
+y trasladaremos después las mismas ideas a funciones de variable real. La
+continuidad cerrará el capítulo al convertir información local sobre límites
+en conclusiones globales de existencia.
+
+\section{Sucesiones reales}
+\label{sec:sucesiones-reales}
+
+\subsection{Definición y formas de descripción}
+\CanonicalUnit{CM-C02-U001}{}{}
+
+\begin{definicion}[Sucesión real]
+Una \emph{sucesión real} es una función
+\[
+  x:\N\longrightarrow\R, \qquad n\longmapsto x_n.
+\]
+El conjunto \(\N=\{1,2,\ldots\}\) es el conjunto de índices. La notación
+\((x_n)_{n\ge1}\) representa la sucesión, mientras que \(x_n\) representa su
+término de índice \(n\).
+\end{definicion}
+
+Una fórmula explícita determina cada término directamente; por ejemplo,
+\(x_n=(-1)^n/n\). Una definición recursiva fija uno o varios términos
+iniciales y expresa los siguientes a partir de los anteriores. La sucesión de
+Fibonacci, por ejemplo, queda determinada por
+\[
+  F_1=F_2=1, \qquad F_{n+2}=F_{n+1}+F_n \quad(n\ge1).
+\]
+En cualquier definición recursiva hay que declarar los términos iniciales y
+el conjunto de índices para el que la regla tiene sentido.
+
+\subsection{Convergencia y divergencia}
+\CanonicalUnit{CM-C02-U002}{}{}
+\ProofRole{proof-006}{}
+
+\begin{definicion}[Convergencia]
+La sucesión \((x_n)\) \emph{converge} a \(L\in\R\) si, para todo
+\(\varepsilon>0\), existe un índice umbral \(N\in\N\) tal que
+\[
+  n\ge N \quad\Longrightarrow\quad |x_n-L|<\varepsilon.
+\]
+Escribimos \(x_n\to L\) o \(\lim_{n\to\infty}x_n=L\). Si no existe tal
+\(L\), la sucesión diverge.
+\end{definicion}
+
+El índice \(N\) puede depender de \(\varepsilon\), pero no del índice
+cuantificado \(n\). La definición no exige que los primeros términos estén
+cerca de \(L\); exige que todos los términos posteriores a un umbral lo estén.
+
+\begin{ejemplo}
+La sucesión \(x_n=1/n\) converge a cero. Dado \(\varepsilon>0\), elegimos un
+entero \(N>1/\varepsilon\). Si \(n\ge N\), entonces
+\[
+  \left|\frac1n-0\right|=\frac1n\le\frac1N<\varepsilon.
+\]
+El testigo es \(N\); el símbolo \(n\) queda libre para representar cualquier
+índice posterior.
+\end{ejemplo}
+
+La sucesión \((-1)^n\) no converge: sus términos pares valen \(1\) y los
+impares valen \(-1\). Este ejemplo también muestra que una sucesión acotada no
+tiene por qué ser convergente.
+
+\subsection{Consecuencias y reglas de cálculo}
+\CanonicalUnit{CM-C02-U003}{}{}
+\ProofRole{proof-007}{}
+
+\begin{teorema}[Unicidad del límite]
+Una sucesión convergente tiene un único límite.
+\end{teorema}
+
+\begin{proof}
+Supongamos que \(x_n\to L\) y \(x_n\to M\). Si \(L\ne M\), tomamos
+\(\varepsilon=|L-M|/3\). Existen índices \(N_L\) y \(N_M\) que satisfacen
+las respectivas definiciones. Para
+\(n\ge N=\max\{N_L,N_M\}\), la desigualdad triangular da
+\[
+ |L-M|\le |L-x_n|+|x_n-M|<2\varepsilon
+ =\frac23|L-M|,
+\]
+una contradicción. Por tanto, \(L=M\).
+\end{proof}
+
+\begin{proposicion}[Acotación]
+Toda sucesión convergente es acotada.
+\end{proposicion}
+
+\begin{proof}
+Si \(x_n\to L\), existe \(N\ge2\) tal que \(|x_n-L|<1\) para \(n\ge N\).
+Entonces \(|x_n|<|L|+1\) en la cola. Los términos
+\(x_1,\ldots,x_{N-1}\) forman un conjunto finito, de modo que
+\[
+ M=\max\{|x_1|,\ldots,|x_{N-1}|,|L|+1\}
+\]
+satisface \(|x_n|\le M\) para todo \(n\).
+\end{proof}
+
+\begin{teorema}[Álgebra y orden de límites de sucesiones]
+Si \(x_n\to L\), \(y_n\to M\) y \(\lambda\in\R\), entonces
+\[
+ x_n+y_n\to L+M,\qquad
+ \lambda x_n\to\lambda L,\qquad
+ x_ny_n\to LM.
+\]
+Si \(M\ne0\), entonces \(y_n\ne0\) a partir de cierto índice y
+\(x_n/y_n\to L/M\). Además, si \(x_n\le y_n\) a partir de cierto índice,
+entonces \(L\le M\).
+\end{teorema}
+
+\begin{proof}[Demostración de las reglas algebraicas]
+Para la suma se escribe
+\[
+ |(x_n+y_n)-(L+M)|
+ \le |x_n-L|+|y_n-M|
+\]
+y se elige un único umbral posterior a los dos que corresponden a
+\(\varepsilon/2\). La regla escalar se obtiene de
+\(|\lambda x_n-\lambda L|=|\lambda|\,|x_n-L|\), con el caso
+\(\lambda=0\) separado.
+
+Para el producto, la convergencia de \((x_n)\) permite fijar \(K\ge1\) tal
+que \(|x_n|\le K\). Entonces
+\[
+ |x_ny_n-LM|
+ \le |x_n|\,|y_n-M|+|M|\,|x_n-L|.
+\]
+Las dos diferencias pueden hacerse menores que
+\(\varepsilon/(2K)\) y \(\varepsilon/(2(|M|+1))\), respectivamente. Para el
+cociente, si \(M\ne0\), a partir de cierto índice
+\(|y_n|\ge|M|/2\), y por tanto
+\[
+ \left|\frac1{y_n}-\frac1M\right|
+ =\frac{|y_n-M|}{|y_n|\,|M|}
+ \le\frac{2}{|M|^2}|y_n-M|\longrightarrow0.
+\]
+La regla del producto aplicada a \(x_n(1/y_n)\) concluye la prueba.
+\end{proof}
+
+La misma elección de umbral debe servir simultáneamente para todas las
+estimaciones que intervienen. Por ejemplo, al sumar dos convergencias se toma
+\(N=\max\{N_1,N_2\}\), no un símbolo ya cuantificado. Las desigualdades
+estrictas pueden perderse en el límite: \(0<1/n\) para todo \(n\), pero ambos
+lados pueden tender a cero.
+
+\begin{teorema}[Teorema del encaje para sucesiones]
+Si \(a_n\le x_n\le b_n\) a partir de cierto índice y
+\(a_n\to L\), \(b_n\to L\), entonces \(x_n\to L\).
+\end{teorema}
+
+\subsection{Monotonía, completitud y una sucesión iterativa}
+\CanonicalUnit{CM-C02-U004}{}{}
+\ProofRole{proof-008}{}
+\ProofRole{proof-001}{}
+
+Una sucesión es \emph{creciente} si \(x_{n+1}\ge x_n\) para todo \(n\), y
+\emph{decreciente} si \(x_{n+1}\le x_n\). Diremos que es monótona si cumple
+una de esas propiedades. Los términos \emph{estrictamente creciente} y
+\emph{estrictamente decreciente} se reservan para las desigualdades estrictas.
+
+\begin{teorema}[Convergencia monótona]
+Toda sucesión creciente y acotada superiormente converge. Toda sucesión
+decreciente y acotada inferiormente converge.
+\end{teorema}
+
+\begin{proof}[Estrategia de demostración]
+Consideremos el caso creciente. Sea
+\[
+  S=\{x_n:n\in\N\}.
+\]
+Este conjunto es no vacío y está acotado superiormente. Por la
+completitud de \(\R\), existe \(L=\sup S\). Dado \(\varepsilon>0\), el número
+\(L-\varepsilon\) no es una cota superior de \(S\); por tanto existe \(N\)
+tal que \(x_N>L-\varepsilon\). Como la sucesión es creciente, para \(n\ge N\)
+se cumple
+\[
+  L-\varepsilon<x_N\le x_n\le L.
+\]
+Así, \(|x_n-L|<\varepsilon\), y \(x_n\to L\). El caso decreciente se reduce
+al anterior aplicándolo a \((-x_n)\).
+\end{proof}
+
+El argumento muestra exactamente dónde interviene la completitud: convierte
+la acotación en un número real \(L\) que puede actuar como límite.
+
+\begin{ejemplo}[Una iteración]
+Definimos
+\[
+  x_1=1, \qquad x_{n+1}=\sqrt{2+x_n}.
+\]
+Primero probamos que la sucesión está bien definida y acotada. Si
+\(1\le x_n\le2\), entonces
+\(1<\sqrt{2+x_n}\le2\); por inducción, \(1\le x_n\le2\) para todo \(n\).
+
+Probamos ahora la monotonía. Como \(x_2=\sqrt3>x_1\), y la raíz cuadrada es
+creciente, de \(x_n\ge x_{n-1}\) se deduce
+\[
+  x_{n+1}=\sqrt{2+x_n}\ge\sqrt{2+x_{n-1}}=x_n.
+\]
+La sucesión es creciente y está acotada superiormente; por el teorema anterior
+converge a algún \(L\in[1,2]\). La sucesión desplazada \((x_{n+1})\) tiene el
+mismo límite. Solo después de haber probado la convergencia usamos
+\(x_{n+1}^2=2+x_n\) y las reglas algebraicas de límites para obtener
+\[
+  L^2=2+L, \qquad L^2-L-2=0.
+\]
+Las soluciones algebraicas son \(2\) y \(-1\), pero \(L\in[1,2]\), luego
+\(L=2\).
+\end{ejemplo}
+
+\begin{advertencia}
+Resolver la ecuación de punto fijo produce candidatos, no prueba que la
+sucesión converja. La acotación y la monotonía son las que justifican la
+existencia del límite en este ejemplo.
+\end{advertencia}
+
+\subsection{Sucesiones de Cauchy}
+\CanonicalUnit{CM-C02-U005}{}{}
+\ProofRole{proof-009}{}
+
+\begin{definicion}[Sucesión de Cauchy]
+Una sucesión \((x_n)\) es \emph{de Cauchy} si, para todo \(\varepsilon>0\),
+existe \(N\in\N\) tal que
+\[
+  m,n\ge N \quad\Longrightarrow\quad |x_n-x_m|<\varepsilon.
+\]
+\end{definicion}
+
+La definición compara términos de la sucesión entre sí y no presupone un
+límite conocido. Para \(x_n=1/n\), si \(m,n\ge N\), entonces
+\[
+  \left|\frac1n-\frac1m\right|
+  \le \frac1n+\frac1m
+  \le \frac2N.
+\]
+Elegir \(N>2/\varepsilon\) prueba que la sucesión es de Cauchy sin introducir
+ninguna igualdad de signo incorrecto.
+
+Toda sucesión convergente es de Cauchy. En \(\R\) también vale el recíproco:
+
+\begin{teorema}[Criterio de Cauchy en \(\R\)]
+Una sucesión real converge si y solo si es de Cauchy.
+\end{teorema}
+
+La implicación difícil es una forma de completitud de \(\R\). No
+desarrollaremos aquí su demostración técnica ni convertiremos el criterio en
+un bloque independiente de ejercicios. Su función es reconocer que
+``los términos se estabilizan entre sí'' basta para garantizar un límite real.
+
+\subsection{Límites infinitos de sucesiones}
+\CanonicalUnit{CM-C02-U006}{}{}
+
+\begin{definicion}[Divergencia a infinito]
+Escribimos \(x_n\to+\infty\) si, para todo \(M\in\R\), existe
+\(N\in\N\) tal que
+\[
+  n\ge N \quad\Longrightarrow\quad x_n>M.
+\]
+Análogamente, \(x_n\to-\infty\) si para todo \(M\in\R\) existe \(N\) tal
+que \(x_n<M\) cuando \(n\ge N\).
+\end{definicion}
+
+Los símbolos \(\pm\infty\) describen comportamiento límite; no son números
+reales. Por eso las reglas que los contienen son abreviaturas de teoremas con
+hipótesis de signo. Por ejemplo, si \(x_n\to+\infty\) y \(y_n\to L>0\),
+entonces \(x_ny_n\to+\infty\). Si \(L<0\), el producto tiende a
+\(-\infty\). Cuando \(L=0\), la expresión simbólica \(0\cdot\infty\) es una
+forma indeterminada: no fija ningún resultado.
+
+\subsection{Enriquecimiento: criterio de Stolz--Cesàro}
+\CanonicalUnit{CM-C02-U007}{}{}
+\ProofRole{proof-010}{}
+
+El criterio siguiente no pertenece al núcleo de técnicas exigibles, pero
+muestra cómo una razón de incrementos puede controlar una razón de sucesiones.
+
+\begin{teorema}[Criterio de Stolz--Cesàro]
+Sean \((a_n)\) y \((b_n)\) sucesiones reales. Supongamos que \((b_n)\) es
+estrictamente creciente y \(b_n\to+\infty\). Si existe, finito o infinito, el
+límite
+\[
+  \lim_{n\to\infty}
+  \frac{a_{n+1}-a_n}{b_{n+1}-b_n}=L,
+\]
+entonces \(a_n/b_n\to L\).
+\end{teorema}
+
+Por ejemplo, con \(a_n=1+1/2+\cdots+1/n\) y \(b_n=n\), la razón de
+incrementos es \(1/(n+1)\), que tiende a cero. El criterio da \(a_n/n\to0\).
+Esta aplicación no usa continuidad del logaritmo ni anticipa resultados de
+derivación.
+
+\section{Límites de funciones}
+\label{sec:limites-funciones}
+
+\subsection{Puntos de acumulación y definición epsilon--delta}
+\CanonicalUnit{CM-C02-U008}{}{}
+\ProofRole{proof-012}{}
+
+Sea \(D\subseteq\R\). Un punto \(a\in\R\) es un \emph{punto de acumulación}
+de \(D\) si todo entorno reducido de \(a\) contiene algún punto de \(D\). No
+se exige que \(a\in D\). Esta convención permite estudiar límites en un punto
+eliminado y en un extremo del dominio.
+
+\begin{definicion}[Límite relativo al dominio]
+Sea \(f:D\to\R\) y sea \(a\) un punto de acumulación de \(D\). Decimos que
+\(f(x)\) tiende a \(L\in\R\) cuando \(x\to a\), relativamente a \(D\), si
+para todo \(\varepsilon>0\) existe \(\delta>0\) tal que, para \(x\in D\),
+\[
+  0<|x-a|<\delta
+  \quad\Longrightarrow\quad
+  |f(x)-L|<\varepsilon.
+\]
+Escribimos \(\lim_{x\to a,\,x\in D}f(x)=L\), omitiendo \(x\in D\) cuando el
+dominio está claro.
+\end{definicion}
+
+El valor \(f(a)\), si existe, no interviene en el límite. Lo que importa es el
+comportamiento de la función en puntos del dominio próximos pero distintos de
+\(a\).
+
+\begin{proposicion}[Unicidad del límite funcional]
+Si el límite de \(f\) cuando \(x\to a\), relativamente al dominio, existe,
+entonces es único.
+\end{proposicion}
+
+\begin{proof}
+Supongamos que dos números distintos \(L\) y \(M\) satisfacen la definición y
+tomemos \(\varepsilon=|L-M|/3\). Sean \(\delta_L\) y \(\delta_M\) los radios
+correspondientes. Como \(a\) es punto de acumulación del dominio, existe
+\(x\in D\) tal que
+\[
+  0<|x-a|<\min\{\delta_L,\delta_M\}.
+\]
+Entonces
+\[
+  |L-M|\le |L-f(x)|+|f(x)-M|<2\varepsilon,
+\]
+lo que contradice la elección de \(\varepsilon\).
+\end{proof}
+
+\begin{ejemplo}[Un argumento directo]
+Para todo \(a\in\R\),
+\(\lim_{x\to a}x^2=a^2\). Dado \(\varepsilon>0\), tomamos
+\[
+  \delta=\min\left\{1,\frac{\varepsilon}{2|a|+1}\right\}.
+\]
+Si \(|x-a|<\delta\le1\), entonces \(|x|\le|a|+1\), y
+\[
+ |x^2-a^2|=|x-a|\,|x+a|
+ \le |x-a|(2|a|+1)<\varepsilon.
+\]
+La elección funciona también cuando \(a\le0\); no divide por \(a\).
+\end{ejemplo}
+
+\subsection{Caracterización mediante sucesiones}
+\CanonicalUnit{CM-C02-U009}{}{}
+\ProofRole{proof-011}{}
+
+\begin{teorema}[Criterio secuencial]
+Sea \(f:D\to\R\) y sea \(a\) un punto de acumulación de \(D\). Entonces
+\[
+ \lim_{x\to a,\,x\in D}f(x)=L
+\]
+si y solo si, para toda sucesión \((x_n)\) de puntos de
+\(D\setminus\{a\}\) tal que \(x_n\to a\), se cumple \(f(x_n)\to L\).
+\end{teorema}
+
+\begin{proof}
+Supongamos primero el límite funcional. Dado \(\varepsilon>0\), elegimos el
+\(\delta\) de su definición. Como \(x_n\to a\), existe \(N\) tal que
+\(|x_n-a|<\delta\) para \(n\ge N\); además, \(x_n\ne a\). Por tanto,
+\(|f(x_n)-L|<\varepsilon\), y \(f(x_n)\to L\).
+
+Para el recíproco, supongamos que el límite funcional no vale. Entonces existe
+\(\varepsilon_0>0\) tal que, para cada \(n\in\N\), podemos elegir
+\(x_n\in D\) con
+\[
+  0<|x_n-a|<\frac1n,
+  \qquad
+  |f(x_n)-L|\ge\varepsilon_0.
+\]
+Así, \(x_n\to a\), pero \(f(x_n)\) no converge a \(L\), contradiciendo la
+hipótesis secuencial.
+\end{proof}
+
+El criterio permite demostrar que un límite no existe mediante dos sucesiones
+que se acercan al mismo punto y producen límites distintos. Para
+\(f(x)=\sin(1/x)\), \(x\ne0\), pueden elegirse índices positivos de forma que
+\(1/x_n=\pi/2+2\pi n\) y \(1/y_n=3\pi/2+2\pi n\). Entonces
+\(x_n,y_n\to0\), pero \(f(x_n)=1\) y \(f(y_n)=-1\).
+
+\subsection{Límites laterales y acotación local}
+\CanonicalUnit{CM-C02-U010}{}{}
+
+El \emph{límite por la derecha} usa solamente puntos \(x>a\) del dominio:
+\[
+  \lim_{x\to a^+}f(x)=L.
+\]
+Formalmente es el límite relativo a \(D\cap(a,+\infty)\). El límite por la
+izquierda, \(x\to a^-\), se define respecto de \(D\cap(-\infty,a)\). Cuando
+ambos lados tienen puntos que se acumulan en \(a\), el límite bilateral existe
+y vale \(L\) si y solo si los dos límites laterales existen y valen \(L\).
+
+\begin{proposicion}[Acotación local]
+Si \(\lim_{x\to a,\,x\in D}f(x)=L\in\R\), entonces existen
+\(\delta>0\) y \(M>0\) tales que
+\[
+ x\in D,\quad 0<|x-a|<\delta
+ \quad\Longrightarrow\quad |f(x)|\le M.
+\]
+Si además \(a\in D\), puede aumentarse \(M\) para incluir también \(f(a)\).
+\end{proposicion}
+
+\begin{proof}
+Tomamos \(\varepsilon=1\). En un entorno reducido suficientemente pequeño,
+\(|f(x)-L|<1\), luego \(|f(x)|<|L|+1\). Si \(a\in D\), basta reemplazar la
+cota por \(\max\{|L|+1,|f(a)|\}\).
+\end{proof}
+
+\subsection{Reglas, orden y límite trigonométrico fundamental}
+\CanonicalUnit{CM-C02-U011}{}{}
+\ProofRole{proof-013}{}
+
+Sean \(f,g:D\to\R\), y supongamos que, cuando \(x\to a\) relativamente a
+\(D\),
+\[
+  f(x)\to L, \qquad g(x)\to M.
+\]
+Entonces se conservan la suma, el producto y los múltiplos escalares. Si
+\(M\ne0\), entonces \(g(x)\ne0\) en algún entorno reducido relativo al
+dominio y
+\[
+  \lim_{x\to a}\frac{f(x)}{g(x)}=\frac{L}{M}.
+\]
+La condición \(M\ne0\) es indispensable; que \(g(x)\ne0\) cerca de \(a\) no
+basta por sí solo. Las reglas de orden y el teorema del encaje tienen la misma
+forma que para sucesiones.
+
+En concreto, si \(p(x)\le f(x)\le q(x)\) en algún entorno reducido relativo
+al dominio y
+\[
+  \lim_{x\to a}p(x)=\lim_{x\to a}q(x)=L,
+\]
+entonces el teorema del encaje afirma que \(f(x)\to L\).
+
+\begin{teorema}[Límite trigonométrico fundamental]
+Si los ángulos se miden en radianes, entonces
+\[
+  \lim_{x\to0}\frac{\sin x}{x}=1.
+\]
+\end{teorema}
+
+\begin{proof}
+Para \(0<x<\pi/2\), la comparación geométrica de áreas en la circunferencia
+unidad da
+\[
+  \sin x<x<\tan x.
+\]
+Al dividir por \(x>0\) y reorganizar,
+\[
+  \cos x<\frac{\sin x}{x}<1.
+\]
+Además,
+\[
+  0\le1-\cos x=2\sin^2(x/2)\le\frac{x^2}{2},
+\]
+donde se usa \(0\le\sin(x/2)\le x/2\). Por el teorema del encaje,
+\(\cos x\to1\) y, de nuevo por encaje, \(\sin x/x\to1\) por la derecha.
+Como \(\sin(-x)/(-x)=\sin x/x\), el cociente es par y el límite bilateral
+tiene el mismo valor.
+\end{proof}
+
+Dos consecuencias que usaremos son
+\[
+  \sin x\sim x \quad(x\to0),
+  \qquad
+  1-\cos x=2\sin^2(x/2)=o(x) \quad(x\to0).
+\]
+
+\subsection{Límites infinitos, límites en el infinito y formas indeterminadas}
+\CanonicalUnit{CM-C02-U012}{}{}
+\ProofRole{proof-004}{}
+
+Decimos que \(f(x)\to+\infty\) cuando \(x\to a\), relativamente a \(D\),
+si para todo \(M\in\R\) existe \(\delta>0\) tal que
+\[
+ x\in D,\quad 0<|x-a|<\delta
+ \quad\Longrightarrow\quad f(x)>M.
+\]
+Las definiciones de \(-\infty\) y de los límites laterales se obtienen
+cambiando el signo o restringiendo el lado de aproximación.
+
+Para límites en el infinito, por ejemplo,
+\[
+  \lim_{x\to+\infty}f(x)=L
+\]
+significa que para todo \(\varepsilon>0\) existe \(R>0\) tal que
+\(x\in D\) y \(x>R\) implican \(|f(x)-L|<\varepsilon\). Se combinan de modo
+análogo la aproximación \(x\to\pm\infty\) y los valores límite
+\(L\), \(+\infty\) o \(-\infty\).
+
+Expresiones como
+\[
+ \frac00,\quad \frac\infty\infty,\quad
+ \infty-\infty,\quad 0\cdot\infty,
+ \quad 1^\infty,\quad0^0,\quad\infty^0
+\]
+son \emph{formas indeterminadas}: describen información insuficiente sobre
+los límites de los componentes, no operaciones entre números. Antes de aplicar
+una técnica hay que identificar los límites separados y transformar la
+expresión respetando su dominio real.
+
+Para fijar una única caracterización principal del número \(e\), consideramos
+\[
+  u_n=\left(1+\frac1n\right)^n.
+\]
+La sucesión \((u_n)\) es creciente y está acotada superiormente; este resultado
+se obtiene mediante desigualdades binomiales y se adopta aquí como parte del
+límite de construcción de la exponencial real. Por completitud, \((u_n)\)
+converge, y definimos
+\[
+  e=\lim_{n\to\infty}\left(1+\frac1n\right)^n.
+\]
+Las caracterizaciones mediante límites de variable real y derivadas se
+deducirán cuando estén disponibles; no se tomarán como definiciones
+independientes.
+
+\subsection{Comparación asintótica y notación o pequeña}
+\CanonicalUnit{CM-C02-U013}{}{}
+
+Sea \(a\) un punto de acumulación del dominio común. Si \(g(x)\ne0\) en un
+entorno reducido relativo al dominio, escribimos
+\[
+  f(x)=o(g(x)) \quad(x\to a)
+\]
+cuando \(f(x)/g(x)\to0\). Decimos que \(f\) y \(g\) son
+\emph{asintóticamente equivalentes}, y escribimos \(f(x)\sim g(x)\), si
+\[
+  \frac{f(x)}{g(x)}\longrightarrow1.
+\]
+Si, además, ambas funciones tienden a cero, se llaman
+\emph{infinitésimos equivalentes}. Un \emph{infinitésimo} es una función que
+tiende a cero. Si
+\(f=o(g)\), decimos que \(f\) es de orden superior a \(g\) en el punto y con
+la variable de aproximación declarados.
+
+Estas relaciones no son intercambiables. La afirmación \(f=o(g)\) es más
+fuerte que una cota del tipo \(|f|\le C|g|\), y ninguna notación de comparación
+se usará sin definición. Del límite trigonométrico fundamental se obtiene
+\(\sin x\sim x\) cuando \(x\to0\); de
+\(0\le1-\cos x\le x^2/2\) se deduce
+\(1-\cos x=o(x)\).
+
+\section{Continuidad}
+\label{sec:continuidad}
+
+\subsection{Continuidad en un punto y en un intervalo}
+\CanonicalUnit{CM-C02-U014}{}{}
+
+\begin{definicion}[Continuidad relativa al dominio]
+Sea \(f:D\to\R\) y \(a\in D\). La función \(f\) es \emph{continua en
+\(a\)} si, para todo \(\varepsilon>0\), existe \(\delta>0\) tal que
+\[
+ x\in D,\quad |x-a|<\delta
+ \quad\Longrightarrow\quad |f(x)-f(a)|<\varepsilon.
+\]
+Si \(a\) es punto de acumulación de \(D\), esta condición equivale a
+\[
+  \lim_{\substack{x\to a\\x\in D}}f(x)=f(a).
+\]
+\end{definicion}
+
+Una función es continua en un conjunto \(E\subseteq D\) si es continua en
+cada punto de \(E\). En un intervalo cerrado \([a,b]\), la continuidad en
+\(a\) se interpreta por la derecha y en \(b\) por la izquierda, siempre
+relativamente al dominio. Denotaremos por \(C(D,\R)\) el espacio de funciones
+continuas de \(D\) en \(\R\); dominio y codominio quedan así declarados.
+
+\begin{teorema}[Álgebra y composición]
+Si \(f,g:D\to\R\) son continuas en \(a\), también lo son
+\(f+g\), \(\lambda f\) y \(fg\). Si \(g(a)\ne0\), el cociente \(f/g\) es
+continuo en \(a\). Además, si \(f:A\to B\) es continua en \(a\),
+\(g:C\to E\) es continua en \(f(a)\) y \(f(A)\subseteq C\), entonces
+\(g\circ f\) es continua en \(a\).
+\end{teorema}
+
+La afirmación de composición respeta los tipos fijados en el
+Capítulo~\ref{chap:numeros-reales-funciones}: primero se comprueba que los
+valores de \(f\) pertenecen al dominio de \(g\), y después se componen los
+límites.
+
+\subsection{Continuidad de las funciones elementales}
+\CanonicalUnit{CM-C02-U015}{}{}
+\ProofRole{proof-014}{}
+
+Las funciones constantes y la identidad son continuas. Las reglas algebraicas
+implican que todo polinomio es continuo en \(\R\) y que una función racional
+es continua en cada punto de su dominio natural. El valor absoluto es continuo
+porque
+\[
+  \bigl||x|-|a|\bigr|\le|x-a|.
+\]
+
+Las funciones exponenciales, logarítmicas y trigonométricas son continuas en
+sus dominios naturales. Como derivación representativa, para \(h\to0\),
+\[
+ \sin(a+h)-\sin a
+ =\sin a(\cos h-1)+\cos a\sin h\longrightarrow0,
+\]
+por los límites trigonométricos anteriores. A partir de aquí usaremos la
+continuidad de la familia elemental como herramienta, sin repetir una prueba
+para cada fórmula. Las funciones inversas elementales son continuas en los
+intervalos principales declarados en el Capítulo~1.
+
+Una composición de funciones elementales es continua allí donde todas las
+operaciones y funciones componentes estén definidas. La comprobación del
+dominio precede siempre a la aplicación de este principio.
+
+\subsection{Tipos de discontinuidad}
+\CanonicalUnit{CM-C02-U016}{}{}
+
+Sea \(f:D\to\R\) y \(a\) un punto relevante del dominio o de su frontera.
+Usaremos la siguiente clasificación controlada:
+
+\begin{itemize}
+  \item Hay una \emph{discontinuidad evitable} si existe un límite finito
+        \(L\) cuando \(x\to a\), pero \(f(a)\) no está definido o no vale
+        \(L\). Redefinir \(f(a)=L\) elimina la discontinuidad.
+  \item Hay una \emph{discontinuidad de salto} si los límites laterales
+        finitos existen y son distintos. El tamaño del salto es la diferencia
+        absoluta entre ellos.
+  \item Hay una \emph{discontinuidad infinita} si al menos uno de los límites
+        laterales es \(+\infty\) o \(-\infty\).
+  \item Hay una \emph{discontinuidad oscilatoria} si no existe límite por una
+        oscilación que persiste a toda escala.
+\end{itemize}
+
+La función \((x^2-1)/(x-1)\) en \(\R\setminus\{1\}\) tiene una
+discontinuidad evitable en \(1\). La función signo tiene un salto en \(0\),
+\(1/x^2\) tiene una discontinuidad infinita allí y \(\sin(1/x)\) presenta una
+discontinuidad oscilatoria. La \emph{función parte entera inferior}, denotada
+\(\lfloor x\rfloor\), tiene saltos en los enteros; no usaremos \([x]\) para
+representarla.
+
+Para funciones monótonas definidas en un intervalo, los límites laterales
+finitos existen en los puntos interiores; las discontinuidades que aparecen
+allí son de salto. La hipótesis de dominio intervalo no puede omitirse en favor
+de un dominio arbitrario.
+
+\section{Teoremas de existencia en intervalos cerrados}
+\label{sec:teoremas-existencia}
+
+\subsection{Teorema del valor extremo}
+\CanonicalUnit{CM-C02-U017}{}{}
+\ProofRole{proof-015}{}
+
+\begin{teorema}[Teorema del valor extremo de Weierstrass]
+Si \(f:[a,b]\to\R\) es continua y \(a<b\), entonces existen
+\(x_{\min},x_{\max}\in[a,b]\) tales que
+\[
+  f(x_{\min})\le f(x)\le f(x_{\max})
+  \qquad\text{para todo }x\in[a,b].
+\]
+Es decir, \(f\) alcanza un mínimo absoluto y un máximo absoluto.
+\end{teorema}
+
+El teorema combina continuidad con un intervalo cerrado y acotado. Ninguna de
+estas condiciones es decorativa. En \((0,1)\), la función \(f(x)=x\) no
+alcanza máximo ni mínimo. En \([0,1]\), la función definida por
+\(f(0)=0\) y \(f(x)=1/x\) para \(x>0\) no es continua y tampoco está
+acotada. El resultado garantiza existencia; no proporciona por sí solo un
+método para localizar los extremos.
+
+\subsection{Teorema de Bolzano}
+\CanonicalUnit{CM-C02-U018}{}{}
+\ProofRole{proof-016}{}
+\ProofRole{proof-001}{}
+
+\begin{teorema}[Teorema de Bolzano]
+Sea \(f:[a,b]\to\R\) continua, con \(a<b\). Si
+\(f(a)f(b)<0\), entonces existe \(c\in(a,b)\) tal que \(f(c)=0\).
+\end{teorema}
+
+El teorema afirma existencia, no unicidad. Por ejemplo, una función continua
+puede cambiar de signo entre los extremos y tener varios ceros interiores.
+
+\begin{proof}[Estrategia de bisección y completitud]
+Se divide \([a,b]\) por su punto medio. Si el valor en ese punto es cero, la
+conclusión ya está probada; en caso contrario, se conserva una mitad cuyos
+valores extremos tienen signos opuestos. Al repetir el proceso se obtienen
+intervalos cerrados encajados
+\([a_n,b_n]\), con longitudes \((b-a)/2^n\), y con
+\(f(a_n)f(b_n)<0\). La completitud de \(\R\) garantiza un único punto
+\(c\) común a todos ellos; equivalentemente, \(a_n\to c\) y \(b_n\to c\).
+Por continuidad, \(f(a_n)\to f(c)\) y \(f(b_n)\to f(c)\). Como los valores
+conservan signos opuestos, el único límite común posible es \(f(c)=0\).
+\end{proof}
+
+La bisección es también un puente natural hacia el cálculo numérico: produce
+intervalos que encierran un cero y un control explícito de su anchura. El
+diseño de un algoritmo y sus actividades computacionales pertenece a las
+prácticas posteriores, no a este capítulo compartido.
+
+Como aplicación, todo polinomio real de grado impar tiene al menos una raíz
+real. Si su coeficiente principal es positivo, el polinomio tiende a
+\(+\infty\) cuando \(x\to+\infty\) y a \(-\infty\) cuando
+\(x\to-\infty\); para coeficiente principal negativo se invierten los signos.
+En ambos casos existen extremos finitos con valores de signo contrario, y
+Bolzano proporciona un cero entre ellos.
+
+\subsection{Teorema del valor intermedio}
+\CanonicalUnit{CM-C02-U019}{}{}
+\ProofRole{proof-017}{}
+
+\begin{teorema}[Teorema del valor intermedio]
+Sea \(f:[a,b]\to\R\) continua. Si \(z\) está entre \(f(a)\) y \(f(b)\),
+entonces existe \(c\in[a,b]\) tal que \(f(c)=z\).
+\end{teorema}
+
+\begin{proof}
+Si \(z=f(a)\) o \(z=f(b)\), basta elegir el extremo correspondiente.
+Supongamos que \(z\) está estrictamente entre ambos valores y definamos
+\[
+  g(x)=f(x)-z.
+\]
+La función \(g\) es continua en \([a,b]\), y \(g(a)\) y \(g(b)\) tienen
+signos opuestos. Por el teorema de Bolzano, existe \(c\in(a,b)\) tal que
+\(g(c)=0\). Por tanto, \(f(c)=z\).
+\end{proof}
+
+La continuidad local en cada punto del intervalo es la hipótesis que permite
+obtener esta conclusión global. El teorema tampoco afirma unicidad: una misma
+altura puede alcanzarse en varios puntos.

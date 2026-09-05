@@ -1,0 +1,516 @@
+\chapter{Números reales y funciones}
+\label{chap:numeros-reales-funciones}
+
+El cálculo diferencial estudia cómo varían las cantidades. Antes de hablar de
+límites o derivadas necesitamos precisar dos piezas del lenguaje: los números
+con los que medimos y las funciones que relacionan unas cantidades con otras.
+Este capítulo fija esa base con el detalle necesario para el curso, sin
+construir los números reales ni repetir un curso completo de álgebra elemental.
+
+\section{Sistemas numéricos y necesidad de los números reales}
+\label{sec:sistemas-numericos}
+\CanonicalUnit{CM-C01-U001}{}{}
+
+Usaremos la convención
+\[
+  \N=\{1,2,3,\ldots\}, \qquad
+  \Nzero=\{0,1,2,3,\ldots\}.
+\]
+Los enteros son
+\(\Z=\{\ldots,-2,-1,0,1,2,\ldots\}\), y los racionales son los cocientes
+\[
+  \Q=\left\{\frac{p}{q}:p,q\in\Z,\ q\ne0\right\}.
+\]
+Cada ampliación responde a una operación que no siempre puede efectuarse en el
+sistema anterior: restar dentro de \(\N\), por ejemplo, conduce a \(\Z\), y
+dividir enteros conduce a \(\Q\) cuando el divisor no es cero.
+
+Sin embargo, los racionales no bastan para describir todas las longitudes. La
+diagonal de un cuadrado de lado uno tiene longitud \(\sqrt2\), y el resultado
+siguiente muestra que esa longitud no pertenece a \(\Q\). Los números reales
+\(\R\) completan la recta numérica: contienen a \(\Q\), incorporan números
+irracionales como \(\sqrt2\) y no presentan los huecos de \(\Q\) que impedirían
+formular con seguridad muchos argumentos de existencia.
+
+La cadena
+\[
+  \N\subset\Z\subset\Q\subset\R
+\]
+es una orientación útil, no una invitación a estudiar aquí el tamaño o la
+numerabilidad de estos conjuntos. Esos asuntos no son necesarios para los
+objetivos de cálculo de este capítulo.
+
+\subsection{Un primer modelo de demostración por contradicción}
+\CanonicalUnit{CM-C01-U002}{}{}
+\ProofRole{proof-002}{}
+
+Una \emph{demostración por contradicción} comienza suponiendo que la afirmación
+que queremos probar es falsa. Si esa suposición obliga a aceptar una
+imposibilidad lógica, concluimos que la afirmación original era verdadera.
+
+\begin{teorema}[Irracionalidad de \(\sqrt2\)]
+  El número \(\sqrt2\) no es racional.
+\end{teorema}
+
+\begin{proof}
+Supongamos, en contra de lo que queremos demostrar, que
+\(\sqrt2=m/n\) para ciertos enteros \(m,n\), con \(n\ne0\). Podemos elegir la
+fracción reducida, de modo que \(m\) y \(n\) no tengan ningún factor común
+mayor que uno. Al elevar al cuadrado obtenemos
+\[
+  m^2=2n^2.
+\]
+Por tanto, \(m^2\) es par. El cuadrado de un entero impar es impar, así que
+\(m\) debe ser par; escribimos \(m=2k\). Sustituyendo,
+\[
+  4k^2=2n^2, \qquad\text{y por tanto}\qquad n^2=2k^2.
+\]
+El mismo razonamiento muestra que \(n\) también es par. Entonces \(m\) y \(n\)
+son divisibles por dos, lo que contradice que \(m/n\) estuviera reducida. La
+suposición inicial es imposible y, en consecuencia, \(\sqrt2\notin\Q\).
+\end{proof}
+
+La estructura del argumento importa tanto como el ejemplo: se declara la
+suposición contraria, se encadenan consecuencias justificadas y se identifica
+con precisión la contradicción final.
+
+\section{La recta real: orden, completitud y densidad}
+\label{sec:recta-real}
+\CanonicalUnit{CM-C01-U003}{}{}
+\ProofRole{proof-001}{}
+
+En este curso trabajaremos con \(\R\) como un \emph{cuerpo ordenado completo}.
+La expresión ``cuerpo ordenado'' resume que podemos sumar, restar, multiplicar
+y dividir por números no nulos, y que esas operaciones son compatibles con el
+orden. Por ejemplo, si \(x<y\), entonces \(x+z<y+z\); si además \(z>0\),
+entonces \(xz<yz\).
+
+La palabra \emph{completo} expresa una propiedad que distingue a \(\R\) de
+\(\Q\). La formularemos después de introducir supremos, pero su idea puede
+anticiparse así: un conjunto no vacío de reales que no puede crecer sin límite
+tiene una frontera superior real bien definida. Adoptamos esta propiedad como
+fundamento de trabajo; no construiremos \(\R\) a partir de \(\Q\).
+
+Entre dos números reales distintos siempre hay tanto un racional como un
+irracional. Se dice que \(\Q\) y \(\R\setminus\Q\) son \emph{densos} en
+\(\R\). Esta afirmación explica por qué racionales e irracionales aparecen
+entremezclados en la recta, pero no elimina su diferencia: por ejemplo,
+\(\sqrt2\) sigue siendo irracional aunque pueda aproximarse por racionales con
+tanta precisión como se desee.
+
+\section{Intervalos, distancia y entornos}
+\label{sec:intervalos-distancia-entornos}
+\CanonicalUnit{CM-C01-U004}{}{}
+
+Un \emph{intervalo} es un conjunto de reales que contiene todos los puntos
+situados entre cualesquiera dos de sus elementos. Para \(a<b\), escribimos
+\[
+\begin{aligned}
+ (a,b)&=\{x\in\R:a<x<b\},
+& [a,b]&=\{x\in\R:a\le x\le b\},\\
+ (a,b]&=\{x\in\R:a<x\le b\},
+& [a,b)&=\{x\in\R:a\le x<b\}.
+\end{aligned}
+\]
+Los intervalos no acotados se escriben, por ejemplo,
+\((a,+\infty)\), \(( -\infty,b]\) y \(\R=(-\infty,+\infty)\). Los símbolos
+\(\pm\infty\) no representan números reales y por ello nunca se incluyen con
+un corchete.
+
+\begin{definicion}[Valor absoluto y distancia]
+Para \(x\in\R\), el \emph{valor absoluto} de \(x\) es
+\[
+ |x|=\begin{cases}x,&x\ge0,\\-x,&x<0.\end{cases}
+\]
+La distancia entre \(x\) e \(y\) es \(d(x,y)=|x-y|\).
+\end{definicion}
+
+Así, \(|x-a|<r\), con \(r>0\), significa que la distancia de \(x\) a \(a\)
+es menor que \(r\), y equivale a
+\[
+  a-r<x<a+r.
+\]
+Esta equivalencia conecta el lenguaje algebraico del valor absoluto con la
+geometría de la recta.
+
+\begin{definicion}[Entorno]
+Si \(a\in\R\) y \(r>0\), el \emph{entorno abierto} de centro \(a\) y radio
+\(r\) es
+\[
+  V_r(a)=(a-r,a+r)=\{x\in\R:|x-a|<r\}.
+\]
+El \emph{entorno reducido} es
+\(V_r(a)\setminus\{a\}\).
+\end{definicion}
+
+Un entorno es, por tanto, un tipo particular de intervalo abierto con un centro
+y un radio declarados. No usaremos las palabras \emph{intervalo} y
+\emph{entorno} como si fueran intercambiables.
+
+\ProofRole{proof-003}{}
+\begin{proposicion}[Desigualdad triangular]
+Para cualesquiera \(x,y\in\R\),
+\[
+  |x+y|\le |x|+|y|.
+\]
+\end{proposicion}
+
+\begin{proof}
+De \(-|x|\le x\le |x|\) y \(-|y|\le y\le |y|\) se obtiene, sumando,
+\[
+  -(|x|+|y|)\le x+y\le |x|+|y|.
+\]
+Para todo \(u\in\R\) y todo \(M\ge0\), la doble desigualdad
+\(-M\le u\le M\) equivale a \(|u|\le M\). Aplicándola a
+\(u=x+y\) y \(M=|x|+|y|\) resulta la afirmación.
+\end{proof}
+
+En adelante utilizaremos la desigualdad triangular como herramienta. Una forma
+frecuente, obtenida aplicándola a \(x-y=(x-z)+(z-y)\), es
+\[
+  |x-y|\le |x-z|+|z-y|.
+\]
+
+\section{Cotas, extremos, supremo e ínfimo}
+\label{sec:cotas-extremos}
+\CanonicalUnit{CM-C01-U005}{}{}
+
+\begin{definicion}[Cotas]
+Sea \(S\subseteq\R\). Un número \(M\in\R\) es una \emph{cota superior} de
+\(S\) si \(x\le M\) para todo \(x\in S\). Un número \(m\in\R\) es una
+\emph{cota inferior} si \(m\le x\) para todo \(x\in S\). El conjunto es
+\emph{acotado superiormente}, \emph{acotado inferiormente} o
+\emph{acotado} según tenga cotas del tipo correspondiente o de ambos tipos.
+\end{definicion}
+
+Una cota no tiene por qué pertenecer al conjunto y rara vez es única. Por
+ejemplo, \(1,2\) y \(100\) son cotas superiores de \((0,1)\), pero ninguno de
+esos hechos afirma todavía cuál es la menor cota superior.
+
+\begin{definicion}[Máximo y mínimo]
+Un elemento \(M\in S\) es el \emph{máximo} de \(S\) si \(x\le M\) para todo
+\(x\in S\). Análogamente, \(m\in S\) es el \emph{mínimo} si \(m\le x\) para
+todo \(x\in S\). Si existen, son únicos y se denotan \(\max S\) y \(\min S\).
+\end{definicion}
+
+La pertenencia es decisiva: \([0,1]\) tiene máximo \(1\), mientras que
+\([0,1)\) no tiene máximo. En efecto, dado \(x<1\), el número
+\((x+1)/2\) sigue perteneciendo a \([0,1)\) y es mayor que \(x\).
+
+\begin{definicion}[Supremo e ínfimo]
+Sea \(S\subseteq\R\) no vacío. Si \(S\) está acotado superiormente, su
+\emph{supremo}, denotado \(\sup S\), es la menor de sus cotas superiores. Si
+\(S\) está acotado inferiormente, su \emph{ínfimo}, denotado \(\inf S\), es la
+mayor de sus cotas inferiores.
+\end{definicion}
+
+El supremo puede pertenecer o no al conjunto. Para \(S=[0,1)\),
+\(\sup S=1\), pero \(S\) no tiene máximo. En cambio, si \(S=[0,1]\), entonces
+\(\sup S=\max S=1\). Del mismo modo, \(\inf(0,1]=0\), aunque ese intervalo no
+tenga mínimo.
+
+Una caracterización práctica es la siguiente: \(s=\sup S\) si y solo si
+\(x\le s\) para todo \(x\in S\) y, para cada \(\varepsilon>0\), existe
+\(x_\varepsilon\in S\) tal que \(s-\varepsilon<x_\varepsilon\). La segunda
+condición dice que ninguna cantidad positiva puede rebajar \(s\) y dejarlo como
+cota superior.
+
+\ProofRole{proof-001}{}
+\begin{teorema}[Propiedad del supremo o completitud de \(\R\)]
+Todo subconjunto no vacío de \(\R\) que esté acotado superiormente tiene
+supremo en \(\R\).
+\end{teorema}
+
+Esta propiedad se adopta como resultado de referencia. Su versión inferior se
+deduce aplicándola al conjunto \(-S=\{-x:x\in S\}\): todo conjunto no vacío y
+acotado inferiormente tiene ínfimo. Más adelante, la completitud sostendrá
+resultados de existencia; no debe confundirse con una regla para calcular
+automáticamente extremos.
+
+\section{Funciones: objetos, no solo fórmulas}
+\label{sec:funciones-objetos}
+\CanonicalUnit{CM-C01-U006}{}{}
+
+\begin{definicion}[Función]
+Una \emph{función} \(f:A\to B\) asigna a cada elemento \(x\in A\) un único
+elemento \(f(x)\in B\). El conjunto \(A\) es el \emph{dominio} y \(B\) es el
+\emph{codominio}.
+\end{definicion}
+
+La función incluye la regla de asignación, el dominio y el codominio. Por eso
+una fórmula aislada no determina por sí sola una función. Por ejemplo,
+\[
+ f:\R\to\R,\quad f(x)=x^2,
+ \qquad\text{y}\qquad
+ h:[0,\infty)\to[0,\infty),\quad h(x)=x^2
+\]
+usan la misma expresión, pero son funciones distintas. La primera no es
+inyectiva ni sobreyectiva; la segunda es biyectiva.
+
+En una fórmula como \(r(x)=1/(x-2)\), si no se declara otro dominio,
+entenderemos el \emph{dominio natural} como el mayor subconjunto de \(\R\) en
+el que la expresión está definida: aquí, \(\R\setminus\{2\}\). En un modelo,
+en cambio, el dominio puede ser menor por razones vinculadas al significado de
+la variable.
+
+\subsection{Imagen, preimagen y gráfica}
+\CanonicalUnit{CM-C01-U007}{}{}
+
+\begin{definicion}[Imagen]
+Si \(f:A\to B\) y \(E\subseteq A\), la \emph{imagen} de \(E\) es
+\[
+  f(E)=\{f(x):x\in E\}\subseteq B.
+\]
+En particular, \(f(A)\) es la imagen de la función. También puede llamarse
+\emph{recorrido}, con este significado y nunca como sinónimo de codominio.
+\end{definicion}
+
+Siempre se cumple \(f(A)\subseteq B\), pero no necesariamente
+\(f(A)=B\). Para \(f:\R\to\R\), \(f(x)=x^2\), el codominio es \(\R\) y la
+imagen es \([0,\infty)\).
+
+\begin{definicion}[Preimagen]
+Si \(F\subseteq B\), la \emph{preimagen} de \(F\) es
+\[
+  f^{-1}(F)=\{x\in A:f(x)\in F\}.
+\]
+Esta notación está definida para cualquier función; no presupone que exista una
+función inversa.
+\end{definicion}
+
+Para la función cuadrado \(f:\R\to\R\), por ejemplo,
+\[
+  f^{-1}([1,4])=[-2,-1]\cup[1,2].
+\]
+Esta preimagen es un conjunto, no el valor de una función inversa.
+
+La \emph{gráfica} de \(f:A\to B\) es
+\[
+  \operatorname{Gr}(f)=\{(x,f(x)):x\in A\}\subseteq A\times B.
+\]
+La gráfica representa una función ya definida; no sustituye la información
+sobre su dominio y su codominio.
+
+\subsection{Inyectividad, sobreyectividad e inversa}
+\CanonicalUnit{CM-C01-U008}{}{}
+
+Una función \(f:A\to B\) es
+\begin{itemize}
+  \item \emph{inyectiva} si \(f(x_1)=f(x_2)\) implica \(x_1=x_2\);
+  \item \emph{sobreyectiva} si \(f(A)=B\);
+  \item \emph{biyectiva} si es inyectiva y sobreyectiva.
+\end{itemize}
+
+\begin{proposicion}[Función inversa]
+Una función \(f:A\to B\) posee una función inversa
+\(f^{-1}:B\to A\) si y solo si es biyectiva. En ese caso,
+\[
+  f^{-1}\circ f=\id_A,
+  \qquad
+  f\circ f^{-1}=\id_B.
+\]
+\end{proposicion}
+
+La invertibilidad depende de la función completa, no solo de la expresión. La
+función \(x\mapsto x^2\) no tiene inversa como función de \(\R\) en \(\R\),
+pero su restricción \(h:[0,\infty)\to[0,\infty)\) sí la tiene y
+\(h^{-1}(y)=\sqrt y\).
+
+\subsection{Composición correctamente tipada}
+\CanonicalUnit{CM-C01-U009}{}{}
+
+Sean
+\[
+  f:A\to B, \qquad g:C\to D.
+\]
+Para aplicar primero \(f\) y después \(g\), cada salida efectiva de \(f\) debe
+ser una entrada admisible de \(g\). Por tanto, la condición necesaria y
+suficiente para definir la composición en todo \(A\) es
+\[
+  f(A)\subseteq C.
+\]
+Bajo esta compatibilidad se define la \emph{composición}
+\[
+  g\circ f:A\to D, \qquad (g\circ f)(x)=g(f(x)).
+\]
+La inclusión relevante compara la imagen de \(f\) con el dominio de \(g\); no
+compara codominios sin atender a los valores realmente producidos.
+
+\begin{ejemplo}
+Sean \(f:\R\to[0,\infty)\), \(f(x)=x^2\), y
+\(g:[0,\infty)\to\R\), \(g(u)=\sqrt u\). Como
+\(f(\R)=[0,\infty)\), la composición está definida y
+\((g\circ f)(x)=|x|\). En cambio,
+\((f\circ g)(u)=u\) para \(u\ge0\). El orden de composición importa.
+\end{ejemplo}
+
+Si una regla \(g\) solo está definida en una parte de \(f(A)\), puede
+considerarse la composición en el subconjunto
+\(\{x\in A:f(x)\in C\}\), pero entonces ese subconjunto, y no todo \(A\), es
+su dominio. Esta observación evita ocultar restricciones de dominio.
+
+\section{Revisión selectiva de funciones elementales}
+\label{sec:funciones-elementales}
+
+Las familias siguientes aparecerán repetidamente en cálculo. El objetivo aquí
+es fijar dominios, imágenes, relaciones inversas y rasgos gráficos esenciales,
+no reconstruir toda la teoría elemental.
+
+\subsection{Polinómicas, racionales y definidas a trozos}
+\CanonicalUnit{CM-C01-U010}{}{}
+
+Una función polinómica tiene la forma
+\[
+  p(x)=a_0+a_1x+\cdots+a_nx^n,
+\]
+donde \(n\in\Nzero\), los coeficientes son reales y, si \(n\ge1\),
+\(a_n\ne0\). Su dominio natural es \(\R\). Su comportamiento global depende
+del grado y del signo del coeficiente principal, aunque el análisis fino se
+hará más adelante con herramientas de cálculo.
+
+Una función racional está dada por
+\[
+  r(x)=\frac{p(x)}{q(x)},
+\]
+donde \(p\) y \(q\) son polinomios y \(q\) no es el polinomio nulo. Su dominio
+natural es
+\[
+  \{x\in\R:q(x)\ne0\}.
+\]
+No se puede cancelar un factor y olvidar los puntos excluidos por el
+denominador original: \((x^2-1)/(x-1)\) coincide con \(x+1\) cuando
+\(x\ne1\), pero la primera expresión no está definida en \(x=1\).
+
+Una función definida a trozos utiliza reglas distintas en partes declaradas
+del dominio. El valor absoluto es el ejemplo básico. Para que la definición
+sea una función, cada punto del dominio debe recibir exactamente un valor; si
+los trozos se solapan, sus reglas han de ser compatibles en el solapamiento.
+
+\subsection{Exponenciales y logaritmos}
+\CanonicalUnit{CM-C01-U011}{}{}
+\ProofRole{proof-004}{}
+
+Para una base \(a>0\), la función exponencial de base \(a\) es
+\[
+  \exp_a:\R\to(0,\infty), \qquad \exp_a(x)=a^x.
+\]
+La extensión de las potencias desde exponentes racionales hasta exponentes
+reales requiere la completitud de \(\R\); adoptamos aquí esa construcción y
+sus propiedades básicas como resultado de referencia. En particular,
+\[
+  a^{x+y}=a^x a^y, \qquad a^{-x}=\frac1{a^x}.
+\]
+Si \(a>1\), la exponencial es estrictamente creciente; si \(0<a<1\), es
+estrictamente decreciente. En ambos casos es biyectiva de \(\R\) en
+\((0,\infty)\). Para \(a=1\) es constante y no posee inversa.
+
+El número \(e\) es la base distinguida de la exponencial natural. En este
+capítulo se toma como una constante real positiva bien definida; sus
+caracterizaciones mediante límites, derivadas o series se estudiarán solo
+cuando esas herramientas estén disponibles.
+
+Si \(a>0\) y \(a\ne1\), el \emph{logaritmo de base \(a\)} es la función
+inversa de la exponencial:
+\[
+  \log_a:(0,\infty)\to\R,
+  \qquad
+  \log_a y=x \iff a^x=y.
+\]
+El \emph{logaritmo natural} se denota \(\ln=\log_e\). No utilizaremos el
+símbolo \(\log\) sin declarar su base.
+
+Las relaciones inversas son
+\[
+  \log_a(a^x)=x \quad(x\in\R),
+  \qquad
+  a^{\log_a y}=y \quad(y>0).
+\]
+Las restricciones escritas forman parte de las identidades.
+
+\ProofRole{proof-005}{}
+\begin{proposicion}[Identidades logarítmicas representativas]
+Si \(a>0\), \(a\ne1\), y \(x,y>0\), entonces
+\[
+ \log_a(xy)=\log_a x+\log_a y,
+ \qquad
+ \log_a\!\left(\frac{x}{y}\right)=\log_a x-\log_a y.
+\]
+Además, para \(r\in\R\), \(\log_a(x^r)=r\log_a x\).
+\end{proposicion}
+
+\begin{proof}
+Demostraremos la primera identidad como modelo. Sean
+\(u=\log_a x\) y \(v=\log_a y\). Entonces \(x=a^u\), \(y=a^v\), y
+\[
+  xy=a^u a^v=a^{u+v}.
+\]
+Al aplicar \(\log_a\) a ambos lados, que son positivos, resulta
+\(\log_a(xy)=u+v=\log_a x+\log_a y\). Las otras identidades se obtienen del
+mismo modo usando las leyes de los exponentes y respetando las hipótesis de
+positividad.
+\end{proof}
+
+\begin{advertencia}
+Expresiones como \(\ln(x-y)\) o \(\log_a(q(x))\) solo tienen sentido real en
+los puntos donde el argumento es positivo; además, una base logarítmica real
+debe cumplir \(a>0\) y \(a\ne1\). Las identidades algebraicas no eliminan
+estas condiciones.
+\end{advertencia}
+
+\subsection{Funciones trigonométricas y radianes}
+\CanonicalUnit{CM-C01-U012}{}{}
+\ProofRole{proof-005}{}
+
+La medida en \emph{radianes} identifica un ángulo orientado con la longitud de
+arco que determina en la circunferencia unidad. Esta elección hace que una
+vuelta completa corresponda a \(2\pi\) y es la medida compatible con las
+fórmulas fundamentales del cálculo.
+
+Para cada \(t\in\R\), el punto de la circunferencia unidad alcanzado tras
+recorrer un arco orientado de longitud \(t\) tiene coordenadas
+\((\cos t,\sin t)\). Así se definen
+\[
+  \sin,\cos:\R\to[-1,1]
+\]
+para todo número real, no solo para ángulos de un triángulo. Ambas funciones
+son periódicas de periodo \(2\pi\); el coseno es par y el seno es impar. La
+identidad pitagórica
+\[
+  \sin^2 t+\cos^2 t=1
+\]
+se obtiene directamente de la ecuación \(x^2+y^2=1\) de la circunferencia.
+
+Las funciones cociente tienen dominios restringidos:
+\[
+  \tan t=\frac{\sin t}{\cos t}
+  \quad\text{si }\cos t\ne0,
+  \qquad
+  \cot t=\frac{\cos t}{\sin t}
+  \quad\text{si }\sin t\ne0.
+\]
+En particular,
+\[
+ \Dom(\tan)=\R\setminus\left\{\frac\pi2+k\pi:k\in\Z\right\},
+ \qquad
+ \Dom(\cot)=\R\setminus\{k\pi:k\in\Z\}.
+\]
+
+Como las funciones trigonométricas son periódicas, no son inyectivas en todo
+\(\R\). Para definir inversas se restringen a intervalos donde sí lo son:
+\[
+\begin{aligned}
+ \arcsin&:[-1,1]\to[-\pi/2,\pi/2],\\
+ \arccos&:[-1,1]\to[0,\pi],\\
+ \arctan&:\R\to(-\pi/2,\pi/2).
+\end{aligned}
+\]
+Por ejemplo, \(\sin(\arcsin y)=y\) para \(y\in[-1,1]\), mientras que
+\(\arcsin(\sin t)=t\) solo cuando \(t\in[-\pi/2,\pi/2]\). Esta asimetría es
+otra manifestación de que una relación inversa depende del dominio escogido.
+
+Los gráficos cualitativos completan estas descripciones: las polinómicas están
+definidas en todo \(\R\); las racionales pueden presentar puntos excluidos; las
+exponenciales toman valores positivos; los logaritmos solo admiten entradas
+positivas; y las trigonométricas repiten su patrón. El análisis mediante
+límites, continuidad y derivadas pertenece a capítulos posteriores y no se
+presupone aquí.

@@ -1,0 +1,49 @@
+\documentclass[10pt,a4paper,oneside,openany]{book}
+\def\PSevenPdfTitle{P02 — Orden, distancia, extremos e imagen — Edición pública para estudiantes · v1.0}
+\def\PSevenPdfSubject{Hoja práctica sin respuestas}
+\def\PSevenPdfKeywords{cálculo diferencial, ejercicios, prácticas, estudio, preparación oral}
+\def\PSevenEdition{Edición pública para estudiantes · v1.0}
+\def\PSevenRunningTitle{P02}
+\def\PSevenAccent{CourseTeal}
+\def\PSevenPale{CoursePaleTeal}
+\input{src/problems/style/public_style.tex}
+\fancyfoot[L]{\parbox[b]{0.42\textwidth}{\raggedright\tiny Cálculo Diferencial en una Variable · P02}}
+\fancyfoot[R]{\parbox[b]{0.42\textwidth}{\raggedleft\tiny Edición pública para estudiantes · v1.0}}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[L]{\parbox[b]{0.42\textwidth}{\raggedright\tiny Cálculo Diferencial en una Variable · P02}}
+  \fancyfoot[C]{\thepage}
+  \fancyfoot[R]{\parbox[b]{0.42\textwidth}{\raggedleft\tiny Edición pública para estudiantes · v1.0}}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+\begin{document}
+\PSevenCompactTitle{P02 — Orden, distancia, extremos e imagen}{Edición pública para estudiantes · v1.0 · hoja sin respuestas}
+Resuelve los ejercicios del núcleo en el orden indicado. El material opcional es una ampliación y aparece separado.
+\section*{Núcleo de la sesión}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P02:CDV1-E0002}Ejercicio 1 · Una desigualdad como comparacion de distancias}
+Resuelve \(|x+1|>|x-3|\) \(\sin\) separar inicialmente en casos. Interpreta ambos valores absolutos como distancias en la recta y expresa la solucion como intervalo.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P02:CDV1-E0003}Ejercicio 2 · Supremo, infimo y extremos}
+Sea \(S=(-3,2)\) \(\cup \) \(\{4\}\). Determina \(\sup\) S, \(\inf\) S, \(\max\) S y \(\min\) S cuando existan. Justifica cada respuesta distinguiendo cota de elemento.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P02:CDV1-E0032}Ejercicio 3 · Irracionalidad de sqrt(2)}
+Reconstruye la prueba por contradiccion de que \(\sqrt{2}\) no es racional. Declara donde usas que la fraccion elegida esta reducida.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P02:CDV1-E0035}Ejercicio 4 · Un racional y un irracional entre dos reales}
+Dados \(a<b,\) usa la densidad de \(\mathbb{Q}\) para obtener q racional con \(a<q<b\). Construye despues, a partir de q y un racional positivo pequeno, un irracional entre a y b.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P02:CDV1-E0039}Ejercicio 5 · Interseccion de entornos}
+Escribe como intervalos y representa en la recta \(|x-2|<3\) y \(|x+1|\le 2\). Halla su interseccion.
+\end{PSevenExerciseFixed}
+\begin{PSevenExerciseFixed}{\PSevenTarget{studentpractical:P02:CDV1-E0049}Ejercicio 6 · Imagen y preimagen de una cuadratica}
+Sea \(f:\mathbb{R}\to \mathbb{R},\) \(f(x)=x^{2}-1\). Calcula \(f([-2,1])\) y \(f^{-1}([0,3])\). Distingue la preimagen de una funcion inversa.
+\end{PSevenExerciseFixed}
+\section*{Opcional y reto}
+\begin{PSevenOptionalFixed}{\PSevenTarget{studentpractical:P02:CDV1-E0033}Ejercicio 7 · Completar una prueba para sqrt(3)}
+Completa: si \(\sqrt{3}=p/q\) con \(mcd(p,q)=1,\) entonces \(p^{2}=3q^{2}\). Justifica que \(3\) divide a p, escribe \(p=3k\) y termina la contradiccion.
+\end{PSevenOptionalFixed}
+\begin{PSevenOptionalFixed}{\PSevenTarget{studentpractical:P02:CDV1-E0040}Ejercicio 8 · Incluir un entorno en otro}
+Determina todos los radios \(r>0\) para los que \((2-r,2+r)\) esta contenido en \((-1,5]\). Justifica por separado ambos extremos.
+\end{PSevenOptionalFixed}
+\end{document}

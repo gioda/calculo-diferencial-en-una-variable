@@ -1,0 +1,28 @@
+name: Problema técnico
+description: Comunica un fallo de Python, construcción o reproducibilidad.
+title: "[Técnico] "
+labels: []
+assignees: []
+body:
+  - type: textarea
+    id: environment
+    attributes:
+      label: Entorno
+      description: Indica el sistema operativo y las versiones relevantes de Python, LaTeX, NumPy o Matplotlib.
+      placeholder: "macOS 15, Python 3.13, LuaLaTeX..."
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Pasos para reproducirlo
+      description: Enumera los comandos o acciones mínimos que provocan el problema.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Resultado observado
+      description: Incluye el mensaje de error relevante y el resultado esperado.
+    validations:
+      required: true

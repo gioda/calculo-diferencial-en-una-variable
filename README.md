@@ -10,9 +10,6 @@
 ![Idioma: español](https://img.shields.io/badge/idioma-espa%C3%B1ol-CB3D27)
 ![Python ≥ 3.9](https://img.shields.io/badge/Python-%E2%89%A5_3.9-3776AB?logo=python&logoColor=white)
 
-[![DOI Teoría: 10.5281/zenodo.22306586](https://img.shields.io/badge/DOI_Teor%C3%ADa-10.5281%2Fzenodo.22306586-1682D4)](https://doi.org/10.5281/zenodo.22306586)
-[![DOI Problemas: 10.5281/zenodo.22307022](https://img.shields.io/badge/DOI_Problemas-10.5281%2Fzenodo.22307022-1682D4)](https://doi.org/10.5281/zenodo.22307022)
-
 **Cálculo Diferencial en una Variable** es un recurso educativo abierto en
 español para un primer curso universitario de cálculo diferencial. Reúne dos
 libros complementarios, trece hojas de prácticas, ocho laboratorios Python y
@@ -30,9 +27,8 @@ una publicación institucional oficial.
 | **Teoría** | Fundamentos, continuidad, derivación, aplicaciones y aproximación de Taylor. | **[Descargar Teoría (PDF)](books/calculo_diferencial_teoria_v1.0.pdf)** |
 | **Problemas, prácticas y estudio** | 301 ejercicios, 301 respuestas breves, 30 soluciones desarrolladas seleccionadas, preparación oral y referencias a los laboratorios. | **[Descargar Problemas, prácticas y estudio (PDF)](books/calculo_diferencial_problemas_practicas_estudio_v1.0.pdf)** |
 
-Los dos volúmenes son publicaciones citables por separado y tienen DOI
-reservados en Zenodo. Los enlaces DOI se activarán cuando se publiquen los
-registros correspondientes.
+Los dos volúmenes son publicaciones citables por separado. Sus enlaces
+permanentes en el repositorio institucional DAU están pendientes.
 
 ## Materiales del curso
 
@@ -53,18 +49,18 @@ de soluciones ni la infraestructura interna usada para producir el curso.
 
 ## Cita
 
-Cada libro tiene su propia referencia y su propio DOI:
+Cada libro tiene su propia referencia. Los enlaces permanentes de DAU se
+incorporarán cuando estén disponibles:
 
 - **Teoría:** Dalmasso, G. (2026). *Cálculo Diferencial en una Variable —
-  Teoría* (versión 1.0). Zenodo.
-  [https://doi.org/10.5281/zenodo.22306586](https://doi.org/10.5281/zenodo.22306586)
+  Teoría* (versión 1.0). `[HANDLE DAU TEORÍA PENDIENTE]`
 - **Problemas, prácticas y estudio:** Dalmasso, G. (2026). *Cálculo Diferencial
-  en una Variable — Problemas, prácticas y estudio* (versión 1.0). Zenodo.
-  [https://doi.org/10.5281/zenodo.22307022](https://doi.org/10.5281/zenodo.22307022)
+  en una Variable — Problemas, prácticas y estudio* (versión 1.0).
+  `[HANDLE DAU PROBLEMAS PENDIENTE]`
 
 [`CITATION.cff`](CITATION.cff) conserva la identidad del repositorio como
 paquete de fuentes y remite a los dos libros como obras citables independientes.
-No existe un DOI único para el repositorio.
+Los enlaces permanentes de DAU están pendientes.
 
 ## Licencias y atribución
 
@@ -86,7 +82,6 @@ handouts/    hojas P01–P13
 labs/        ocho laboratorios Python
 src/         fuentes LaTeX, TikZ y recursos gráficos
 scripts/     construcción y generación de figuras
-metadata/    plantillas de metadatos para los dos libros
 ```
 
 Las erratas y mejoras pueden proponerse siguiendo

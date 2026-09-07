@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "Cite el volumen específico que haya utilizado: Teoría, DOI 10.5281/zenodo.22306586; Problemas, prácticas y estudio, DOI 10.5281/zenodo.22307022."
+message: "Cite el volumen específico que haya utilizado. Los enlaces permanentes de DAU están pendientes."
 title: "Cálculo Diferencial en una Variable"
 authors:
   - family-names: Dalmasso
@@ -8,6 +8,7 @@ authors:
     orcid: "https://orcid.org/0000-0002-8586-6027"
 version: "1.0"
 license: CC-BY-NC-SA-4.0
+repository-code: "https://github.com/gioda/calculo-diferencial-en-una-variable"
 keywords:
   - cálculo diferencial
   - cálculo en una variable
@@ -21,11 +22,8 @@ references:
         given-names: Giovanni
         affiliation: "Department of Mathematics and Data Analytics, IQS School of Engineering, Universitat Ramon Llull"
         orcid: "https://orcid.org/0000-0002-8586-6027"
-    publisher:
-      name: Zenodo
     year: 2026
     version: "1.0"
-    doi: "10.5281/zenodo.22306586"
   - type: book
     title: "Cálculo Diferencial en una Variable — Problemas, prácticas y estudio"
     authors:
@@ -33,8 +31,5 @@ references:
         given-names: Giovanni
         affiliation: "Department of Mathematics and Data Analytics, IQS School of Engineering, Universitat Ramon Llull"
         orcid: "https://orcid.org/0000-0002-8586-6027"
-    publisher:
-      name: Zenodo
     year: 2026
     version: "1.0"
-    doi: "10.5281/zenodo.22307022"

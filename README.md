@@ -11,7 +11,7 @@
 [![Código: MIT](https://img.shields.io/badge/c%C3%B3digo-MIT-5C677D)](LICENSES/MIT.txt)
 ![Idioma: español](https://img.shields.io/badge/idioma-espa%C3%B1ol-CB3D27)
 ![Python ≥ 3.9](https://img.shields.io/badge/Python-%E2%89%A5_3.9-3776AB?logo=python&logoColor=white)
-[![Próxima release: v1.0.0](https://img.shields.io/badge/GitHub_release-v1.0.0_pr%C3%B3xima-6B7280?logo=github)](https://github.com/gioda/calculo-diferencial-en-una-variable/releases/tag/v1.0.0)
+[![GitHub release](https://img.shields.io/github/v/release/gioda/calculo-diferencial-en-una-variable?display_name=tag&label=release)](https://github.com/gioda/calculo-diferencial-en-una-variable/releases/latest)
 
 [![Estrellas](https://img.shields.io/github/stars/gioda/calculo-diferencial-en-una-variable?label=estrellas)](https://github.com/gioda/calculo-diferencial-en-una-variable/stargazers)
 [![Forks](https://img.shields.io/github/forks/gioda/calculo-diferencial-en-una-variable?label=forks)](https://github.com/gioda/calculo-diferencial-en-una-variable/forks)

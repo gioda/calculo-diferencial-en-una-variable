@@ -5,10 +5,18 @@
 </p>
 
 ![Versión 1.0](https://img.shields.io/badge/versi%C3%B3n-1.0-365F7D)
+[![DAU · Teoría](https://img.shields.io/badge/DAU-Teor%C3%ADa-365F7D)](https://hdl.handle.net/20.500.14342/7180)
+[![DAU · Problemas](https://img.shields.io/badge/DAU-Problemas-365F7D)](https://hdl.handle.net/20.500.14342/7179)
 [![Contenido: CC BY-SA 4.0](https://img.shields.io/badge/contenido-CC_BY--SA_4.0-2B7A78)](LICENSE)
 [![Código: MIT](https://img.shields.io/badge/c%C3%B3digo-MIT-5C677D)](LICENSES/MIT.txt)
 ![Idioma: español](https://img.shields.io/badge/idioma-espa%C3%B1ol-CB3D27)
 ![Python ≥ 3.9](https://img.shields.io/badge/Python-%E2%89%A5_3.9-3776AB?logo=python&logoColor=white)
+[![Próxima release: v1.0.0](https://img.shields.io/badge/GitHub_release-v1.0.0_pr%C3%B3xima-6B7280?logo=github)](https://github.com/gioda/calculo-diferencial-en-una-variable/releases/tag/v1.0.0)
+
+[![Estrellas](https://img.shields.io/github/stars/gioda/calculo-diferencial-en-una-variable?label=estrellas)](https://github.com/gioda/calculo-diferencial-en-una-variable/stargazers)
+[![Forks](https://img.shields.io/github/forks/gioda/calculo-diferencial-en-una-variable?label=forks)](https://github.com/gioda/calculo-diferencial-en-una-variable/forks)
+[![Incidencias abiertas](https://img.shields.io/github/issues/gioda/calculo-diferencial-en-una-variable?label=incidencias)](https://github.com/gioda/calculo-diferencial-en-una-variable/issues)
+[![Contribuidores](https://img.shields.io/github/contributors/gioda/calculo-diferencial-en-una-variable?label=contribuidores)](https://github.com/gioda/calculo-diferencial-en-una-variable/graphs/contributors)
 
 **Cálculo Diferencial en una Variable** es un recurso educativo abierto en
 español para un primer curso universitario de cálculo diferencial. Reúne dos

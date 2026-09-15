@@ -5,7 +5,7 @@
 </p>
 
 ![Versión 1.0](https://img.shields.io/badge/versi%C3%B3n-1.0-365F7D)
-[![Contenido: CC BY-NC-SA 4.0](https://img.shields.io/badge/contenido-CC_BY--NC--SA_4.0-2B7A78)](LICENSE)
+[![Contenido: CC BY-SA 4.0](https://img.shields.io/badge/contenido-CC_BY--SA_4.0-2B7A78)](LICENSE)
 [![Código: MIT](https://img.shields.io/badge/c%C3%B3digo-MIT-5C677D)](LICENSES/MIT.txt)
 ![Idioma: español](https://img.shields.io/badge/idioma-espa%C3%B1ol-CB3D27)
 ![Python ≥ 3.9](https://img.shields.io/badge/Python-%E2%89%A5_3.9-3776AB?logo=python&logoColor=white)
@@ -27,8 +27,10 @@ una publicación institucional oficial.
 | **Teoría** | Fundamentos, continuidad, derivación, aplicaciones y aproximación de Taylor. | **[Descargar Teoría (PDF)](books/calculo_diferencial_teoria_v1.0.pdf)** |
 | **Problemas, prácticas y estudio** | 301 ejercicios, 301 respuestas breves, 30 soluciones desarrolladas seleccionadas, preparación oral y referencias a los laboratorios. | **[Descargar Problemas, prácticas y estudio (PDF)](books/calculo_diferencial_problemas_practicas_estudio_v1.0.pdf)** |
 
-Los dos volúmenes son publicaciones citables por separado. Sus enlaces
-permanentes en el repositorio institucional DAU están pendientes.
+Los dos volúmenes son publicaciones citables por separado:
+
+- **[Teoría — enlace permanente DAU](https://hdl.handle.net/20.500.14342/7180)**
+- **[Problemas, prácticas y estudio — enlace permanente DAU](https://hdl.handle.net/20.500.14342/7179)**
 
 ## Materiales del curso
 
@@ -49,25 +51,27 @@ de soluciones ni la infraestructura interna usada para producir el curso.
 
 ## Cita
 
-Cada libro tiene su propia referencia. Los enlaces permanentes de DAU se
-incorporarán cuando estén disponibles:
+Cada libro tiene su propia referencia:
 
 - **Teoría:** Dalmasso, G. (2026). *Cálculo Diferencial en una Variable —
-  Teoría* (versión 1.0). `[HANDLE DAU TEORÍA PENDIENTE]`
+  Teoría* (versión 1.0). https://hdl.handle.net/20.500.14342/7180
 - **Problemas, prácticas y estudio:** Dalmasso, G. (2026). *Cálculo Diferencial
   en una Variable — Problemas, prácticas y estudio* (versión 1.0).
-  `[HANDLE DAU PROBLEMAS PENDIENTE]`
+  https://hdl.handle.net/20.500.14342/7179
 
 [`CITATION.cff`](CITATION.cff) conserva la identidad del repositorio como
 paquete de fuentes y remite a los dos libros como obras citables independientes.
-Los enlaces permanentes de DAU están pendientes.
 
 ## Licencias y atribución
 
 - Libros, hojas, textos educativos, fuentes LaTeX/TikZ y figuras educativas:
-  **[CC BY-NC-SA 4.0](LICENSE)**.
+  **[CC BY-SA 4.0](LICENSE)**, salvo la fotografía del autor.
 - Laboratorios Python, scripts de figuras y código de construcción:
   **[MIT](LICENSES/MIT.txt)**.
+
+La fotografía del autor
+(`src/shared/assets/author/giovanni_dalmasso.jpg`) se utiliza con permiso y no
+está incluida en la licencia CC BY-SA 4.0 del resto de la obra.
 
 Los nombres y marcas de terceros —incluidos los nombres institucionales usados
 como afiliación factual— no quedan licenciados por estas licencias. Consulta

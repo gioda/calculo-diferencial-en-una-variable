@@ -20,8 +20,11 @@ School of Engineering, Universitat Ramon Llull. Esta afiliación se ofrece
 únicamente como información y no presenta estos materiales como publicaciones
 institucionales oficiales.
 
-La fotografía del autor fue suministrada por Giovanni Dalmasso para esta
-edición. Se conserva como archivo fuente sin recomprimir.
+Fotografía del autor: facilitada por la fotógrafa de IQS y utilizada con
+permiso. Esta fotografía no está incluida en la licencia CC BY-SA 4.0 del resto
+de la obra. La excepción corresponde al archivo
+`src/shared/assets/author/giovanni_dalmasso.jpg`; no se afirma una transferencia
+de derechos de autor ni se asigna a la fotografía una licencia alternativa.
 
 El banner de la página principal (`assets/readme-hero.png`) fue generado
 mediante generación de imágenes de OpenAI, bajo la dirección y selección de
@@ -31,6 +34,9 @@ generación específicos.
 La imagen `assets/social-preview.png` es una derivación técnica del mismo
 banner, ajustada a 1280 × 640 mediante escalado proporcional y extensión del
 fondo, sin añadir texto, marcas ni otros elementos gráficos.
+
+Estas descripciones de imágenes generadas mediante IA no afirman que exista un
+derecho de autor exclusivo sobre ellas.
 
 Las referencias consultadas se normalizan en
 [`BIBLIOGRAPHY.md`](BIBLIOGRAPHY.md). Los ejercicios de esta versión están

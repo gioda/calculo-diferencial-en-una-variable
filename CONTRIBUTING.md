@@ -22,7 +22,7 @@ de texto. Tampoco envíes soluciones, notas o recursos privados destinados al
 profesorado.
 
 Al contribuir, confirma que tienes derecho a aportar el material. El contenido
-educativo y documental se acepta bajo **CC BY-NC-SA 4.0**; el código Python, los
+educativo y documental se acepta bajo **CC BY-SA 4.0**; el código Python, los
 scripts de figuras y el código de construcción se aceptan bajo **MIT**, de
 acuerdo con [`LICENSES.md`](LICENSES.md).
 
